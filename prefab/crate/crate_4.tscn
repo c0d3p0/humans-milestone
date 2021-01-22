@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://model/object/metal_crate_1.tscn" type="PackedScene" id=3]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.5, 0.5, 0.5 )
+
+[node name="Crate4" type="StaticBody"]
+collision_layer = 32
+collision_mask = 495
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 1 )
+
+[node name="ScaleFix" type="Spatial" parent="."]
+transform = Transform( 0.82, 0, 0, 0, 0.837, 0, 0, 0, 0.795, 0, -0.039, -0.005 )
+
+[node name="MetalCrate1MI" parent="ScaleFix" instance=ExtResource( 3 )]
+transform = Transform( 0.006, 0, 0, 0, 0.006, 0, 0, 0, 0.006, 0, 0.334, 0.00160736 )

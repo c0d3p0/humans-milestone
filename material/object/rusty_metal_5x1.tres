@@ -1,0 +1,37 @@
+[gd_resource type="SpatialMaterial" load_steps=5 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 7
+load_path = "res://.import/rusty_metal_albedo.png-4d7d29fbcb424d7fbe6fd23548d5066d.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 7
+load_path = "res://.import/rusty_metal_ao.png-198f4e30772819f3b7f0c22ea79dc7f8.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=3]
+flags = 7
+load_path = "res://.import/rusty_metal_specular.png-010cdecd4f342746da5e442883230ec3.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=4]
+flags = 7
+load_path = "res://.import/rusty_metal_normal.png-bd2707b46d8f59e842a32a676aef6285.s3tc.stex"
+
+[resource]
+resource_name = "Material.002"
+params_cull_mode = 2
+albedo_texture = SubResource( 1 )
+metallic = 1.0
+metallic_texture = SubResource( 3 )
+roughness = 0.45
+normal_enabled = true
+normal_scale = 1.5
+normal_texture = SubResource( 4 )
+rim_enabled = true
+rim = 0.09
+rim_tint = 1.0
+ao_enabled = true
+ao_light_affect = 0.7
+ao_texture = SubResource( 2 )
+ao_on_uv2 = false
+ao_texture_channel = 0
+uv1_scale = Vector3( 5, 1, 1 )

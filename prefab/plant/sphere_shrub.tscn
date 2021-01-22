@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://model/object/sphere_shrub.tscn" type="PackedScene" id=1]
+
+[sub_resource type="CylinderShape" id=1]
+radius = 0.15
+height = 1.0
+
+[node name="SphereShrub" type="StaticBody"]
+collision_layer = 32
+collision_mask = 495
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 1 )
+
+[node name="SphereShrubMI" parent="." instance=ExtResource( 1 )]

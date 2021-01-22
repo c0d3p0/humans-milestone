@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://material/ground/gravel/gravel_ground_17x25.tres" type="Material" id=1]
+
+[sub_resource type="ConcavePolygonShape" id=1]
+data = PoolVector3Array( -8.5, 0.5, 12.5, 8.5, 0.5, 12.5, -8.5, -0.5, 12.5, 8.5, 0.5, 12.5, 8.5, -0.5, 12.5, -8.5, -0.5, 12.5, 8.5, 0.5, -12.5, -8.5, 0.5, -12.5, 8.5, -0.5, -12.5, -8.5, 0.5, -12.5, -8.5, -0.5, -12.5, 8.5, -0.5, -12.5, 8.5, 0.5, 12.5, 8.5, 0.5, -12.5, 8.5, -0.5, 12.5, 8.5, 0.5, -12.5, 8.5, -0.5, -12.5, 8.5, -0.5, 12.5, -8.5, 0.5, -12.5, -8.5, 0.5, 12.5, -8.5, -0.5, -12.5, -8.5, 0.5, 12.5, -8.5, -0.5, 12.5, -8.5, -0.5, -12.5, 8.5, 0.5, 12.5, -8.5, 0.5, 12.5, 8.5, 0.5, -12.5, -8.5, 0.5, 12.5, -8.5, 0.5, -12.5, 8.5, 0.5, -12.5, -8.5, -0.5, 12.5, 8.5, -0.5, 12.5, -8.5, -0.5, -12.5, 8.5, -0.5, 12.5, 8.5, -0.5, -12.5, -8.5, -0.5, -12.5 )
+
+[sub_resource type="CubeMesh" id=2]
+size = Vector3( 17, 1, 25 )
+
+[node name="ConcreteStoneGround17x25" type="StaticBody"]
+collision_layer = 32
+collision_mask = 495
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = SubResource( 2 )
+material/0 = ExtResource( 1 )

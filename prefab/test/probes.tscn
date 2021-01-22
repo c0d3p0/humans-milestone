@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=2]
+
+[sub_resource type="GIProbeData" id=1]
+bounds = AABB( -46, -5, -40, 92, 10, 80 )
+cell_size = 0.179688
+to_cell_xform = Transform( 5.56522, 0, 0, 0, 5.56522, 0, 0, 0, 5.56522, 256, 27.8261, 222.609 )
+dynamic_data = PoolIntArray( 0, 10, 512, 64, 512, 1, 0, 0, 2, 12, 0, 0, 8, 0, 999380144, 32600, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
+dynamic_range = 10
+bias = 2.5
+normal_bias = 1.0
+propagation = 0.7
+
+[sub_resource type="BakedLightmapData" id=4]
+bounds = AABB( -46, -5, -40, 92, 10, 80 )
+cell_space_transform = Transform( 0.025, 0, 0, 0, 0.025, 0, 0, 0, 0.025, 1.15, 0.125, 1 )
+cell_subdiv = 2
+octree = PoolByteArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255 )
+
+[sub_resource type="GIProbeData" id=3]
+bounds = AABB( -46, -5, -40, 92, 10, 80 )
+cell_size = 0.359375
+to_cell_xform = Transform( 2.78261, 0, 0, 0, 2.78261, 0, 0, 0, 2.78261, 128, 13.913, 111.304 )
+dynamic_data = PoolIntArray( 0, 9, 256, 32, 256, 1, 0, 1137618680, -1098755687, 1052369700, 1063613869, 1115921603, 1029260271, 1065250220, 1036441584, 1111973595, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
+dynamic_range = 8
+bias = 1.5
+normal_bias = 0.0
+propagation = 0.7
+
+[node name="Probes" type="Spatial"]
+
+[node name="GIProbe2020" type="GIProbe" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -10 )
+subdiv = 3
+extents = Vector3( 46, 5, 40 )
+dynamic_range = 10
+bias = 2.5
+normal_bias = 1.0
+data = SubResource( 1 )
+
+[node name="BakedLightmap" type="BakedLightmap" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -10 )
+bake_cell_size = 64.0
+bake_quality = 2
+bake_mode = 1
+bake_energy = 2.0
+bake_hdr = true
+bake_extents = Vector3( 46, 5, 40 )
+bake_default_texels_per_unit = 1024.0
+capture_cell_size = 63.0
+light_data = SubResource( 4 )
+
+[node name="GIProbe2021" type="GIProbe" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -10 )
+subdiv = 2
+extents = Vector3( 46, 5, 40 )
+dynamic_range = 8
+data = SubResource( 3 )

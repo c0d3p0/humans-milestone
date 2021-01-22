@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/land_shoe_footstep.wav-552d1d0d27b3bc22bd23c8d5fc97eab9.sample"
+
+[deps]
+
+source_file="res://sound/character/land_shoe_footstep.wav"
+dest_files=[ "res://.import/land_shoe_footstep.wav-552d1d0d27b3bc22bd23c8d5fc97eab9.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

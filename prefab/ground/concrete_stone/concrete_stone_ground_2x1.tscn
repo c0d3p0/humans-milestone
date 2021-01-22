@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://material/ground/gravel/gravel_ground_2x1.tres" type="Material" id=1]
+
+[sub_resource type="ConcavePolygonShape" id=1]
+data = PoolVector3Array( -1, 0.5, 0.5, 1, 0.5, 0.5, -1, -0.5, 0.5, 1, 0.5, 0.5, 1, -0.5, 0.5, -1, -0.5, 0.5, 1, 0.5, -0.5, -1, 0.5, -0.5, 1, -0.5, -0.5, -1, 0.5, -0.5, -1, -0.5, -0.5, 1, -0.5, -0.5, 1, 0.5, 0.5, 1, 0.5, -0.5, 1, -0.5, 0.5, 1, 0.5, -0.5, 1, -0.5, -0.5, 1, -0.5, 0.5, -1, 0.5, -0.5, -1, 0.5, 0.5, -1, -0.5, -0.5, -1, 0.5, 0.5, -1, -0.5, 0.5, -1, -0.5, -0.5, 1, 0.5, 0.5, -1, 0.5, 0.5, 1, 0.5, -0.5, -1, 0.5, 0.5, -1, 0.5, -0.5, 1, 0.5, -0.5, -1, -0.5, 0.5, 1, -0.5, 0.5, -1, -0.5, -0.5, 1, -0.5, 0.5, 1, -0.5, -0.5, -1, -0.5, -0.5 )
+
+[sub_resource type="CubeMesh" id=2]
+size = Vector3( 2, 1, 1 )
+
+[node name="ConcreteStoneGround2x1" type="StaticBody"]
+collision_layer = 32
+collision_mask = 495
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = SubResource( 2 )
+material/0 = ExtResource( 1 )

@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://source/experiment/ExperimentManager.cs" type="Script" id=1]
+[ext_resource path="res://source/experiment/ExperimentManagerInitializer.cs" type="Script" id=2]
+[ext_resource path="res://source/experiment/ExperimentCharacterManager.cs" type="Script" id=3]
+[ext_resource path="res://source/experiment/ExperimentManagerDebug.cs" type="Script" id=4]
+
+[node name="ExperimentManager" type="Node"]
+script = ExtResource( 1 )
+experimentCharacterMangerNP = NodePath("Source/ExperimentCharacterManager")
+
+[node name="Source" type="Node" parent="."]
+
+[node name="ExperimentCharacterManager" type="Node" parent="Source"]
+script = ExtResource( 3 )
+
+[node name="ExperimentManagerDebug" type="Node" parent="Source"]
+script = ExtResource( 4 )
+
+[node name="ExperimentManagerInitializer" type="Node" parent="Source"]
+script = ExtResource( 2 )
+experimentManagerNP = NodePath("../..")
+experimentCharacterManagerNP = NodePath("../ExperimentCharacterManager")
+experimentManagerDebugNP = NodePath("../ExperimentManagerDebug")

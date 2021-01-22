@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://prefab/crate/pallet.tscn" type="PackedScene" id=1]
+[ext_resource path="res://prefab/object/barrier.tscn" type="PackedScene" id=2]
+[ext_resource path="res://prefab/crate/wood_crate_1.tscn" type="PackedScene" id=3]
+
+[node name="BarrierPile2" type="Spatial"]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0 )
+
+[node name="Barrier" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5 )
+
+[node name="Barrier2" parent="." instance=ExtResource( 2 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -1.5, 0, 0 )
+
+[node name="Barrier3" parent="." instance=ExtResource( 2 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 1.5, 0, 0 )
+
+[node name="Barrier4" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5 )
+
+[node name="Pallet" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, -0.389, 0 )
+
+[node name="WoodCrate1" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 0.212, 0 )
+
+[node name="WoodCrate2" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.642788, 0, -0.766044, 0, 1, 0, 0.766044, 0, 0.642788, 0.0353553, 1.271, 0.0353553 )

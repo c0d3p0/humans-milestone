@@ -1,0 +1,32 @@
+[gd_resource type="SpatialMaterial" load_steps=5 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 7
+load_path = "res://.import/earth_cover_albedo.png-1a4bc18431bb3f2e4a4b18445d028f1f.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 7
+load_path = "res://.import/earth_cover_ao.png-bb240be9ecf001d2898544249b4067c1.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=3]
+flags = 7
+load_path = "res://.import/earth_cover_normal.png-8196ba645a6201aedf0ae2674ebcf530.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=4]
+flags = 7
+load_path = "res://.import/earth_cover_roughness.png-8575f62fe44d0e07227a4cde2be86569.s3tc.stex"
+
+[resource]
+albedo_texture = SubResource( 1 )
+roughness_texture = SubResource( 4 )
+normal_enabled = true
+normal_scale = -2.0
+normal_texture = SubResource( 3 )
+rim_enabled = true
+rim = 0.06
+rim_tint = 0.5
+ao_enabled = true
+ao_light_affect = 0.96
+ao_texture = SubResource( 2 )
+ao_on_uv2 = false
+ao_texture_channel = 0

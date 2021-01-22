@@ -1,0 +1,785 @@
+[gd_scene load_steps=88 format=2]
+
+[ext_resource path="res://source/computer/main/MainComputer.cs" type="Script" id=1]
+[ext_resource path="res://source/computer/main/MainComputerInitializer.cs" type="Script" id=2]
+[ext_resource path="res://source/computer/main/MainSystem.cs" type="Script" id=3]
+[ext_resource path="res://.import/wrong_password.wav-2870917ec4d7cb8d1baed9617dc0502c.sample" type="AudioStream" id=4]
+[ext_resource path="res://.import/puzzle_solved.wav-a4dae7e8a8d318bbd672b6c2d263e5ec.sample" type="AudioStream" id=5]
+[ext_resource path="res://.import/adrenaline_mamoune taleb.wav-450cdf6afef3bf23ca1deb7c78b4972e.sample" type="AudioStream" id=6]
+[ext_resource path="res://.import/experiment_update.wav-dd5acb044090492ce563ce08651eccd6.sample" type="AudioStream" id=7]
+[ext_resource path="res://source/computer/main/ExperimentDoorSystem.cs" type="Script" id=8]
+[ext_resource path="res://source/computer/main/ExperimentComputerSystem.cs" type="Script" id=9]
+[ext_resource path="res://.import/hello_2948.wav-a2bf1d9d541aa3a4ffc8ce10adeacdae.sample" type="AudioStream" id=10]
+[ext_resource path="res://gui/font/xolonium_20.tres" type="DynamicFont" id=11]
+[ext_resource path="res://.import/hello_3682.wav-4ba41d1e21f9240b75824e36f9e7b594.sample" type="AudioStream" id=12]
+[ext_resource path="res://.import/hello_4706.wav-2fb855cf23722854175b4dc6bada1822.sample" type="AudioStream" id=13]
+[ext_resource path="res://.import/the_experiment.wav-714e21b8e17fdc8c78ab152fcd61d4b8.sample" type="AudioStream" id=14]
+[ext_resource path="res://.import/hello_1054.wav-5f61310ebd252fdd537538a2d06bc53c.sample" type="AudioStream" id=15]
+[ext_resource path="res://.import/congratulations.wav-a4818a170cdf514a755ce40c563277d4.sample" type="AudioStream" id=16]
+[ext_resource path="res://.import/high_score.wav-9137e347869e61c6c53cc5f35c60e3b6.sample" type="AudioStream" id=17]
+[ext_resource path="res://.import/average_score.wav-ce1a0d305e6f9995a407f8224a6b46d0.sample" type="AudioStream" id=18]
+[ext_resource path="res://.import/low_score.wav-296cbb25af1e8bde2d99f8babc6bc07d.sample" type="AudioStream" id=19]
+[ext_resource path="res://source/animation/AnimationStateMachinePlayer.cs" type="Script" id=20]
+[ext_resource path="res://.import/award_time.wav-965b3c9f057507b8b90b9c6c459087d4.sample" type="AudioStream" id=21]
+[ext_resource path="res://sound/system/anti_cheat_warning.wav" type="AudioStream" id=22]
+[ext_resource path="res://sound/system/cheating_consequences.wav" type="AudioStream" id=23]
+[ext_resource path="res://source/computer/main/MainComputerDebug.cs" type="Script" id=24]
+
+[sub_resource type="AnimationNodeAnimation" id=1]
+animation = "anti_cheat_warning"
+
+[sub_resource type="AnimationNodeAnimation" id=2]
+animation = "average_score"
+
+[sub_resource type="AnimationNodeAnimation" id=3]
+animation = "award_time"
+
+[sub_resource type="AnimationNodeAnimation" id=4]
+animation = "cheating_consequences"
+
+[sub_resource type="AnimationNodeAnimation" id=5]
+animation = "congratulations"
+
+[sub_resource type="AnimationNodeAnimation" id=6]
+animation = "correct_password"
+
+[sub_resource type="AnimationNodeAnimation" id=7]
+animation = "experiment_update"
+
+[sub_resource type="AnimationNodeAnimation" id=8]
+animation = "hello_1054"
+
+[sub_resource type="AnimationNodeAnimation" id=9]
+animation = "hello_2948"
+
+[sub_resource type="AnimationNodeAnimation" id=10]
+animation = "hello_3682"
+
+[sub_resource type="AnimationNodeAnimation" id=11]
+animation = "hello_4706"
+
+[sub_resource type="AnimationNodeAnimation" id=12]
+animation = "high_score"
+
+[sub_resource type="AnimationNodeAnimation" id=13]
+animation = "idle"
+
+[sub_resource type="AnimationNodeAnimation" id=14]
+animation = "low_score"
+
+[sub_resource type="AnimationNodeAnimation" id=15]
+animation = "speech_end"
+
+[sub_resource type="AnimationNodeAnimation" id=16]
+animation = "the_experiment"
+
+[sub_resource type="AnimationNodeAnimation" id=17]
+animation = "wrong_password"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=18]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=19]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=20]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=21]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=22]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=23]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=24]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=25]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=26]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=27]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=28]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=29]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=30]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=31]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=32]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=33]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=34]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=35]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=36]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=37]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=38]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=39]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=40]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=41]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=42]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=43]
+
+[sub_resource type="AnimationNodeStateMachine" id=44]
+states/anti_cheat_warning/node = SubResource( 1 )
+states/anti_cheat_warning/position = Vector2( 76.5654, 180 )
+states/average_score/node = SubResource( 2 )
+states/average_score/position = Vector2( 495, 521.418 )
+states/award_time/node = SubResource( 3 )
+states/award_time/position = Vector2( 495, 622.78 )
+states/cheating_consequences/node = SubResource( 4 )
+states/cheating_consequences/position = Vector2( 79, 308.413 )
+states/congratulations/node = SubResource( 5 )
+states/congratulations/position = Vector2( 495, 440.418 )
+states/correct_password/node = SubResource( 6 )
+states/correct_password/position = Vector2( 603, 180 )
+states/experiment_update/node = SubResource( 7 )
+states/experiment_update/position = Vector2( 250, 440.418 )
+states/hello_1054/node = SubResource( 8 )
+states/hello_1054/position = Vector2( 79, 36 )
+states/hello_2948/node = SubResource( 9 )
+states/hello_2948/position = Vector2( 250, 36 )
+states/hello_3682/node = SubResource( 10 )
+states/hello_3682/position = Vector2( 421, 36 )
+states/hello_4706/node = SubResource( 11 )
+states/hello_4706/position = Vector2( 598, 36 )
+states/high_score/node = SubResource( 12 )
+states/high_score/position = Vector2( 317, 521.418 )
+states/idle/node = SubResource( 13 )
+states/idle/position = Vector2( 338, -96.8069 )
+states/low_score/node = SubResource( 14 )
+states/low_score/position = Vector2( 666, 521.418 )
+states/speech_end/node = SubResource( 15 )
+states/speech_end/position = Vector2( 338, 250.413 )
+states/the_experiment/node = SubResource( 16 )
+states/the_experiment/position = Vector2( 338, 128 )
+states/wrong_password/node = SubResource( 17 )
+states/wrong_password/position = Vector2( 603, 308.413 )
+transitions = [ "hello_1054", "the_experiment", SubResource( 18 ), "hello_2948", "the_experiment", SubResource( 19 ), "hello_3682", "the_experiment", SubResource( 20 ), "hello_4706", "the_experiment", SubResource( 21 ), "congratulations", "high_score", SubResource( 22 ), "congratulations", "average_score", SubResource( 23 ), "congratulations", "low_score", SubResource( 24 ), "high_score", "award_time", SubResource( 25 ), "average_score", "award_time", SubResource( 26 ), "low_score", "award_time", SubResource( 27 ), "idle", "hello_1054", SubResource( 28 ), "idle", "hello_2948", SubResource( 29 ), "idle", "hello_3682", SubResource( 30 ), "idle", "hello_4706", SubResource( 31 ), "the_experiment", "speech_end", SubResource( 32 ), "speech_end", "correct_password", SubResource( 33 ), "speech_end", "wrong_password", SubResource( 34 ), "speech_end", "experiment_update", SubResource( 35 ), "speech_end", "congratulations", SubResource( 36 ), "correct_password", "speech_end", SubResource( 37 ), "wrong_password", "speech_end", SubResource( 38 ), "experiment_update", "speech_end", SubResource( 39 ), "speech_end", "anti_cheat_warning", SubResource( 40 ), "anti_cheat_warning", "speech_end", SubResource( 41 ), "cheating_consequences", "speech_end", SubResource( 42 ), "speech_end", "cheating_consequences", SubResource( 43 ) ]
+start_node = "idle"
+end_node = "award_time"
+graph_offset = Vector2( -160.117, 101.573 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=45]
+
+[sub_resource type="Animation" id=46]
+length = 10.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4, 9.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ "You're pretty smart, too bad you think you can outsmart us,", "I recommend you to fix what you have done as soon as possible, we don't tolerate cheaters.", "" ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("AudioStreamPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 22 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=47]
+length = 5.9
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "We expected a little bit more from humans, you only got an average score in our experiment." ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("AudioStreamPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 18 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=48]
+length = 7.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3.2, 6.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ "Thanks to you we were able to collect the desired data,", "now it is time to give you an award for your contribution.", " " ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("AudioStreamPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 21 )
+} ],
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("Source/MainSystem")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 6.9 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ true ],
+"method": "SetSecretRoomDoorsUnlocked"
+} ]
+}
+
+[sub_resource type="Animation" id=49]
+resource_name = "cheating_consequences"
+length = 5.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "Since you think you're smarter than us, we believe you can outsmart 3 monsters.", "" ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("AudioStreamPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 23 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=50]
+length = 3.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "Congratulations, you solved all puzzles.", "" ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("AudioStreamPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 16 )
+} ],
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("Source/MainSystem")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"values": [  ]
+}
+
+[sub_resource type="Animation" id=51]
+length = 5.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "Good Job, you solved the puzzle. The experiment level has increased.", "" ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("AudioStreamPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 5 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=52]
+length = 5.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "Experiment update executed, different doors are now randomly locked.", "" ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("AudioStreamPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 7 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=53]
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Hello Subject 1054" ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("AudioStreamPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 15 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=54]
+length = 3.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Hello Subject 2948" ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("AudioStreamPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 10 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=55]
+length = 3.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Hello Subject 3682" ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("AudioStreamPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 12 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=56]
+length = 3.7
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Hello Subject 4706" ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("AudioStreamPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 13 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=57]
+length = 5.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "You were up to our expectations about humans, you got a high score in our experiment." ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("AudioStreamPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 17 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=58]
+
+[sub_resource type="Animation" id=59]
+length = 15.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 6.4, 11.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ "Did we make a mistake when selecting our samples? Did we expect too much from such specie?", "We are very cautious with our work, I think humans are just way too inferior,", "that's why you got a garbage score in our experiment." ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("AudioStreamPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 19 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=60]
+length = 0.1
+
+[sub_resource type="Animation" id=61]
+length = 39.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 6.2, 12.8, 19.4, 24.5, 29.9, 35.4, 39 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "You are now part of an experiment. The objective is to find out how intelligent humans are,", "by collecting data from samples like you, using the \"Galactic Intelligence Scale\" as metric.", "The data is obtained by forcing the samples to solve puzzles in a very stressful circumstance.", "Keep in mind that our galaxy is ruled by some very advanced civilizations,", "they have rules against this kind of experiment, that means we are doing it secretly,", "so I recommend you to take it seriously, or it may end really bad for you.", "We wish you the best in our experiment, good luck.", "" ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("AudioStreamPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 14 )
+} ],
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("Source/MainSystem")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 39 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "OnFirstInformationGiven"
+} ]
+}
+
+[sub_resource type="Animation" id=62]
+length = 2.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "Wrong password, try again.", "" ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("AudioStreamPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=63]
+length = 145.2
+loop = true
+tracks/0/type = "audio"
+tracks/0/path = NodePath("BGMusicAudioStreamPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 6 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[node name="MainComputer" type="Control"]
+margin_right = 1024.0
+margin_bottom = 600.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+mainSystemNP = NodePath("Source/MainSystem")
+experimentComputerSystemNP = NodePath("Source/ExperimentComputerSystem")
+experimentDoorSystemNP = NodePath("Source/ExperimentDoorSystem")
+mainComputerInitializerNP = NodePath("Source/MainComputerInitializer")
+
+[node name="Label" type="Label" parent="."]
+margin_top = 550.0
+margin_right = 1024.0
+margin_bottom = 575.0
+custom_fonts/font = ExtResource( 11 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 22 )
+
+[node name="BGMusicAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -14.0
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 44 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 45 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/anti_cheat_warning = SubResource( 46 )
+anims/average_score = SubResource( 47 )
+anims/award_time = SubResource( 48 )
+anims/cheating_consequences = SubResource( 49 )
+anims/congratulations = SubResource( 50 )
+anims/correct_password = SubResource( 51 )
+anims/experiment_update = SubResource( 52 )
+anims/hello_1054 = SubResource( 53 )
+anims/hello_2948 = SubResource( 54 )
+anims/hello_3682 = SubResource( 55 )
+anims/hello_4706 = SubResource( 56 )
+anims/high_score = SubResource( 57 )
+anims/idle = SubResource( 58 )
+anims/low_score = SubResource( 59 )
+anims/speech_end = SubResource( 60 )
+anims/the_experiment = SubResource( 61 )
+anims/wrong_password = SubResource( 62 )
+
+[node name="BGMusicAnimationPlayer" type="AnimationPlayer" parent="."]
+anims/bg_music = SubResource( 63 )
+
+[node name="ExperimentUpdateTimer" type="Timer" parent="."]
+wait_time = 60.0
+
+[node name="Source" type="Node" parent="."]
+
+[node name="MainSystem" type="Node" parent="Source"]
+script = ExtResource( 3 )
+
+[node name="ExperimentDoorSystem" type="Node" parent="Source"]
+script = ExtResource( 8 )
+experimentUpdateTimerNP = NodePath("../../ExperimentUpdateTimer")
+
+[node name="ExperimentComputerSystem" type="Node" parent="Source"]
+script = ExtResource( 9 )
+
+[node name="MainComputerDebug" type="Node" parent="Source"]
+script = ExtResource( 24 )
+mainSystemNP = NodePath("../MainSystem")
+experimentDoorSystemNP = NodePath("../ExperimentDoorSystem")
+
+[node name="MainComputerInitializer" type="Node" parent="Source"]
+script = ExtResource( 2 )
+mainComputerNP = NodePath("../..")
+mainSystemNP = NodePath("../MainSystem")
+experimentDoorSystemNP = NodePath("../ExperimentDoorSystem")
+experimentComputerSystemNP = NodePath("../ExperimentComputerSystem")
+bgMusicAPNP = NodePath("../../BGMusicAnimationPlayer")
+animationTreeNP = NodePath("../../AnimationTree")
+animationStateMachinePlayerNP = NodePath("../AnimationStateMachinePlayer")
+
+[node name="AnimationStateMachinePlayer" type="Node" parent="Source"]
+script = ExtResource( 20 )
+animationTreeNP = NodePath("../../AnimationTree")
+[connection signal="timeout" from="ExperimentUpdateTimer" to="Source/MainSystem" method="OnExperimentUpdateTimeout"]

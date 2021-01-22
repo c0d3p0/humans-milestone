@@ -1,0 +1,40 @@
+[gd_resource type="SpatialMaterial" load_steps=6 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 7
+load_path = "res://.import/wood_crate_1_albedo.png-5a8f773caeeb2410002570d09a18fdc6.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 7
+load_path = "res://.import/wood_crate_1_ao.png-0c6b6ce2480064658a7a2ef762d3c071.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=3]
+flags = 7
+load_path = "res://.import/wood_crate_1_specular.png-ec891bb94413724fb08331fe6c20f0bd.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=4]
+flags = 7
+load_path = "res://.import/wood_crate_1_normal.png-333de5e3d5b159c1ac2c8f584136df5f.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=5]
+flags = 7
+load_path = "res://.import/wood_crate_1_roughness.png-3e126eab7c3e0c7a886f47cb653063a8.s3tc.stex"
+
+[resource]
+resource_name = "Wood"
+params_cull_mode = 2
+albedo_texture = SubResource( 1 )
+metallic_texture = SubResource( 3 )
+roughness = 0.8
+roughness_texture = SubResource( 5 )
+normal_enabled = true
+normal_scale = -0.3
+normal_texture = SubResource( 4 )
+rim_enabled = true
+rim = 0.09
+rim_tint = 0.5
+ao_enabled = true
+ao_light_affect = 0.99
+ao_texture = SubResource( 2 )
+ao_on_uv2 = false
+ao_texture_channel = 0

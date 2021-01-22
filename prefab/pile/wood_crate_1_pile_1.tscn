@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://prefab/crate/wood_crate_1.tscn" type="PackedScene" id=1]
+
+
+
+[node name="WoodCrate1Pile1" type="Spatial"]
+
+[node name="WoodCrate1" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.598, 0, -0.532 )
+
+[node name="WoodCrate1_2" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.532, 0, -0.532 )
+
+[node name="WoodCrate1_3" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.532, 0, -0.532 )
+
+[node name="WoodCrate1_4" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.598, 0, -0.532 )
+
+[node name="WoodCrate1_5" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.598, 0, 0.532 )
+
+[node name="WoodCrate1_6" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.532, 0, 0.532 )
+
+[node name="WoodCrate1_7" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.532, 0, 0.532 )
+
+[node name="WoodCrate1_8" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.598, 0, 0.532 )
+
+[node name="WoodCrate1_9" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.939693, 0, -0.34202, 0, 1, 0, 0.34202, 0, 0.939693, -1.42089, 1.06, 0.1 )
+
+[node name="WoodCrate1_10" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -0.00404149, 1.06, 0 )
+
+[node name="WoodCrate1_11" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.642788, 0, -0.766044, 0, 1, 0, 0.766044, 0, 0.642788, 1.30594, 1.06, -0.1 )
+
+[node name="WoodCrate1_12" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0.672524, 2.12, -0.05 )

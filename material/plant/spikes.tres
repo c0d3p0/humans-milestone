@@ -1,0 +1,27 @@
+[gd_resource type="SpatialMaterial" load_steps=4 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 7
+load_path = "res://.import/spikes_albedo.png-06c52bef7a0cbcbee408bd8c772c378f.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 7
+load_path = "res://.import/spikes_normal.png-db2447e189148e4d378d761d89179bdb.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=3]
+flags = 7
+load_path = "res://.import/spikes_roughness.png-4d1570092ba25b01c7ca12319cc5c74e.s3tc.stex"
+
+[resource]
+params_cull_mode = 2
+params_use_alpha_scissor = true
+params_alpha_scissor_threshold = 0.01
+albedo_texture = SubResource( 1 )
+roughness = 0.9
+roughness_texture = SubResource( 3 )
+normal_enabled = true
+normal_scale = 1.5
+normal_texture = SubResource( 2 )
+rim_enabled = true
+rim = 0.4
+rim_tint = 1.0

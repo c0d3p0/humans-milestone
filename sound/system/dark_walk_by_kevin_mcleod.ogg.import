@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/dark_walk_by_kevin_mcleod.ogg-8c3ba9690dc924792103af17fb2955eb.oggstr"
+
+[deps]
+
+source_file="res://sound/system/dark_walk_by_kevin_mcleod.ogg"
+dest_files=[ "res://.import/dark_walk_by_kevin_mcleod.ogg-8c3ba9690dc924792103af17fb2955eb.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

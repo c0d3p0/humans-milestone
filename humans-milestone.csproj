@@ -1,0 +1,121 @@
+﻿<Project Sdk="Godot.NET.Sdk/3.2.3">
+  <PropertyGroup>
+    <ProjectGuid>{7C4AC8F4-0D4C-4F62-84BA-19ABE4A79CF9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>humansmilestone</RootNamespace>
+    <AssemblyName>humans-milestone</AssemblyName>
+    <GodotProjectGeneratorVersion>1.0.0.0</GodotProjectGeneratorVersion>
+    <TargetFramework>net472</TargetFramework>
+    <!--The following properties were overriden during migration to prevent errors.
+    Enabling them may require other manual changes to the project and its files.-->
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <Deterministic>false</Deterministic>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <!--	-->
+    <Compile Include="source\animation\AnimationStateMachinePlayer.cs" />
+    <!--	-->
+    <Compile Include="source\character\CharacterLook.cs" />
+    <Compile Include="source\character\CharacterMove.cs" />
+    <!--	-->
+    <Compile Include="source\character\monster\DummyMonster.cs" />
+    <Compile Include="source\character\monster\MonsterAI.cs" />
+    <Compile Include="source\character\monster\MonsterCharacter.cs" />
+    <Compile Include="source\character\monster\MonsterCharacterDebug.cs" />
+    <Compile Include="source\character\monster\MonsterCharacterInitializer.cs" />
+    <Compile Include="source\character\monster\MonsterMainAction.cs" />
+    <!--	-->
+    <Compile Include="source\character\player\PlayerCharacter.cs" />
+    <Compile Include="source\character\player\PlayerCharacterDebug.cs" />
+    <Compile Include="source\character\player\PlayerCharacterInitializer.cs" />
+    <Compile Include="source\character\player\PlayerInputInterpreter.cs" />
+    <Compile Include="source\character\player\PlayerInteraction.cs" />
+    <Compile Include="source\character\player\PlayerMainAction.cs" />
+    <!--	-->
+    <Compile Include="source\computer\core\BaseSystemGUI.cs" />
+    <Compile Include="source\computer\core\ComputerTouchScreen.cs" />
+    <Compile Include="source\computer\core\ExperimentResultData.cs" />
+    <Compile Include="source\computer\core\RoomInformation.cs" />
+    <Compile Include="source\computer\core\SystemGUIID.cs" />
+    <!--	-->
+    <Compile Include="source\computer\door\DoorLockComputer.cs" />
+    <Compile Include="source\computer\door\DoorLockComputerInitializer.cs" />
+    <Compile Include="source\computer\door\DoorLockSystemGUI.cs" />
+    <!--	-->
+    <Compile Include="source\computer\experiment\ExperimentResultComputer.cs" />
+    <Compile Include="source\computer\experiment\ExperimentResultComputerInitializer.cs" />
+    <Compile Include="source\computer\experiment\ExperimentResultSystem.cs" />
+    <Compile Include="source\computer\experiment\ExperimentResultSystemGUI.cs" />
+    <!--	-->
+    <Compile Include="source\computer\information\InformationComputer.cs" />
+    <Compile Include="source\computer\information\InformationSystem.cs" />
+    <Compile Include="source\computer\information\InformationSystemGUI.cs" />
+    <Compile Include="source\computer\information\InformationComputerInitializer.cs" />
+    <!--	-->
+    <Compile Include="source\computer\main\ExperimentComputerSystem.cs" />
+    <Compile Include="source\computer\main\ExperimentDoorSystem.cs" />
+    <Compile Include="source\computer\main\MainComputer.cs" />
+    <Compile Include="source\computer\main\MainComputerDebug.cs" />
+    <Compile Include="source\computer\main\MainComputerInitializer.cs" />
+    <Compile Include="source\computer\main\MainSystem.cs" />
+    <!--	-->
+    <Compile Include="source\computer\puzzle\PuzzleComputer.cs" />
+    <Compile Include="source\computer\puzzle\PuzzleSystem.cs" />
+    <Compile Include="source\computer\puzzle\PuzzleSystemGUI.cs" />
+    <Compile Include="source\computer\puzzle\PuzzleComputerInitializer.cs" />
+    <!--	-->
+    <Compile Include="source\door\Door.cs" />
+    <Compile Include="source\door\DoorInitializer.cs" />
+    <Compile Include="source\door\DoorSystem.cs" />
+    <!--	-->
+    <Compile Include="source\experiment\ExperimentCharacterManager.cs" />
+    <Compile Include="source\experiment\ExperimentManager.cs" />
+    <Compile Include="source\experiment\ExperimentManagerDebug.cs" />
+    <Compile Include="source\experiment\ExperimentManagerInitializer.cs" />
+    <!--	-->
+    <Compile Include="source\game\GlobalValue.cs" />
+    <Compile Include="source\game\PlayerInput.cs" />
+    <Compile Include="source\game\SignalKey.cs" />
+    <Compile Include="source\game\SignalMethod.cs" />
+    <Compile Include="source\game\TaskRunner.cs" />
+    <Compile Include="source\game\WindowManager.cs" />
+    <!--	-->
+    <Compile Include="source\godot\HashList.cs" />
+    <Compile Include="source\godot\ObjectExtension.cs" />
+    <Compile Include="source\godot\SignalData.cs" />
+    <!--	-->
+    <Compile Include="source\puzzle\AnyDividedBy0Puzzle.cs" />
+    <Compile Include="source\puzzle\CarvedInTheCoffinsV1Puzzle.cs" />
+    <Compile Include="source\puzzle\KeysToTheTreasureV1Puzzle.cs" />
+    <Compile Include="source\puzzle\KnowledgeGivenByTheBookV1Puzzle.cs" />
+    <Compile Include="source\puzzle\GuidedByTheEvidenceV1Puzzle.cs" />
+    <Compile Include="source\puzzle\NotSoHiddenV1Puzzle.cs" />
+    <Compile Include="source\puzzle\TheLawOfTheRectangleV1Puzzle.cs" />
+    <!--	-->
+    <Compile Include="source\puzzle\core\BasePuzzle.cs" />
+    <Compile Include="source\puzzle\core\EnhancedBasePuzzle.cs" />
+    <Compile Include="source\puzzle\core\Puzzle.cs" />
+    <Compile Include="source\puzzle\core\PuzzleContent.cs" />
+    <Compile Include="source\puzzle\core\PuzzleInputPage.cs" />
+    <!--	-->
+    <Compile Include="source\screen\CreditsScreen.cs" />
+    <Compile Include="source\screen\LoadScreen.cs" />
+    <Compile Include="source\screen\ReturnScreen.cs" />
+    <Compile Include="source\screen\TitleScreen.cs" />
+    <!--	-->
+    <Compile Include="source\screen\dead\DeadScreen.cs" />
+    <Compile Include="source\screen\dead\DeadScreenInitializer.cs" />
+    <Compile Include="source\screen\dead\DeadScreenManager.cs" />
+    <!--	-->
+    <Compile Include="source\sensor\MonsterSensor.cs" />
+    <Compile Include="source\sensor\MonsterSensorInitializer.cs" />
+    <Compile Include="source\sensor\MonsterSensorSystem.cs" />
+    <!--	-->
+    <Compile Include="source\sound\SoundPlayer3D.cs" />
+  </ItemGroup>
+</Project>

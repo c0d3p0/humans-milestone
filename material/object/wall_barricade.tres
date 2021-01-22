@@ -1,0 +1,35 @@
+[gd_resource type="SpatialMaterial" load_steps=5 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 7
+load_path = "res://.import/barricade_albedo.png-71ce53b3599eeb0f9149dd416dd297e1.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 7
+load_path = "res://.import/barricade_ao.png-a335c0c7e69984df3d1fe959a53264bd.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=3]
+flags = 7
+load_path = "res://.import/barricade_normal.png-c8c1b777b7ad2f80dc0bcdacd567245a.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=4]
+flags = 7
+load_path = "res://.import/barricade_roughness.png-5353b67aaf335517e1b3329011ae80fc.s3tc.stex"
+
+[resource]
+albedo_texture = SubResource( 1 )
+roughness = 0.6
+roughness_texture = SubResource( 4 )
+roughness_texture_channel = 4
+normal_enabled = true
+normal_scale = 2.0
+normal_texture = SubResource( 3 )
+rim_enabled = true
+rim = 0.07
+rim_tint = 0.5
+ao_enabled = true
+ao_light_affect = 0.93
+ao_texture = SubResource( 2 )
+ao_on_uv2 = false
+ao_texture_channel = 0
+uv1_scale = Vector3( 2, 2, 1 )

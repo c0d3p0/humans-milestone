@@ -1,0 +1,26 @@
+[gd_resource type="SpatialMaterial" load_steps=4 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 7
+load_path = "res://.import/wood_2_albedo.png-8ad18c55016c425669029b1de5818792.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 7
+load_path = "res://.import/wood_2_normal.png-c1faacf057e74f11948d1ea518ed7b63.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=3]
+flags = 7
+load_path = "res://.import/wood_2_roughness.png-8db024ef2c53e1d9be0b519138ad2f59.s3tc.stex"
+
+[resource]
+albedo_texture = SubResource( 1 )
+roughness = 0.7
+roughness_texture = SubResource( 3 )
+normal_enabled = true
+normal_scale = 2.0
+normal_texture = SubResource( 2 )
+rim_enabled = true
+rim = 0.09
+rim_tint = 0.5
+uv1_scale = Vector3( 1.5, 2, 1 )
+uv1_offset = Vector3( -0.2, 0, 0 )

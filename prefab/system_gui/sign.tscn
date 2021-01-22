@@ -1,0 +1,158 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://gui/theme/computer_system_theme.tres" type="Theme" id=1]
+[ext_resource path="res://gui/font/Xolonium-Regular.ttf" type="DynamicFontData" id=2]
+
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.117647, 0.705882, 0.0392157, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0.117647, 0.705882, 0.0392157, 1 )
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.784314, 0.0392157, 0.0392157, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0.784314, 0.0392157, 0.0392157, 1 )
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DoorSignPanel" type="Panel" parent="."]
+visible = false
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 305.0
+margin_bottom = 115.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UnlockedContainer" type="PanelContainer" parent="DoorSignPanel"]
+margin_left = 14.0
+margin_top = 10.0
+margin_right = 272.0
+margin_bottom = 85.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="DoorSignPanel/UnlockedContainer"]
+margin_left = 3.0
+margin_top = 3.0
+margin_right = 255.0
+margin_bottom = 72.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.101961, 0.109804, 0.117647, 1 )
+text = "Unlocked"
+align = 1
+
+[node name="LockedContainer" type="PanelContainer" parent="DoorSignPanel"]
+visible = false
+margin_left = 14.0
+margin_top = 10.0
+margin_right = 272.0
+margin_bottom = 85.0
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="DoorSignPanel/LockedContainer"]
+margin_left = 3.0
+margin_top = 3.0
+margin_right = 255.0
+margin_bottom = 72.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.101961, 0.109804, 0.117647, 1 )
+text = "Locked"
+align = 1
+
+[node name="RoomSignPanel" type="Panel" parent="."]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 554.0
+margin_bottom = 115.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PuzzleMainRoomContainer" type="PanelContainer" parent="RoomSignPanel"]
+visible = false
+margin_left = 14.0
+margin_top = 10.0
+margin_right = 272.0
+margin_bottom = 87.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="RoomSignPanel/PuzzleMainRoomContainer"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 500.0
+margin_bottom = 73.0
+custom_fonts/font = SubResource( 2 )
+text = "Puzzle Main Room"
+align = 1
+
+[node name="PuzzleRoom1Container" type="PanelContainer" parent="RoomSignPanel"]
+visible = false
+margin_left = 14.0
+margin_top = 10.0
+margin_right = 520.0
+margin_bottom = 85.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="RoomSignPanel/PuzzleRoom1Container"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 500.0
+margin_bottom = 73.0
+custom_fonts/font = SubResource( 2 )
+text = "Puzzle Room 1"
+align = 1
+
+[node name="PuzzleRoom2Container" type="PanelContainer" parent="RoomSignPanel"]
+margin_left = 14.0
+margin_top = 10.0
+margin_right = 520.0
+margin_bottom = 85.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="RoomSignPanel/PuzzleRoom2Container"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 500.0
+margin_bottom = 73.0
+custom_fonts/font = SubResource( 2 )
+text = "Puzzle Room 2"
+align = 1

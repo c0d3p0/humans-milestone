@@ -1,0 +1,37 @@
+[gd_resource type="SpatialMaterial" load_steps=5 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 7
+load_path = "res://.import/log_crate_1_albedo.png-76c34ae788e56139fd4a539698210cd7.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 7
+load_path = "res://.import/log_crate_1_ao.png-b55206f7f8c8edb27deddcf6a063b3e3.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=3]
+flags = 7
+load_path = "res://.import/log_crate_1_normal.png-6096867342f8b133b6457ddeebafdf07.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=4]
+flags = 7
+load_path = "res://.import/log_crate_1_roughness.png-ecf692a07ca931c7ca98c4881ee26360.s3tc.stex"
+
+[resource]
+resource_name = "LogEdgeWeathered"
+params_cull_mode = 2
+albedo_color = Color( 0.796078, 0.701961, 0.666667, 1 )
+albedo_texture = SubResource( 1 )
+roughness = 0.55
+roughness_texture = SubResource( 4 )
+normal_enabled = true
+normal_scale = -0.5
+normal_texture = SubResource( 3 )
+rim_enabled = true
+rim = 0.15
+rim_tint = 1.0
+ao_enabled = true
+ao_light_affect = 0.45
+ao_texture = SubResource( 2 )
+ao_on_uv2 = false
+ao_texture_channel = 0
+uv1_scale = Vector3( 2, 1, 1 )

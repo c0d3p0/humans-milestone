@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://material/ground/ceramic_g2/ceramic_g2_wall_11x16.tres" type="Material" id=1]
+
+[sub_resource type="ConcavePolygonShape" id=1]
+data = PoolVector3Array( -5.5, 0.5, 8, 5.5, 0.5, 8, -5.5, -0.5, 8, 5.5, 0.5, 8, 5.5, -0.5, 8, -5.5, -0.5, 8, 5.5, 0.5, -8, -5.5, 0.5, -8, 5.5, -0.5, -8, -5.5, 0.5, -8, -5.5, -0.5, -8, 5.5, -0.5, -8, 5.5, 0.5, 8, 5.5, 0.5, -8, 5.5, -0.5, 8, 5.5, 0.5, -8, 5.5, -0.5, -8, 5.5, -0.5, 8, -5.5, 0.5, -8, -5.5, 0.5, 8, -5.5, -0.5, -8, -5.5, 0.5, 8, -5.5, -0.5, 8, -5.5, -0.5, -8, 5.5, 0.5, 8, -5.5, 0.5, 8, 5.5, 0.5, -8, -5.5, 0.5, 8, -5.5, 0.5, -8, 5.5, 0.5, -8, -5.5, -0.5, 8, 5.5, -0.5, 8, -5.5, -0.5, -8, 5.5, -0.5, 8, 5.5, -0.5, -8, -5.5, -0.5, -8 )
+
+[sub_resource type="CubeMesh" id=2]
+size = Vector3( 11, 1, 16 )
+
+[node name="CeramicGeo2Ground11x16" type="StaticBody"]
+collision_layer = 32
+collision_mask = 495
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = SubResource( 2 )
+material/0 = ExtResource( 1 )

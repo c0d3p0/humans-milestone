@@ -1,0 +1,169 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://gui/theme/computer_system_theme.tres" type="Theme" id=1]
+[ext_resource path="res://model/object/small_panel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://source/computer/core/ComputerTouchScreen.cs" type="Script" id=3]
+[ext_resource path="res://source/computer/door/DoorLockSystemGUI.cs" type="Script" id=4]
+[ext_resource path="res://source/computer/door/DoorLockComputerInitializer.cs" type="Script" id=5]
+[ext_resource path="res://source/computer/door/DoorLockComputer.cs" type="Script" id=6]
+[ext_resource path="res://.import/ocarina_system_button_pressed.wav-cdad8038763e682fb069a6c2a59dc410.sample" type="AudioStream" id=7]
+[ext_resource path="res://shader/monitor_screen.shader" type="Shader" id=8]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.109, 0.053, 0.01 )
+
+[sub_resource type="PlaneMesh" id=2]
+size = Vector2( 0.207, 0.096 )
+
+[sub_resource type="ViewportTexture" id=3]
+viewport_path = NodePath("ScreenSurface/Viewport")
+
+[sub_resource type="ShaderMaterial" id=4]
+resource_local_to_scene = true
+shader = ExtResource( 8 )
+shader_param/bgColor = Color( 0.560784, 0.560784, 0.560784, 1 )
+shader_param/color = Color( 0.7, 0.8, 2.4, 1 )
+shader_param/bgColorFactor = 0.11
+shader_param/uv1_scale = Vector3( 1, 1, 1 )
+shader_param/uv1_offset = Vector3( 0, 0, 0 )
+shader_param/textureAlbedo = SubResource( 3 )
+
+[sub_resource type="BoxShape" id=5]
+extents = Vector3( 0.09, 0.033, 0.003 )
+
+[sub_resource type="SphereShape" id=6]
+radius = 20.0
+
+[sub_resource type="Animation" id=7]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("NoiseArea:monitorable")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("AudioStreamPlayer3D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 7 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[node name="DoorLockComputer" type="Spatial"]
+script = ExtResource( 6 )
+doorLockSystemGUINP = NodePath("Source/DoorLockSystemGUI")
+
+[node name="StaticBody" type="StaticBody" parent="."]
+
+[node name="SmallPanelMI" parent="StaticBody" instance=ExtResource( 2 )]
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+shape = SubResource( 1 )
+
+[node name="BodyArea" type="Area" parent="."]
+collision_layer = 524288
+collision_mask = 524288
+
+[node name="CollisionShape" type="CollisionShape" parent="BodyArea"]
+shape = SubResource( 1 )
+
+[node name="ScreenSurface" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.009 )
+
+[node name="MeshInstance" type="MeshInstance" parent="ScreenSurface"]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 4 )
+
+[node name="Viewport" type="Viewport" parent="ScreenSurface"]
+size = Vector2( 145, 67 )
+disable_3d = true
+usage = 0
+render_target_v_flip = true
+render_target_update_mode = 3
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Panel" type="Panel" parent="ScreenSurface/Viewport"]
+margin_right = 145.0
+margin_bottom = 67.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="ScreenSurface/Viewport/Panel"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 135.0
+margin_bottom = 57.0
+text = "Lock"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TouchArea" type="Spatial" parent="ScreenSurface"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.003 )
+
+[node name="LockArea" type="Area" parent="ScreenSurface/TouchArea"]
+collision_layer = 524288
+collision_mask = 524288
+
+[node name="CollisionShape" type="CollisionShape" parent="ScreenSurface/TouchArea/LockArea"]
+shape = SubResource( 5 )
+
+[node name="TouchTimer" type="Timer" parent="ScreenSurface/TouchArea"]
+wait_time = 0.1
+one_shot = true
+
+[node name="NoiseArea" type="Area" parent="." groups=[
+"noise",
+]]
+monitoring = false
+monitorable = false
+collision_layer = 65536
+collision_mask = 0
+
+[node name="CollisionShape" type="CollisionShape" parent="NoiseArea"]
+shape = SubResource( 6 )
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/button_touch = SubResource( 7 )
+
+[node name="Source" type="Node" parent="."]
+
+[node name="ComputerTouchScreen" type="Node" parent="Source"]
+script = ExtResource( 3 )
+screenViewportNP = NodePath("../../ScreenSurface/Viewport")
+touchTimerNP = NodePath("../../ScreenSurface/TouchArea/TouchTimer")
+
+[node name="DoorLockSystemGUI" type="Node" parent="Source"]
+script = ExtResource( 4 )
+lockButtonNP = NodePath("../../ScreenSurface/Viewport/Panel/Button")
+lockAreaNP = NodePath("../../ScreenSurface/TouchArea/LockArea")
+
+[node name="DoorLockComputerInitializer" type="Node" parent="Source"]
+script = ExtResource( 5 )
+doorLockComputerNP = NodePath("../..")
+computerTouchScreenNP = NodePath("../ComputerTouchScreen")
+lockAreaNP = NodePath("../../ScreenSurface/TouchArea/LockArea")
+animationPlayerNP = NodePath("../../AnimationPlayer")
+[connection signal="pressed" from="ScreenSurface/Viewport/Panel/Button" to="Source/DoorLockSystemGUI" method="OnButtonPressed"]
+[connection signal="timeout" from="ScreenSurface/TouchArea/TouchTimer" to="Source/ComputerTouchScreen" method="OnReleaseTouch"]

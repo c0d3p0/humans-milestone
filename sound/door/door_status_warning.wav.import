@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/door_status_warning.wav-1393a27c60488c0f61e3aeb04ca5566c.sample"
+
+[deps]
+
+source_file="res://sound/door/door_status_warning.wav"
+dest_files=[ "res://.import/door_status_warning.wav-1393a27c60488c0f61e3aeb04ca5566c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

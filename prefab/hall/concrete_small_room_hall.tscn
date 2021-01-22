@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://prefab/wall/concrete/concrete_wall_4x4.tscn" type="PackedScene" id=1]
+[ext_resource path="res://prefab/ground/ceramic_g2/ceramic_geo_2_ground_4x4.tscn" type="PackedScene" id=2]
+
+
+[node name="ConcreteSmallRoomHall" type="Spatial"]
+
+[node name="ConcreteWall4x4" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2 )
+
+[node name="CeramicGeo2Ground4x4" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.5, -0.5 )

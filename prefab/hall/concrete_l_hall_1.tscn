@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://prefab/hall/concrete_hall.tscn" type="PackedScene" id=1]
+[ext_resource path="res://prefab/hall/concrete_window_hall.tscn" type="PackedScene" id=2]
+[ext_resource path="res://prefab/hall/hall_room_border.tscn" type="PackedScene" id=3]
+[ext_resource path="res://prefab/pile/concrete_cube_pile_1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://prefab/plant/cross_pine.tscn" type="PackedScene" id=5]
+[ext_resource path="res://prefab/object/metal_shelf.tscn" type="PackedScene" id=6]
+
+[node name="ConcreteLHall1" type="Spatial"]
+
+[node name="ConcreteWindowHall1" parent="." instance=ExtResource( 2 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 6, 0, -5.5 )
+
+[node name="ConcreteWindowHall2" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 2 )
+
+[node name="ConcreteHall" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 2 )
+
+[node name="ConcreteWindowHall3" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 2 )
+
+[node name="HallRoomBorder" parent="." instance=ExtResource( 3 )]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 6, 0, 2 )
+
+[node name="ConcreteCubePile1" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -1.53, 2 )
+
+[node name="Object" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -1.5, 2 )
+
+[node name="CrossPine" parent="Object" instance=ExtResource( 5 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 4.2, 0, -4.2 )
+
+[node name="CrossPine2" parent="Object" instance=ExtResource( 5 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -4.2, 0, 4.2 )
+
+[node name="MetalShelf" parent="Object" instance=ExtResource( 6 )]
+transform = Transform( 0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 2.14407, 0.505, -2.57339 )

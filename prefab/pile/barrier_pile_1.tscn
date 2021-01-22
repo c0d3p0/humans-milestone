@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://prefab/object/barrier.tscn" type="PackedScene" id=1]
+[ext_resource path="res://prefab/barrel/barrel_flammable.tscn" type="PackedScene" id=2]
+
+[node name="BarrierPile1" type="Spatial"]
+
+[node name="Barrier" parent="." instance=ExtResource( 1 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 1.4, 0, 0 )
+
+[node name="Barrier2" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.4 )
+
+[node name="Barrier3" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.4 )
+
+[node name="Barrier4" parent="." instance=ExtResource( 1 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -1.4, 0, 0 )
+
+[node name="BarrelFlammable" parent="." instance=ExtResource( 2 )]
+transform = Transform( 0.819152, 0, 0.573577, 0, 1, 0, -0.573577, 0, 0.819152, 0.123, -0.2, -0.086 )
+
+[node name="BarrelFlammable2" parent="." instance=ExtResource( 2 )]
+transform = Transform( 0.819152, 0, 0.573577, 0, 1, 0, -0.573577, 0, 0.819152, -0.294944, -0.2, -0.15971 )
+
+[node name="BarrelFlammable3" parent="." instance=ExtResource( 2 )]
+transform = Transform( 0.819152, 0, 0.573577, 0, 1, 0, -0.573577, 0, 0.819152, 0.049202, -0.2, 0.331781 )
+
+[node name="BarrelFlammable4" parent="." instance=ExtResource( 2 )]
+transform = Transform( 0.819152, 0, 0.573577, 0, 1, 0, -0.573577, 0, 0.819152, -0.114715, 0.322, -0.16383 )
+
+[node name="BarrelFlammable5" parent="." instance=ExtResource( 2 )]
+transform = Transform( 0.819152, 0, 0.573577, 0, 1, 0, -0.573577, 0, 0.819152, 0.114716, 0.322, 0.163831 )

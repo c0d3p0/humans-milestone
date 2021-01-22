@@ -1,0 +1,867 @@
+[gd_scene load_steps=31 format=2]
+
+[ext_resource path="res://gui/theme/computer_system_theme.tres" type="Theme" id=1]
+[ext_resource path="res://gui/font/xolonium_22.tres" type="DynamicFont" id=2]
+[ext_resource path="res://.import/dark_walk_by_kevin_mcleod.ogg-8c3ba9690dc924792103af17fb2955eb.oggstr" type="AudioStream" id=3]
+[ext_resource path="res://source/screen/CreditsScreen.cs" type="Script" id=4]
+[ext_resource path="res://gui/font/xolonium_60.tres" type="DynamicFont" id=5]
+[ext_resource path="res://gui/font/xolonium_40.tres" type="DynamicFont" id=6]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "assets_credits"
+length = 7.0
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("TitleControl/SubTitle:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 6.7, 7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("TitleControl/SubTitle:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Assets" ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("MultiTextControl:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1, 1.3, 5.7, 6, 7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("SingleTextControl:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("MultiTextControl/ContentControl/FirstLabel:text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Monster Model
+and Animation" ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("MultiTextControl/ContentControl/SecondLabel:text")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Experiment
+BGM" ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("MultiTextControl/ContentControl/ThirdLabel:text")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Title and
+Credits Screen
+BGM" ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("MultiTextControl/CreditControl/FirstLabel:text")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Mixamo (https://www.mixamo.com)" ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("MultiTextControl/CreditControl/SecondLabel:text")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Adrenaline by Mamoune Taleb" ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("MultiTextControl/CreditControl/ThirdLabel:text")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Dark Walk by Kevin MacLeod (https://incompetech.com)
+Licensed under Creative Commons: By Attribution 3.0 License.
+https://creativecommons.org/licenses/by/3.0/" ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "end"
+length = 2.0
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("TitleControl/TitleLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("TitleControl/SubTitle:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("MultiTextControl:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("SingleTextControl:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath("Source/CreditsScreen")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "GoToTitleScreen"
+} ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 5.0
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("TitleControl/TitleLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("TitleControl/SubTitle:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("MultiTextControl:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("SingleTextControl:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "pre_credits"
+length = 0.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("TitleControl/TitleLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("TitleControl/SubTitle:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("MultiTextControl:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("SingleTextControl:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "project_credits"
+length = 7.0
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("TitleControl/SubTitle:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 6.7, 7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("TitleControl/SubTitle:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Game Project" ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("MultiTextControl:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1, 1.3, 5.7, 6, 7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("SingleTextControl:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("MultiTextControl/ContentControl/FirstLabel:text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Game Developer
+and Producer" ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("MultiTextControl/ContentControl/SecondLabel:text")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "License" ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("MultiTextControl/ContentControl/ThirdLabel:text")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Available at" ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("MultiTextControl/CreditControl/FirstLabel:text")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Ednilson Pereira Oliveira" ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("MultiTextControl/CreditControl/SecondLabel:text")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "GPL 3.0 (Open Source)" ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("MultiTextControl/CreditControl/ThirdLabel:text")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "github.com/c0d3p0" ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "special_thanks"
+length = 7.0
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("TitleControl/SubTitle:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 6.7, 7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("TitleControl/SubTitle:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Special Thanks" ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("MultiTextControl:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("SingleTextControl:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1, 1.3, 5.7, 6, 7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("SingleTextControl/Label:text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "https://godotengine.org
+https://www.mixamo.com
+https://www.blendswap.com
+https://www.3dmodelscc0.com
+https://3dmodelhaven.com
+https://www.3dassets.one
+
+and all free content creators for allowing projects like this to be a reality." ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "thank_you"
+length = 9.0
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("TitleControl/SubTitle:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 8.7, 9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("TitleControl/SubTitle:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "" ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("MultiTextControl:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("SingleTextControl:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.3, 6.7, 7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("SingleTextControl/Label:text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Thank you for playing." ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=9]
+animation = "assets_credits"
+
+[sub_resource type="AnimationNodeAnimation" id=10]
+animation = "end"
+
+[sub_resource type="AnimationNodeAnimation" id=11]
+animation = "game_title"
+
+[sub_resource type="AnimationNodeAnimation" id=12]
+animation = "pre_credits"
+
+[sub_resource type="AnimationNodeAnimation" id=13]
+animation = "project_credits"
+
+[sub_resource type="AnimationNodeAnimation" id=14]
+animation = "special_thanks"
+
+[sub_resource type="AnimationNodeAnimation" id=15]
+animation = "thank_you"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=16]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=17]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=18]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=19]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=20]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=21]
+
+[sub_resource type="AnimationNodeStateMachine" id=22]
+states/assets_credits/node = SubResource( 9 )
+states/assets_credits/position = Vector2( 349, 69 )
+states/end/node = SubResource( 10 )
+states/end/position = Vector2( 775, 118 )
+states/game_title/node = SubResource( 11 )
+states/game_title/position = Vector2( 132, 171 )
+states/pre_credits/node = SubResource( 12 )
+states/pre_credits/position = Vector2( 132, 69 )
+states/project_credits/node = SubResource( 13 )
+states/project_credits/position = Vector2( 349, 171 )
+states/special_thanks/node = SubResource( 14 )
+states/special_thanks/position = Vector2( 588, 171 )
+states/thank_you/node = SubResource( 15 )
+states/thank_you/position = Vector2( 588, 69 )
+transitions = [ "game_title", "assets_credits", SubResource( 16 ), "assets_credits", "project_credits", SubResource( 17 ), "project_credits", "special_thanks", SubResource( 18 ), "special_thanks", "thank_you", SubResource( 19 ), "thank_you", "end", SubResource( 20 ), "pre_credits", "game_title", SubResource( 21 ) ]
+start_node = "pre_credits"
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=23]
+
+[sub_resource type="Animation" id=24]
+length = 36.0
+tracks/0/type = "audio"
+tracks/0/path = NodePath("AudioStreamPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 43.4,
+"stream": ExtResource( 3 )
+} ],
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 36 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ -30.0, -10.0, -10.0 ]
+}
+
+[node name="CreditsScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+theme = ExtResource( 1 )
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleControl" type="Control" parent="."]
+margin_right = 1024.0
+margin_bottom = 180.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleLabel" type="Label" parent="TitleControl"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 14.0
+margin_right = 1024.0
+margin_bottom = 95.0
+custom_fonts/font = ExtResource( 5 )
+text = "Humans: Milestone"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SubTitle" type="Label" parent="TitleControl"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 120.0
+margin_right = 1024.0
+margin_bottom = 177.0
+custom_fonts/font = ExtResource( 6 )
+text = "Assets"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MultiTextControl" type="Control" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 250.0
+margin_right = 1024.0
+margin_bottom = 600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ContentControl" type="Control" parent="MultiTextControl"]
+margin_left = 40.0
+margin_right = 240.0
+margin_bottom = 300.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FirstLabel" type="Label" parent="MultiTextControl/ContentControl"]
+margin_right = 200.0
+margin_bottom = 89.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Monster Model
+and Animation"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SecondLabel" type="Label" parent="MultiTextControl/ContentControl"]
+margin_top = 100.0
+margin_right = 200.0
+margin_bottom = 189.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Experiment
+BGM"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ThirdLabel" type="Label" parent="MultiTextControl/ContentControl"]
+margin_top = 200.0
+margin_right = 200.0
+margin_bottom = 247.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Title and
+Credit Screen
+BGM"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreditControl" type="Control" parent="MultiTextControl"]
+margin_left = 269.0
+margin_right = 969.0
+margin_bottom = 300.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FirstLabel" type="Label" parent="MultiTextControl/CreditControl"]
+margin_right = 715.0
+margin_bottom = 47.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Mixamo (https://www.mixamo.com)"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SecondLabel" type="Label" parent="MultiTextControl/CreditControl"]
+margin_top = 100.0
+margin_right = 715.0
+margin_bottom = 147.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Adrenaline by Mamoune Taleb"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ThirdLabel" type="Label" parent="MultiTextControl/CreditControl"]
+margin_top = 200.0
+margin_right = 715.0
+margin_bottom = 295.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Dark Walk by Kevin MacLeod (https://incompetech.com)
+Licensed under Creative Commons: By Attribution 3.0 License.
+https://creativecommons.org/licenses/by/3.0/"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SingleTextControl" type="Control" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 250.0
+margin_right = 1024.0
+margin_bottom = 600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="SingleTextControl"]
+margin_right = 1024.0
+margin_bottom = 350.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Thank you for playing."
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/assets_credits = SubResource( 2 )
+anims/end = SubResource( 3 )
+anims/game_title = SubResource( 4 )
+anims/pre_credits = SubResource( 5 )
+anims/project_credits = SubResource( 6 )
+anims/special_thanks = SubResource( 7 )
+anims/thank_you = SubResource( 8 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 22 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 23 )
+
+[node name="BGMAnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "bgm"
+anims/bgm = SubResource( 24 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -30.0
+
+[node name="Source" type="Node" parent="."]
+
+[node name="CreditsScreen" type="Node" parent="Source"]
+script = ExtResource( 4 )
+animationTreeNP = NodePath("../../AnimationTree")

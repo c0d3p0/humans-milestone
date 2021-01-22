@@ -1,0 +1,34 @@
+[gd_resource type="SpatialMaterial" load_steps=5 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 7
+load_path = "res://.import/gravel_1_albedo.png-885e78d121ad05069db78d2d706e4296.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 7
+load_path = "res://.import/gravel_1_ao.png-fc6cae844c6ac328a7bcb80ad20da044.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=3]
+flags = 7
+load_path = "res://.import/gravel_1_normal.png-6cdd95989b0849ef5c7d55a48b8ca3c2.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=4]
+flags = 7
+load_path = "res://.import/gravel_1_roughness.png-ea5fa9aab15e59f560779a8fe50f3888.s3tc.stex"
+
+[resource]
+resource_name = "Modular buildings"
+albedo_texture = SubResource( 1 )
+roughness_texture = SubResource( 4 )
+normal_enabled = true
+normal_scale = -2.0
+normal_texture = SubResource( 3 )
+rim_enabled = true
+rim = 0.08
+rim_tint = 0.5
+ao_enabled = true
+ao_light_affect = 0.94
+ao_texture = SubResource( 2 )
+ao_on_uv2 = false
+ao_texture_channel = 0
+uv1_scale = Vector3( 24, 2, 1 )

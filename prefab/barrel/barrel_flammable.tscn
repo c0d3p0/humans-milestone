@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://material/barrel/barrel_flammable.tres" type="Material" id=1]
+[ext_resource path="res://model/object/barrel.tscn" type="PackedScene" id=2]
+
+[sub_resource type="CylinderShape" id=1]
+radius = 0.2
+height = 0.52
+
+[node name="BarrelFlammable" type="StaticBody"]
+collision_layer = 32
+collision_mask = 495
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 1 )
+
+[node name="BarrelMeshInstance" parent="." instance=ExtResource( 2 )]
+material/0 = ExtResource( 1 )

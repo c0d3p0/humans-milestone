@@ -1,0 +1,38 @@
+[gd_resource type="SpatialMaterial" load_steps=6 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 7
+load_path = "res://.import/pallete_albedo.png-bba97b50f430fa74f38161bc57b0a157.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 7
+load_path = "res://.import/pallete_ao.png-73db79cd225548bbf73a46e4c4fa0332.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=3]
+flags = 7
+load_path = "res://.import/pallete_specular.png-a5d15b46eae52618b22f92e6c85ce0db.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=4]
+flags = 7
+load_path = "res://.import/pallete_normal.png-fc058f8412e3b7ff0f40a369be576c91.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=5]
+flags = 7
+load_path = "res://.import/pallete_roughness.png-5e6d1c2dea934ae45fc42f5756475a1f.s3tc.stex"
+
+[resource]
+albedo_texture = SubResource( 1 )
+metallic_texture = SubResource( 3 )
+roughness = 0.3
+roughness_texture = SubResource( 5 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = SubResource( 4 )
+rim_enabled = true
+rim = 0.09
+rim_tint = 0.5
+ao_enabled = true
+ao_light_affect = 0.47
+ao_texture = SubResource( 2 )
+ao_on_uv2 = false
+ao_texture_channel = 0

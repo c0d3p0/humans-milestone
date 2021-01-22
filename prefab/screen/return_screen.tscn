@@ -1,0 +1,63 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://gui/font/xolonium_20.tres" type="DynamicFont" id=1]
+[ext_resource path="res://source/screen/ReturnScreen.cs" type="Script" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "fade"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 2.7, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Source/ReturnScreen:quitActive")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[node name="ReturnScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 1024.0
+margin_bottom = 600.0
+custom_fonts/font = ExtResource( 1 )
+text = "Press ESC again to quit the game."
+align = 1
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/fade = SubResource( 1 )
+
+[node name="Source" type="Node" parent="."]
+
+[node name="ReturnScreen" type="Node" parent="Source"]
+script = ExtResource( 2 )
+animationPlayerNP = NodePath("../../AnimationPlayer")
+titleScreenPath = "res://scene/title_screen.tscn"
+loadScreenPath = "res://scene/load_screen.tscn"
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="OnAnimationFinished"]

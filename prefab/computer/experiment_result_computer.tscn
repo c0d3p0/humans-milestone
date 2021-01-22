@@ -1,0 +1,337 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://gui/font/Xolonium-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://source/computer/core/ComputerTouchScreen.cs" type="Script" id=2]
+[ext_resource path="res://.import/ocarina_system_button_pressed.wav-cdad8038763e682fb069a6c2a59dc410.sample" type="AudioStream" id=3]
+[ext_resource path="res://source/computer/experiment/ExperimentResultSystemGUI.cs" type="Script" id=4]
+[ext_resource path="res://source/computer/experiment/ExperimentResultComputer.cs" type="Script" id=5]
+[ext_resource path="res://source/computer/experiment/ExperimentResultComputerInitializer.cs" type="Script" id=6]
+[ext_resource path="res://source/computer/experiment/ExperimentResultSystem.cs" type="Script" id=7]
+[ext_resource path="res://material/metal/gold_metal.tres" type="Material" id=8]
+[ext_resource path="res://material/metal/dark_metal_2x2.tres" type="Material" id=9]
+[ext_resource path="res://gui/theme/computer_system_theme.tres" type="Theme" id=10]
+[ext_resource path="res://gui/font/xolonium_40.tres" type="DynamicFont" id=11]
+[ext_resource path="res://gui/font/xolonium_60.tres" type="DynamicFont" id=12]
+[ext_resource path="res://shader/monitor_screen.shader" type="Shader" id=13]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.805, 0.455, 0.01 )
+
+[sub_resource type="ArrayMesh" id=2]
+resource_local_to_scene = true
+surfaces/0 = {
+"aabb": AABB( -0.805, -0.455, -0.01, 1.61, 0.91, 0.02001 ),
+"array_data": PoolByteArray( 123, 20, 78, 191, 195, 245, 232, 190, 10, 215, 35, 60, 0, 0, 127, 0, 130, 4, 0, 127, 0, 60, 0, 0, 192, 208, 75, 191, 102, 102, 230, 190, 10, 215, 35, 60, 0, 0, 127, 0, 129, 0, 0, 127, 244, 59, 255, 29, 123, 20, 78, 63, 195, 245, 232, 190, 10, 215, 35, 60, 0, 0, 127, 0, 130, 252, 0, 127, 0, 0, 0, 0, 192, 208, 75, 63, 102, 102, 230, 62, 10, 215, 35, 60, 0, 0, 127, 0, 129, 0, 0, 127, 159, 29, 244, 59, 123, 20, 78, 63, 195, 245, 232, 62, 10, 215, 35, 60, 0, 0, 127, 0, 129, 0, 0, 127, 0, 0, 0, 60, 205, 204, 76, 63, 102, 102, 230, 62, 10, 215, 35, 60, 0, 0, 127, 0, 129, 0, 0, 127, 91, 26, 244, 59, 205, 204, 204, 62, 102, 102, 230, 190, 10, 215, 35, 60, 0, 0, 127, 0, 129, 0, 0, 127, 6, 52, 255, 29, 205, 204, 76, 63, 102, 102, 102, 190, 10, 215, 35, 60, 0, 0, 127, 0, 130, 8, 0, 127, 91, 26, 12, 52, 205, 204, 76, 63, 102, 102, 230, 190, 10, 215, 35, 60, 0, 0, 127, 0, 130, 252, 0, 127, 91, 26, 255, 29, 123, 20, 78, 191, 195, 245, 232, 62, 10, 215, 35, 60, 0, 0, 127, 0, 130, 0, 0, 127, 0, 60, 0, 60, 205, 204, 76, 191, 102, 102, 230, 190, 10, 215, 35, 60, 0, 0, 127, 0, 130, 4, 0, 127, 248, 59, 255, 29, 205, 204, 204, 190, 102, 102, 230, 62, 10, 215, 35, 60, 0, 0, 127, 0, 129, 0, 0, 127, 252, 57, 244, 59, 205, 204, 76, 191, 102, 102, 102, 62, 10, 215, 35, 60, 0, 0, 127, 0, 130, 5, 0, 127, 248, 59, 250, 57, 205, 204, 76, 191, 102, 102, 230, 62, 10, 215, 35, 60, 0, 0, 127, 0, 130, 0, 0, 127, 248, 59, 244, 59, 205, 204, 76, 63, 102, 102, 230, 62, 10, 215, 163, 59, 129, 0, 0, 0, 0, 129, 0, 129, 0, 0, 0, 0, 205, 204, 76, 63, 102, 102, 230, 62, 10, 215, 35, 60, 129, 0, 0, 0, 0, 129, 0, 129, 0, 0, 0, 52, 205, 204, 76, 63, 102, 102, 102, 190, 10, 215, 35, 60, 129, 0, 0, 0, 0, 130, 0, 129, 0, 58, 0, 52, 205, 204, 76, 63, 102, 102, 230, 190, 10, 215, 163, 59, 129, 0, 0, 0, 0, 129, 0, 129, 0, 60, 0, 0, 205, 204, 76, 63, 102, 102, 230, 190, 10, 215, 35, 60, 129, 0, 0, 0, 0, 129, 0, 129, 0, 60, 0, 52, 205, 204, 76, 191, 102, 102, 230, 62, 10, 215, 163, 59, 0, 129, 0, 0, 0, 0, 129, 129, 0, 60, 0, 0, 205, 204, 76, 191, 102, 102, 230, 62, 10, 215, 35, 60, 0, 129, 0, 0, 0, 0, 129, 129, 0, 58, 0, 0, 205, 204, 204, 190, 102, 102, 230, 62, 10, 215, 35, 60, 0, 129, 0, 0, 0, 0, 129, 129, 0, 58, 0, 52, 205, 204, 76, 63, 102, 102, 230, 62, 10, 215, 163, 59, 0, 129, 0, 0, 1, 0, 130, 129, 0, 60, 0, 60, 205, 204, 76, 191, 102, 102, 230, 62, 10, 215, 163, 59, 0, 129, 0, 0, 19, 0, 131, 129, 0, 60, 0, 0, 205, 204, 204, 190, 102, 102, 230, 62, 10, 215, 35, 60, 0, 129, 0, 0, 19, 0, 131, 129, 255, 57, 1, 52, 192, 208, 75, 63, 102, 102, 230, 62, 10, 215, 35, 60, 0, 129, 0, 0, 2, 0, 130, 129, 0, 58, 251, 59, 205, 204, 76, 63, 102, 102, 230, 62, 10, 215, 35, 60, 0, 129, 0, 0, 0, 0, 129, 129, 0, 58, 0, 60, 205, 204, 76, 191, 102, 102, 230, 62, 10, 215, 35, 60, 127, 0, 0, 0, 0, 129, 0, 129, 0, 0, 0, 58, 205, 204, 76, 191, 102, 102, 230, 62, 10, 215, 163, 59, 127, 0, 0, 0, 0, 129, 0, 129, 0, 0, 0, 60, 205, 204, 76, 191, 102, 102, 102, 62, 10, 215, 35, 60, 127, 0, 0, 0, 0, 130, 0, 129, 255, 51, 0, 58, 205, 204, 76, 191, 102, 102, 230, 190, 10, 215, 163, 59, 127, 0, 0, 0, 0, 129, 0, 129, 0, 60, 0, 60, 205, 204, 76, 191, 102, 102, 230, 190, 10, 215, 35, 60, 127, 0, 0, 0, 0, 129, 0, 129, 0, 60, 0, 58, 205, 204, 76, 63, 102, 102, 230, 190, 10, 215, 163, 59, 0, 127, 0, 0, 0, 0, 129, 129, 0, 60, 0, 0, 205, 204, 76, 63, 102, 102, 230, 190, 10, 215, 35, 60, 0, 127, 0, 0, 0, 0, 129, 129, 0, 58, 0, 0, 205, 204, 204, 62, 102, 102, 230, 190, 10, 215, 35, 60, 0, 127, 0, 0, 0, 0, 129, 129, 0, 58, 0, 52, 205, 204, 76, 191, 102, 102, 230, 190, 10, 215, 163, 59, 0, 127, 0, 0, 255, 0, 130, 129, 0, 60, 0, 60, 205, 204, 76, 63, 102, 102, 230, 190, 10, 215, 163, 59, 0, 127, 0, 0, 237, 0, 131, 129, 0, 60, 0, 0, 205, 204, 204, 62, 102, 102, 230, 190, 10, 215, 35, 60, 0, 127, 0, 0, 237, 0, 131, 129, 255, 57, 1, 52, 192, 208, 75, 191, 102, 102, 230, 190, 10, 215, 35, 60, 0, 127, 0, 0, 254, 0, 130, 129, 0, 58, 251, 59, 205, 204, 76, 191, 102, 102, 230, 190, 10, 215, 35, 60, 0, 127, 0, 0, 0, 0, 129, 129, 0, 58, 0, 60, 123, 20, 78, 63, 195, 245, 232, 62, 10, 215, 35, 188, 127, 0, 0, 0, 0, 129, 0, 127, 0, 0, 0, 0, 123, 20, 78, 63, 195, 245, 232, 190, 10, 215, 35, 188, 127, 0, 0, 0, 0, 129, 0, 127, 0, 60, 0, 0, 123, 20, 78, 63, 195, 245, 232, 62, 10, 215, 35, 60, 127, 0, 0, 0, 0, 129, 0, 127, 0, 0, 0, 60, 123, 20, 78, 63, 195, 245, 232, 190, 10, 215, 35, 60, 127, 0, 0, 0, 0, 129, 0, 127, 0, 60, 0, 60, 123, 20, 78, 191, 195, 245, 232, 62, 10, 215, 35, 60, 0, 127, 0, 0, 0, 0, 129, 127, 0, 0, 0, 0, 123, 20, 78, 191, 195, 245, 232, 62, 10, 215, 35, 188, 0, 127, 0, 0, 0, 0, 130, 127, 0, 60, 0, 0, 123, 20, 78, 63, 195, 245, 232, 62, 10, 215, 35, 60, 0, 127, 0, 0, 0, 0, 130, 127, 0, 0, 0, 60, 123, 20, 78, 63, 195, 245, 232, 62, 10, 215, 35, 188, 0, 127, 0, 0, 0, 0, 129, 127, 0, 60, 0, 60, 123, 20, 78, 191, 195, 245, 232, 62, 10, 215, 35, 60, 129, 0, 0, 0, 0, 129, 0, 127, 0, 0, 0, 0, 123, 20, 78, 191, 195, 245, 232, 190, 10, 215, 35, 60, 129, 0, 0, 0, 0, 129, 0, 127, 0, 60, 0, 0, 123, 20, 78, 191, 195, 245, 232, 62, 10, 215, 35, 188, 129, 0, 0, 0, 0, 129, 0, 127, 0, 0, 0, 60, 123, 20, 78, 191, 195, 245, 232, 190, 10, 215, 35, 188, 129, 0, 0, 0, 0, 129, 0, 127, 0, 60, 0, 60, 123, 20, 78, 63, 195, 245, 232, 190, 10, 215, 35, 60, 0, 129, 0, 0, 0, 0, 129, 127, 0, 0, 0, 0, 123, 20, 78, 63, 195, 245, 232, 190, 10, 215, 35, 188, 0, 129, 0, 0, 0, 0, 130, 127, 0, 60, 0, 0, 123, 20, 78, 191, 195, 245, 232, 190, 10, 215, 35, 60, 0, 129, 0, 0, 0, 0, 130, 127, 0, 0, 0, 60, 123, 20, 78, 191, 195, 245, 232, 190, 10, 215, 35, 188, 0, 129, 0, 0, 0, 0, 129, 127, 0, 60, 0, 60, 123, 20, 78, 63, 195, 245, 232, 62, 10, 215, 35, 188, 0, 0, 129, 0, 129, 0, 0, 127, 0, 0, 0, 0, 123, 20, 78, 191, 195, 245, 232, 62, 10, 215, 35, 188, 0, 0, 129, 0, 129, 0, 0, 127, 0, 60, 0, 0, 123, 20, 78, 63, 195, 245, 232, 190, 10, 215, 35, 188, 0, 0, 129, 0, 129, 0, 0, 127, 0, 0, 0, 60, 123, 20, 78, 191, 195, 245, 232, 190, 10, 215, 35, 188, 0, 0, 129, 0, 129, 0, 0, 127, 0, 60, 0, 60, 205, 204, 76, 191, 102, 102, 230, 62, 10, 215, 163, 59, 0, 0, 127, 0, 130, 0, 0, 129, 0, 60, 0, 0, 205, 204, 76, 63, 102, 102, 230, 62, 10, 215, 163, 59, 0, 0, 127, 0, 129, 0, 0, 129, 0, 0, 0, 0, 205, 204, 76, 63, 102, 102, 230, 190, 10, 215, 163, 59, 0, 0, 127, 0, 130, 0, 0, 129, 0, 0, 0, 60, 205, 204, 76, 191, 102, 102, 230, 190, 10, 215, 163, 59, 0, 0, 127, 0, 129, 0, 0, 129, 0, 60, 0, 60 ),
+"array_index_data": PoolByteArray( 0, 0, 1, 0, 2, 0, 3, 0, 4, 0, 5, 0, 1, 0, 6, 0, 2, 0, 5, 0, 4, 0, 7, 0, 6, 0, 8, 0, 2, 0, 7, 0, 4, 0, 8, 0, 2, 0, 8, 0, 4, 0, 4, 0, 3, 0, 9, 0, 1, 0, 0, 0, 10, 0, 3, 0, 11, 0, 9, 0, 10, 0, 0, 0, 12, 0, 11, 0, 13, 0, 9, 0, 12, 0, 0, 0, 13, 0, 9, 0, 13, 0, 0, 0, 14, 0, 15, 0, 16, 0, 16, 0, 17, 0, 14, 0, 18, 0, 17, 0, 16, 0, 19, 0, 20, 0, 21, 0, 22, 0, 23, 0, 24, 0, 25, 0, 26, 0, 22, 0, 22, 0, 24, 0, 25, 0, 27, 0, 28, 0, 29, 0, 30, 0, 31, 0, 29, 0, 29, 0, 28, 0, 30, 0, 32, 0, 33, 0, 34, 0, 35, 0, 36, 0, 37, 0, 38, 0, 39, 0, 35, 0, 35, 0, 37, 0, 38, 0, 40, 0, 41, 0, 42, 0, 43, 0, 42, 0, 41, 0, 44, 0, 45, 0, 46, 0, 47, 0, 46, 0, 45, 0, 48, 0, 49, 0, 50, 0, 51, 0, 50, 0, 49, 0, 52, 0, 53, 0, 54, 0, 55, 0, 54, 0, 53, 0, 56, 0, 57, 0, 58, 0, 59, 0, 58, 0, 57, 0, 60, 0, 61, 0, 62, 0, 62, 0, 63, 0, 60, 0 ),
+"blend_shape_data": [  ],
+"format": 97559,
+"index_count": 120,
+"name": "metal",
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 64
+}
+
+[sub_resource type="CubeMesh" id=3]
+size = Vector3( 0.2, 0.2, 0.02 )
+
+[sub_resource type="QuadMesh" id=4]
+size = Vector2( 1.6, 0.9 )
+
+[sub_resource type="ViewportTexture" id=5]
+viewport_path = NodePath("ScreenSurface/Viewport")
+
+[sub_resource type="ShaderMaterial" id=6]
+resource_local_to_scene = true
+shader = ExtResource( 13 )
+shader_param/bgColor = Color( 0.56, 0.56, 0.56, 1 )
+shader_param/color = Color( 0.7, 0.8, 2.4, 1 )
+shader_param/bgColorFactor = 0.11
+shader_param/uv1_scale = Vector3( 1, 1, 1 )
+shader_param/uv1_offset = Vector3( 0, 0, 0 )
+shader_param/textureAlbedo = SubResource( 5 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 150
+font_data = ExtResource( 1 )
+
+[sub_resource type="BoxShape" id=8]
+extents = Vector3( 0.044, 0.033, 0.003 )
+
+[sub_resource type="SphereShape" id=9]
+radius = 20.0
+
+[sub_resource type="Animation" id=10]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("NoiseArea:monitorable")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("AudioStreamPlayer3D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 3 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[node name="ExperimentResultComputer" type="Spatial"]
+script = ExtResource( 5 )
+experimentResultSystemNP = NodePath("Source/ExperimentResultSystem")
+experimentResultSystemGUINP = NodePath("Source/ExperimentResultSystemGUI")
+roomId = 8
+
+[node name="StaticBody" type="StaticBody" parent="."]
+collision_layer = 32
+collision_mask = 495
+
+[node name="CollisionShapeScreen" type="CollisionShape" parent="StaticBody"]
+shape = SubResource( 1 )
+
+[node name="MeshInstanceScreen" type="MeshInstance" parent="StaticBody"]
+mesh = SubResource( 2 )
+material/0 = ExtResource( 9 )
+
+[node name="MeshInstanceConector" type="MeshInstance" parent="StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.016 )
+mesh = SubResource( 3 )
+material/0 = ExtResource( 8 )
+
+[node name="BodyArea" type="Area" parent="."]
+collision_layer = 524288
+collision_mask = 524288
+
+[node name="CollisionShapeScreen" type="CollisionShape" parent="BodyArea"]
+shape = SubResource( 1 )
+
+[node name="ScreenSurface" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.009 )
+
+[node name="MeshInstance" type="MeshInstance" parent="ScreenSurface"]
+mesh = SubResource( 4 )
+material/0 = SubResource( 6 )
+
+[node name="Viewport" type="Viewport" parent="ScreenSurface"]
+size = Vector2( 1120, 630 )
+disable_3d = true
+usage = 0
+render_target_v_flip = true
+render_target_update_mode = 3
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Panel" type="Panel" parent="ScreenSurface/Viewport"]
+margin_right = 1120.0
+margin_bottom = 630.0
+theme = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="PanelContainer" parent="ScreenSurface/Viewport/Panel"]
+visible = false
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 1110.0
+margin_bottom = 100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleLabel" type="Label" parent="ScreenSurface/Viewport/Panel/Title"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 1094.0
+margin_bottom = 85.0
+custom_fonts/font = ExtResource( 12 )
+text = "Experiment Result"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResultData" type="PanelContainer" parent="ScreenSurface/Viewport/Panel"]
+visible = false
+margin_left = 10.0
+margin_top = 110.0
+margin_right = 555.0
+margin_bottom = 618.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Container" type="Control" parent="ScreenSurface/Viewport/Panel/ResultData"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 539.0
+margin_bottom = 504.0
+
+[node name="TitleLabel" type="Label" parent="ScreenSurface/Viewport/Panel/ResultData/Container"]
+margin_top = 10.0
+margin_right = 533.0
+margin_bottom = 67.0
+custom_fonts/font = ExtResource( 11 )
+text = "Data"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DataResultLabel" type="Label" parent="ScreenSurface/Viewport/Panel/ResultData/Container"]
+margin_left = 14.0
+margin_right = 533.0
+margin_bottom = 500.0
+custom_fonts/font = ExtResource( 11 )
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Award" type="PanelContainer" parent="ScreenSurface/Viewport/Panel"]
+visible = false
+margin_left = 565.0
+margin_top = 110.0
+margin_right = 1110.0
+margin_bottom = 618.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Container" type="Control" parent="ScreenSurface/Viewport/Panel/Award"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 539.0
+margin_bottom = 504.0
+
+[node name="TitleLabel" type="Label" parent="ScreenSurface/Viewport/Panel/Award/Container"]
+margin_top = 10.0
+margin_right = 533.0
+margin_bottom = 67.0
+custom_fonts/font = ExtResource( 11 )
+text = "Award"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Action" type="Control" parent="ScreenSurface/Viewport/Panel/Award/Container"]
+margin_left = 16.0
+margin_top = 100.0
+margin_right = 517.0
+margin_bottom = 440.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InfoLabel" type="Label" parent="ScreenSurface/Viewport/Panel/Award/Container/Action"]
+margin_right = 501.0
+margin_bottom = 213.0
+custom_fonts/font = ExtResource( 11 )
+text = "In order to get your award, please press OK to confirm you have finished the experiment"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ClaimAwardButton" type="Button" parent="ScreenSurface/Viewport/Panel/Award/Container/Action"]
+margin_left = 220.0
+margin_top = 280.0
+margin_right = 281.0
+margin_bottom = 327.0
+disabled = true
+text = "OK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Inactive" type="PanelContainer" parent="ScreenSurface/Viewport/Panel"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 1110.0
+margin_bottom = 620.0
+
+[node name="Label" type="Label" parent="ScreenSurface/Viewport/Panel/Inactive"]
+margin_left = 6.0
+margin_top = 210.0
+margin_right = 1094.0
+margin_bottom = 399.0
+custom_fonts/font = SubResource( 7 )
+text = "Inactive"
+align = 1
+valign = 1
+
+[node name="TouchArea" type="Spatial" parent="ScreenSurface"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.263, 0.003 )
+
+[node name="ClaimAwardArea" type="Area" parent="ScreenSurface/TouchArea"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.397, -0.552, 0 )
+collision_layer = 524288
+collision_mask = 524288
+
+[node name="CollisionShape" type="CollisionShape" parent="ScreenSurface/TouchArea/ClaimAwardArea"]
+shape = SubResource( 8 )
+
+[node name="TouchTimer" type="Timer" parent="ScreenSurface/TouchArea"]
+wait_time = 0.1
+one_shot = true
+
+[node name="NoiseArea" type="Area" parent="." groups=[
+"noise",
+]]
+monitoring = false
+monitorable = false
+collision_layer = 65536
+collision_mask = 0
+
+[node name="CollisionShape" type="CollisionShape" parent="NoiseArea"]
+shape = SubResource( 9 )
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/button_touch = SubResource( 10 )
+
+[node name="Source" type="Node" parent="."]
+
+[node name="ComputerTouchScreen" type="Node" parent="Source"]
+script = ExtResource( 2 )
+screenViewportNP = NodePath("../../ScreenSurface/Viewport")
+touchTimerNP = NodePath("../../ScreenSurface/TouchArea/TouchTimer")
+
+[node name="ExperimentResultSystem" type="Node" parent="Source"]
+script = ExtResource( 7 )
+
+[node name="ExperimentResultSystemGUI" type="Node" parent="Source"]
+script = ExtResource( 4 )
+rootPanelNP = NodePath("../../ScreenSurface/Viewport/Panel")
+touchAreaNP = NodePath("../../ScreenSurface/TouchArea/ClaimAwardArea")
+
+[node name="ExperimentResultComputerInitializer" type="Node" parent="Source"]
+script = ExtResource( 6 )
+experimentResultComputerNP = NodePath("../..")
+computerTouchScreenNP = NodePath("../ComputerTouchScreen")
+touchAreaNP = NodePath("../../ScreenSurface/TouchArea")
+experimentResultSystemNP = NodePath("../ExperimentResultSystem")
+experimentResultSystemGUINP = NodePath("../ExperimentResultSystemGUI")
+animationPlayerNP = NodePath("../../AnimationPlayer")
+[connection signal="pressed" from="ScreenSurface/Viewport/Panel/Award/Container/Action/ClaimAwardButton" to="Source/ExperimentResultSystem" method="OnClaimAward"]
+[connection signal="timeout" from="ScreenSurface/TouchArea/TouchTimer" to="Source/ComputerTouchScreen" method="OnReleaseTouch"]

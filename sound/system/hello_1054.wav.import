@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/hello_1054.wav-5f61310ebd252fdd537538a2d06bc53c.sample"
+
+[deps]
+
+source_file="res://sound/system/hello_1054.wav"
+dest_files=[ "res://.import/hello_1054.wav-5f61310ebd252fdd537538a2d06bc53c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

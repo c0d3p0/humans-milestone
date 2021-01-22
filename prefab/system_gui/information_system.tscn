@@ -1,0 +1,147 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://gui/theme/computer_system_theme.tres" type="Theme" id=1]
+[ext_resource path="res://gui/font/xolonium_40.tres" type="DynamicFont" id=2]
+[ext_resource path="res://gui/font/xolonium_60.tres" type="DynamicFont" id=3]
+
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 96.0
+margin_bottom = 30.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 1120.0
+margin_bottom = 630.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RoomTitle" type="PanelContainer" parent="Panel"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 1110.0
+margin_bottom = 100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel/RoomTitle"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 1094.0
+margin_bottom = 85.0
+custom_fonts/font = ExtResource( 3 )
+text = "Room Title"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NavigationButton" type="Control" parent="Panel"]
+margin_left = 506.0
+margin_top = 107.0
+margin_right = 614.0
+margin_bottom = 154.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PreviousPageButton" type="Button" parent="Panel/NavigationButton"]
+margin_right = 35.0
+margin_bottom = 47.0
+text = "<"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NextPageButton" type="Button" parent="Panel/NavigationButton"]
+margin_left = 73.0
+margin_right = 108.0
+margin_bottom = 47.0
+text = ">"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DoorInfo" type="PanelContainer" parent="Panel"]
+margin_left = 10.0
+margin_top = 161.0
+margin_right = 555.0
+margin_bottom = 618.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Container" type="Control" parent="Panel/DoorInfo"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 539.0
+margin_bottom = 453.0
+
+[node name="TitleLabel" type="Label" parent="Panel/DoorInfo/Container"]
+margin_top = 10.0
+margin_right = 533.0
+margin_bottom = 67.0
+custom_fonts/font = ExtResource( 2 )
+text = "Doors Status"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StatusLabel" type="Label" parent="Panel/DoorInfo/Container"]
+margin_top = 77.0
+margin_right = 533.0
+margin_bottom = 449.0
+custom_fonts/font = ExtResource( 2 )
+text = "1: Unlocked"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PuzzleInfo" type="PanelContainer" parent="Panel"]
+margin_left = 565.0
+margin_top = 161.0
+margin_right = 1110.0
+margin_bottom = 618.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Container" type="Control" parent="Panel/PuzzleInfo"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 539.0
+margin_bottom = 453.0
+
+[node name="Label1" type="Label" parent="Panel/PuzzleInfo/Container"]
+margin_top = 10.0
+margin_right = 533.0
+margin_bottom = 67.0
+custom_fonts/font = ExtResource( 2 )
+text = "Puzzles Status"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Panel/PuzzleInfo/Container"]
+margin_top = 77.0
+margin_right = 533.0
+margin_bottom = 449.0
+custom_fonts/font = ExtResource( 2 )
+text = "1: Unsolved"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

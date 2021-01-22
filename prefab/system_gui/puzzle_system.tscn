@@ -1,0 +1,659 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://gui/theme/computer_system_theme.tres" type="Theme" id=1]
+[ext_resource path="res://gui/font/Xolonium-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://gui/font/xolonium_50.tres" type="DynamicFont" id=3]
+[ext_resource path="res://gui/font/share_tech_40.tres" type="DynamicFont" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 2 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 96.0
+margin_bottom = 30.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 1120.0
+margin_bottom = 630.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnswerPanel" type="PanelContainer" parent="Panel"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 1110.0
+margin_bottom = 118.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PasswordControl" type="Control" parent="Panel/AnswerPanel"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 1094.0
+margin_bottom = 104.0
+
+[node name="PW0" type="PanelContainer" parent="Panel/AnswerPanel/PasswordControl"]
+margin_left = 11.0
+margin_top = 10.0
+margin_right = 91.0
+margin_bottom = 90.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel/AnswerPanel/PasswordControl/PW0"]
+margin_left = 6.0
+margin_top = 5.0
+margin_right = 74.0
+margin_bottom = 74.0
+custom_fonts/font = ExtResource( 3 )
+align = 1
+valign = 1
+
+[node name="TextureRect" type="TextureRect" parent="Panel/AnswerPanel/PasswordControl/PW0"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 74.0
+margin_bottom = 76.0
+
+[node name="PW1" type="PanelContainer" parent="Panel/AnswerPanel/PasswordControl"]
+margin_left = 99.0
+margin_top = 10.0
+margin_right = 179.0
+margin_bottom = 90.0
+
+[node name="Label" type="Label" parent="Panel/AnswerPanel/PasswordControl/PW1"]
+margin_left = 6.0
+margin_top = 5.0
+margin_right = 74.0
+margin_bottom = 74.0
+custom_fonts/font = ExtResource( 3 )
+align = 1
+valign = 1
+
+[node name="TextureRect" type="TextureRect" parent="Panel/AnswerPanel/PasswordControl/PW1"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 74.0
+margin_bottom = 76.0
+
+[node name="PW2" type="PanelContainer" parent="Panel/AnswerPanel/PasswordControl"]
+margin_left = 189.0
+margin_top = 10.0
+margin_right = 269.0
+margin_bottom = 90.0
+
+[node name="Label" type="Label" parent="Panel/AnswerPanel/PasswordControl/PW2"]
+margin_left = 6.0
+margin_top = 5.0
+margin_right = 74.0
+margin_bottom = 74.0
+custom_fonts/font = ExtResource( 3 )
+align = 1
+valign = 1
+
+[node name="TextureRect" type="TextureRect" parent="Panel/AnswerPanel/PasswordControl/PW2"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 74.0
+margin_bottom = 76.0
+
+[node name="PW3" type="PanelContainer" parent="Panel/AnswerPanel/PasswordControl"]
+margin_left = 279.0
+margin_top = 10.0
+margin_right = 359.0
+margin_bottom = 90.0
+
+[node name="Label" type="Label" parent="Panel/AnswerPanel/PasswordControl/PW3"]
+margin_left = 6.0
+margin_top = 5.0
+margin_right = 74.0
+margin_bottom = 74.0
+custom_fonts/font = ExtResource( 3 )
+align = 1
+valign = 1
+
+[node name="TextureRect" type="TextureRect" parent="Panel/AnswerPanel/PasswordControl/PW3"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 74.0
+margin_bottom = 76.0
+
+[node name="PW4" type="PanelContainer" parent="Panel/AnswerPanel/PasswordControl"]
+margin_left = 369.0
+margin_top = 10.0
+margin_right = 449.0
+margin_bottom = 90.0
+
+[node name="Label" type="Label" parent="Panel/AnswerPanel/PasswordControl/PW4"]
+margin_left = 6.0
+margin_top = 5.0
+margin_right = 74.0
+margin_bottom = 74.0
+custom_fonts/font = ExtResource( 3 )
+align = 1
+valign = 1
+
+[node name="TextureRect" type="TextureRect" parent="Panel/AnswerPanel/PasswordControl/PW4"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 74.0
+margin_bottom = 76.0
+
+[node name="PW5" type="PanelContainer" parent="Panel/AnswerPanel/PasswordControl"]
+margin_left = 459.0
+margin_top = 10.0
+margin_right = 539.0
+margin_bottom = 90.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel/AnswerPanel/PasswordControl/PW5"]
+margin_left = 6.0
+margin_top = 5.0
+margin_right = 74.0
+margin_bottom = 74.0
+custom_fonts/font = ExtResource( 3 )
+align = 1
+valign = 1
+
+[node name="TextureRect" type="TextureRect" parent="Panel/AnswerPanel/PasswordControl/PW5"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 74.0
+margin_bottom = 76.0
+
+[node name="PW6" type="PanelContainer" parent="Panel/AnswerPanel/PasswordControl"]
+margin_left = 549.0
+margin_top = 10.0
+margin_right = 629.0
+margin_bottom = 90.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel/AnswerPanel/PasswordControl/PW6"]
+margin_left = 6.0
+margin_top = 5.0
+margin_right = 74.0
+margin_bottom = 74.0
+custom_fonts/font = ExtResource( 3 )
+align = 1
+valign = 1
+
+[node name="TextureRect" type="TextureRect" parent="Panel/AnswerPanel/PasswordControl/PW6"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 74.0
+margin_bottom = 76.0
+
+[node name="PW7" type="PanelContainer" parent="Panel/AnswerPanel/PasswordControl"]
+margin_left = 639.0
+margin_top = 10.0
+margin_right = 719.0
+margin_bottom = 90.0
+
+[node name="Label" type="Label" parent="Panel/AnswerPanel/PasswordControl/PW7"]
+margin_left = 6.0
+margin_top = 5.0
+margin_right = 74.0
+margin_bottom = 74.0
+custom_fonts/font = ExtResource( 3 )
+align = 1
+valign = 1
+
+[node name="TextureRect" type="TextureRect" parent="Panel/AnswerPanel/PasswordControl/PW7"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 74.0
+margin_bottom = 76.0
+
+[node name="PW8" type="PanelContainer" parent="Panel/AnswerPanel/PasswordControl"]
+margin_left = 729.0
+margin_top = 10.0
+margin_right = 809.0
+margin_bottom = 90.0
+
+[node name="Label" type="Label" parent="Panel/AnswerPanel/PasswordControl/PW8"]
+margin_left = 6.0
+margin_top = 5.0
+margin_right = 74.0
+margin_bottom = 74.0
+custom_fonts/font = ExtResource( 3 )
+align = 1
+valign = 1
+
+[node name="TextureRect" type="TextureRect" parent="Panel/AnswerPanel/PasswordControl/PW8"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 74.0
+margin_bottom = 76.0
+
+[node name="PW9" type="PanelContainer" parent="Panel/AnswerPanel/PasswordControl"]
+margin_left = 819.0
+margin_top = 10.0
+margin_right = 899.0
+margin_bottom = 90.0
+
+[node name="Label" type="Label" parent="Panel/AnswerPanel/PasswordControl/PW9"]
+margin_left = 6.0
+margin_top = 5.0
+margin_right = 74.0
+margin_bottom = 74.0
+custom_fonts/font = ExtResource( 3 )
+align = 1
+valign = 1
+
+[node name="TextureRect" type="TextureRect" parent="Panel/AnswerPanel/PasswordControl/PW9"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 74.0
+margin_bottom = 76.0
+
+[node name="PW10" type="PanelContainer" parent="Panel/AnswerPanel/PasswordControl"]
+margin_left = 909.0
+margin_top = 10.0
+margin_right = 989.0
+margin_bottom = 90.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel/AnswerPanel/PasswordControl/PW10"]
+margin_left = 6.0
+margin_top = 5.0
+margin_right = 74.0
+margin_bottom = 74.0
+custom_fonts/font = ExtResource( 3 )
+align = 1
+valign = 1
+
+[node name="TextureRect" type="TextureRect" parent="Panel/AnswerPanel/PasswordControl/PW10"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 74.0
+margin_bottom = 76.0
+
+[node name="PW11" type="PanelContainer" parent="Panel/AnswerPanel/PasswordControl"]
+margin_left = 999.0
+margin_top = 10.0
+margin_right = 1079.0
+margin_bottom = 90.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel/AnswerPanel/PasswordControl/PW11"]
+margin_left = 6.0
+margin_top = 5.0
+margin_right = 74.0
+margin_bottom = 74.0
+custom_fonts/font = ExtResource( 3 )
+align = 1
+valign = 1
+
+[node name="TextureRect" type="TextureRect" parent="Panel/AnswerPanel/PasswordControl/PW11"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 74.0
+margin_bottom = 76.0
+
+[node name="MessageControl" type="Control" parent="Panel/AnswerPanel"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 1094.0
+margin_bottom = 104.0
+
+[node name="Label" type="Label" parent="Panel/AnswerPanel/MessageControl"]
+margin_right = 1088.0
+margin_bottom = 100.0
+custom_fonts/font = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PuzzleContentPanel" type="PanelContainer" parent="Panel"]
+margin_left = 10.0
+margin_top = 127.0
+margin_right = 555.0
+margin_bottom = 619.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Content" type="Control" parent="Panel/PuzzleContentPanel"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 539.0
+margin_bottom = 488.0
+
+[node name="PagePanel" type="PanelContainer" parent="Panel/PuzzleContentPanel/Content"]
+margin_left = 60.0
+margin_top = 16.0
+margin_right = 476.0
+margin_bottom = 470.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="18x9Label" type="Label" parent="Panel/PuzzleContentPanel/Content/PagePanel"]
+margin_left = 6.0
+margin_top = 200.0
+margin_right = 410.0
+margin_bottom = 254.0
+custom_fonts/font = ExtResource( 4 )
+align = 1
+valign = 1
+autowrap = true
+
+[node name="TextureRect" type="TextureRect" parent="Panel/PuzzleContentPanel/Content/PagePanel"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 410.0
+margin_bottom = 450.0
+
+[node name="BackButton" type="Button" parent="Panel/PuzzleContentPanel/Content"]
+margin_left = 10.0
+margin_top = 222.0
+margin_right = 50.0
+margin_bottom = 269.0
+text = "<"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ForwardButton" type="Button" parent="Panel/PuzzleContentPanel/Content"]
+margin_left = 486.0
+margin_top = 222.0
+margin_right = 526.0
+margin_bottom = 269.0
+text = ">"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TouchKeyboardPanel" type="PanelContainer" parent="Panel"]
+margin_left = 565.0
+margin_top = 127.0
+margin_right = 1110.0
+margin_bottom = 619.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TouchKeyboard" type="Control" parent="Panel/TouchKeyboardPanel"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 539.0
+margin_bottom = 488.0
+
+[node name="K0" type="Control" parent="Panel/TouchKeyboardPanel/TouchKeyboard"]
+margin_left = 10.0
+margin_top = 27.0
+margin_right = 110.0
+margin_bottom = 127.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="K0TextureRect" type="TextureRect" parent="Panel/TouchKeyboardPanel/TouchKeyboard/K0"]
+margin_right = 100.0
+margin_bottom = 100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Panel/TouchKeyboardPanel/TouchKeyboard/K0"]
+margin_right = 100.0
+margin_bottom = 100.0
+custom_fonts/font = ExtResource( 3 )
+
+[node name="K1" type="Control" parent="Panel/TouchKeyboardPanel/TouchKeyboard"]
+margin_left = 120.0
+margin_top = 27.0
+margin_right = 220.0
+margin_bottom = 127.0
+
+[node name="K1TextureRect" type="TextureRect" parent="Panel/TouchKeyboardPanel/TouchKeyboard/K1"]
+margin_right = 100.0
+margin_bottom = 100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Panel/TouchKeyboardPanel/TouchKeyboard/K1"]
+margin_right = 100.0
+margin_bottom = 100.0
+custom_fonts/font = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="K2" type="Control" parent="Panel/TouchKeyboardPanel/TouchKeyboard"]
+margin_left = 230.0
+margin_top = 27.0
+margin_right = 330.0
+margin_bottom = 127.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="K2TextureRect" type="TextureRect" parent="Panel/TouchKeyboardPanel/TouchKeyboard/K2"]
+margin_right = 100.0
+margin_bottom = 100.0
+
+[node name="Button" type="Button" parent="Panel/TouchKeyboardPanel/TouchKeyboard/K2"]
+margin_right = 100.0
+margin_bottom = 100.0
+custom_fonts/font = ExtResource( 3 )
+
+[node name="K3" type="Control" parent="Panel/TouchKeyboardPanel/TouchKeyboard"]
+margin_left = 10.0
+margin_top = 137.0
+margin_right = 110.0
+margin_bottom = 237.0
+
+[node name="K3TextureRect" type="TextureRect" parent="Panel/TouchKeyboardPanel/TouchKeyboard/K3"]
+margin_right = 100.0
+margin_bottom = 100.0
+
+[node name="Button" type="Button" parent="Panel/TouchKeyboardPanel/TouchKeyboard/K3"]
+margin_right = 100.0
+margin_bottom = 100.0
+custom_fonts/font = ExtResource( 3 )
+
+[node name="K4" type="Control" parent="Panel/TouchKeyboardPanel/TouchKeyboard"]
+margin_left = 120.0
+margin_top = 137.0
+margin_right = 220.0
+margin_bottom = 237.0
+
+[node name="K4TextureRect" type="TextureRect" parent="Panel/TouchKeyboardPanel/TouchKeyboard/K4"]
+margin_right = 100.0
+margin_bottom = 100.0
+
+[node name="Button" type="Button" parent="Panel/TouchKeyboardPanel/TouchKeyboard/K4"]
+margin_right = 100.0
+margin_bottom = 100.0
+custom_fonts/font = ExtResource( 3 )
+
+[node name="K5" type="Control" parent="Panel/TouchKeyboardPanel/TouchKeyboard"]
+margin_left = 230.0
+margin_top = 137.0
+margin_right = 330.0
+margin_bottom = 237.0
+
+[node name="K5TextureRect" type="TextureRect" parent="Panel/TouchKeyboardPanel/TouchKeyboard/K5"]
+margin_right = 100.0
+margin_bottom = 100.0
+
+[node name="Button" type="Button" parent="Panel/TouchKeyboardPanel/TouchKeyboard/K5"]
+margin_right = 100.0
+margin_bottom = 100.0
+custom_fonts/font = ExtResource( 3 )
+
+[node name="K6" type="Control" parent="Panel/TouchKeyboardPanel/TouchKeyboard"]
+margin_left = 10.0
+margin_top = 247.0
+margin_right = 110.0
+margin_bottom = 347.0
+
+[node name="K6TextureRect" type="TextureRect" parent="Panel/TouchKeyboardPanel/TouchKeyboard/K6"]
+margin_right = 100.0
+margin_bottom = 100.0
+
+[node name="Button" type="Button" parent="Panel/TouchKeyboardPanel/TouchKeyboard/K6"]
+margin_right = 100.0
+margin_bottom = 100.0
+custom_fonts/font = ExtResource( 3 )
+
+[node name="K7" type="Control" parent="Panel/TouchKeyboardPanel/TouchKeyboard"]
+margin_left = 120.0
+margin_top = 247.0
+margin_right = 220.0
+margin_bottom = 347.0
+
+[node name="K7TextureRect" type="TextureRect" parent="Panel/TouchKeyboardPanel/TouchKeyboard/K7"]
+margin_right = 100.0
+margin_bottom = 100.0
+
+[node name="Button" type="Button" parent="Panel/TouchKeyboardPanel/TouchKeyboard/K7"]
+margin_right = 100.0
+margin_bottom = 100.0
+custom_fonts/font = ExtResource( 3 )
+
+[node name="K8" type="Control" parent="Panel/TouchKeyboardPanel/TouchKeyboard"]
+margin_left = 230.0
+margin_top = 247.0
+margin_right = 330.0
+margin_bottom = 347.0
+
+[node name="K8TextureRect" type="TextureRect" parent="Panel/TouchKeyboardPanel/TouchKeyboard/K8"]
+margin_right = 100.0
+margin_bottom = 100.0
+
+[node name="Button" type="Button" parent="Panel/TouchKeyboardPanel/TouchKeyboard/K8"]
+margin_right = 100.0
+margin_bottom = 100.0
+custom_fonts/font = ExtResource( 3 )
+
+[node name="K9" type="Control" parent="Panel/TouchKeyboardPanel/TouchKeyboard"]
+margin_left = 10.0
+margin_top = 357.0
+margin_right = 110.0
+margin_bottom = 457.0
+
+[node name="K9TextureRect" type="TextureRect" parent="Panel/TouchKeyboardPanel/TouchKeyboard/K9"]
+margin_right = 100.0
+margin_bottom = 100.0
+
+[node name="Button" type="Button" parent="Panel/TouchKeyboardPanel/TouchKeyboard/K9"]
+margin_right = 100.0
+margin_bottom = 100.0
+custom_fonts/font = ExtResource( 3 )
+
+[node name="K10" type="Control" parent="Panel/TouchKeyboardPanel/TouchKeyboard"]
+margin_left = 120.0
+margin_top = 357.0
+margin_right = 220.0
+margin_bottom = 457.0
+
+[node name="K10TextureRect" type="TextureRect" parent="Panel/TouchKeyboardPanel/TouchKeyboard/K10"]
+margin_right = 100.0
+margin_bottom = 100.0
+
+[node name="Button" type="Button" parent="Panel/TouchKeyboardPanel/TouchKeyboard/K10"]
+margin_right = 100.0
+margin_bottom = 100.0
+custom_fonts/font = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="K11" type="Control" parent="Panel/TouchKeyboardPanel/TouchKeyboard"]
+margin_left = 230.0
+margin_top = 357.0
+margin_right = 330.0
+margin_bottom = 457.0
+
+[node name="K11TextureRect" type="TextureRect" parent="Panel/TouchKeyboardPanel/TouchKeyboard/K11"]
+margin_right = 100.0
+margin_bottom = 100.0
+
+[node name="Button" type="Button" parent="Panel/TouchKeyboardPanel/TouchKeyboard/K11"]
+margin_right = 100.0
+margin_bottom = 100.0
+custom_fonts/font = ExtResource( 3 )
+
+[node name="KOK" type="Control" parent="Panel/TouchKeyboardPanel/TouchKeyboard"]
+margin_left = 425.0
+margin_top = 27.0
+margin_right = 525.0
+margin_bottom = 127.0
+
+[node name="KOKTextureRect" type="TextureRect" parent="Panel/TouchKeyboardPanel/TouchKeyboard/KOK"]
+margin_right = 100.0
+margin_bottom = 100.0
+
+[node name="Button" type="Button" parent="Panel/TouchKeyboardPanel/TouchKeyboard/KOK"]
+margin_right = 100.0
+margin_bottom = 100.0
+text = "OK"
+
+[node name="KBS" type="Control" parent="Panel/TouchKeyboardPanel/TouchKeyboard"]
+margin_left = 425.0
+margin_top = 137.0
+margin_right = 525.0
+margin_bottom = 237.0
+
+[node name="KBSTextureRect" type="TextureRect" parent="Panel/TouchKeyboardPanel/TouchKeyboard/KBS"]
+margin_right = 100.0
+margin_bottom = 100.0
+
+[node name="Button" type="Button" parent="Panel/TouchKeyboardPanel/TouchKeyboard/KBS"]
+margin_right = 100.0
+margin_bottom = 100.0
+text = "BS"
+
+[node name="KCLR" type="Control" parent="Panel/TouchKeyboardPanel/TouchKeyboard"]
+margin_left = 425.0
+margin_top = 247.0
+margin_right = 525.0
+margin_bottom = 347.0
+
+[node name="KCLRTextureRect" type="TextureRect" parent="Panel/TouchKeyboardPanel/TouchKeyboard/KCLR"]
+margin_right = 100.0
+margin_bottom = 100.0
+
+[node name="Button" type="Button" parent="Panel/TouchKeyboardPanel/TouchKeyboard/KCLR"]
+margin_right = 100.0
+margin_bottom = 100.0
+text = "CLR"
+
+[node name="KALT" type="Control" parent="Panel/TouchKeyboardPanel/TouchKeyboard"]
+margin_left = 425.0
+margin_top = 357.0
+margin_right = 525.0
+margin_bottom = 457.0
+
+[node name="KALTTextureRect" type="TextureRect" parent="Panel/TouchKeyboardPanel/TouchKeyboard/KALT"]
+margin_right = 100.0
+margin_bottom = 100.0
+
+[node name="Button" type="Button" parent="Panel/TouchKeyboardPanel/TouchKeyboard/KALT"]
+margin_right = 100.0
+margin_bottom = 100.0
+text = "ALT"
+
+[node name="TouchTimer" type="Timer" parent="Panel"]
+wait_time = 0.1
+one_shot = true

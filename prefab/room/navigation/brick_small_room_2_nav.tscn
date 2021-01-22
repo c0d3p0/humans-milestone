@@ -1,0 +1,61 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://prefab/wall/navigation/brick_wall_door_4x4_nav.tscn" type="PackedScene" id=1]
+[ext_resource path="res://prefab/wall/brick/brick_wall_2x4.tscn" type="PackedScene" id=2]
+[ext_resource path="res://prefab/object/ventilator.tscn" type="PackedScene" id=3]
+[ext_resource path="res://prefab/wall/brick/brick_wall_4x4.tscn" type="PackedScene" id=4]
+[ext_resource path="res://prefab/plant/square_palm.tscn" type="PackedScene" id=5]
+[ext_resource path="res://prefab/ground/concrete_stone/concrete_stone_block.tscn" type="PackedScene" id=6]
+[ext_resource path="res://prefab/ground/concrete_stone/concrete_stone_ground_4x4.tscn" type="PackedScene" id=7]
+[ext_resource path="res://prefab/object/cardboard_box_1.tscn" type="PackedScene" id=8]
+[ext_resource path="res://prefab/trash/trash_can_1.tscn" type="PackedScene" id=9]
+[ext_resource path="res://prefab/object/cardboard_box_3.tscn" type="PackedScene" id=10]
+
+[node name="ConcreteSmallRoom" type="Spatial"]
+
+[node name="BrickWall2x4" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2 )
+
+[node name="BrickWall4x4" parent="." instance=ExtResource( 4 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -1.5, 0, -0.5 )
+
+[node name="BrickWall4x4_2" parent="." instance=ExtResource( 4 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 1.5, 0, -0.5 )
+
+[node name="ConcreteStoneGround4x4" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.5, -0.5 )
+
+[node name="ConcreteStoneBlock" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -2.5, 2 )
+
+[node name="ConcreteStoneBlock2" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -2.5, 2 )
+
+[node name="Object" type="Spatial" parent="."]
+
+[node name="Ventilator" parent="Object" instance=ExtResource( 3 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.5, 0.295, -1.344 )
+
+[node name="TrashCan" parent="Object" instance=ExtResource( 9 )]
+transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0.8, -1.759, -1.3 )
+
+[node name="CardboardBox1" parent="Object" instance=ExtResource( 8 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -0.75, -1.875, -0.634636 )
+
+[node name="CardboardBox1_2" parent="Object" instance=ExtResource( 8 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -0.75, -1.625, -0.65 )
+
+[node name="CardboardBox2" parent="Object" instance=ExtResource( 8 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -0.75, -1.875, 0.035 )
+
+[node name="CardboardBox1_3" parent="Object" instance=ExtResource( 8 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -0.75, -1.625, 0.05 )
+
+[node name="CardboardBox3" parent="Object" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, -1.749, -0.65 )
+
+[node name="SquarePalm" parent="Object" instance=ExtResource( 5 )]
+transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -0.7, -1.65, -1.2 )
+
+[node name="BrickWallDoor4x4" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2 )

@@ -1,0 +1,133 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://prefab/room/puzzle_main_room.tscn" type="PackedScene" id=1]
+[ext_resource path="res://prefab/character/player_character.tscn" type="PackedScene" id=2]
+[ext_resource path="res://prefab/experiment/experiment_manager.tscn" type="PackedScene" id=3]
+[ext_resource path="res://prefab/screen/dead_screen.tscn" type="PackedScene" id=5]
+[ext_resource path="res://prefab/screen/return_screen.tscn" type="PackedScene" id=7]
+[ext_resource path="res://prefab/character/monster_character.tscn" type="PackedScene" id=8]
+
+[sub_resource type="NavigationMesh" id=1]
+vertices = PoolVector3Array( -0.12, 5.4, 2.1, -8.92, 5.4, 2.1, -8.92, 5.4, 8.5, -8.92, 5.4, 21.3, -8.92, 5.4, 27.9, -0.12, 5.4, 27.9, 8.88, 5.4, 8.5, 8.88, 5.4, 2.1, -0.12, 5.4, 2.1, -0.12, 5.4, 27.9, 8.88, 5.4, 27.9, 8.88, 5.4, 21.3, -0.12, 5.4, 2.1, -8.92, 5.4, 8.5, -8.92, 5.4, 14.9, 8.88, 5.4, 14.9, 8.88, 5.4, 8.5, -0.12, 5.4, 2.1, -8.92, 5.4, 14.9, -8.92, 5.4, 21.3, -0.12, 5.4, 27.9, 8.88, 5.4, 21.3, 8.88, 5.4, 14.9, -0.12, 5.4, 2.1, 4.68, 0.4, 4.1, 5.48, 0.4, 3.7, 5.48, 0.4, 3.3, -1.12, 0.4, 3.3, -7.72, 0.4, 5.7, -7.32, 0.4, 5.7, -6.32, 0.4, 4.1, -7.72, 0.4, 3.3, 2.68, 0.4, 8.5, 6.48, 0.4, 6.3, 4.68, 0.4, 4.7, 2.28, 0.4, 8.1, -7.72, 0.4, 3.3, -6.32, 0.4, 4.1, -5.12, 0.4, 3.7, -1.12, 0.4, 3.3, -7.72, 0.4, 3.3, -5.12, 0.4, 3.7, -1.12, 0.4, 3.3, -5.12, 0.4, 3.7, -4.72, 0.4, 4.9, -4.72, 0.4, 4.9, -6.32, 0.4, 6.3, -2.72, 0.4, 8.5, -2.32, 0.4, 8.1, 2.28, 0.4, 8.1, 4.68, 0.4, 4.7, 4.68, 0.4, 4.1, -1.12, 0.4, 3.3, -4.72, 0.4, 4.9, -2.32, 0.4, 8.1, 7.88, 0.4, 3.3, 5.48, 0.4, 3.3, 5.48, 0.4, 3.7, 7.28, 0.4, 5.1, 7.28, 0.4, 5.9, 6.48, 0.4, 6.3, 2.68, 0.4, 8.5, 2.68, 0.4, 13.3, 7.88, 0.4, 13.3, 7.88, 0.4, 3.3, 7.28, 0.4, 5.1, 7.28, 0.4, 5.9, 7.88, 0.4, 13.3, -7.72, 0.4, 24.3, -7.32, 0.4, 24.3, -6.92, 0.4, 23.7, -6.92, 0.4, 6.3, -7.32, 0.4, 5.7, -7.72, 0.4, 5.7, -7.72, 0.4, 10.9, -7.72, 0.4, 10.9, -8.12, 0.4, 11.1, -8.12, 0.4, 12.1, -7.72, 0.4, 12.3, -6.12, 0.4, 23.7, -4.72, 0.4, 25.3, -2.12, 0.4, 20.9, -2.72, 0.4, 20.5, -2.32, 0.4, 15.1, -0.72, 0.4, 15.1, -0.72, 0.4, 13.9, -2.32, 0.4, 13.9, -2.32, 0.4, 13.9, -2.72, 0.4, 13.5, -7.72, 0.4, 12.3, -2.72, 0.4, 15.5, -2.32, 0.4, 15.1, -7.72, 0.4, 24.3, -6.92, 0.4, 23.7, -2.72, 0.4, 20.5, -2.72, 0.4, 15.5, -7.72, 0.4, 12.3, -6.92, 0.4, 23.7, -6.12, 0.4, 23.7, -2.72, 0.4, 20.5, -2.72, 0.4, 8.5, -6.32, 0.4, 6.3, -6.92, 0.4, 6.3, -7.72, 0.4, 10.9, -7.72, 0.4, 12.3, -2.72, 0.4, 13.5, -1.52, 1.6, 9.3, -1.12, 1.6, 9.9, -0.72, 1.6, 9.5, 1.48, 1.6, 9.3, -1.52, 1.6, 9.3, -0.72, 1.6, 9.5, 0.679999, 1.6, 9.5, -1.52, 1.6, 12.7, -0.72, 1.6, 12.5, -1.12, 1.6, 12.1, 1.48, 1.6, 9.3, 0.679999, 1.6, 9.5, 1.08, 1.6, 9.9, 1.48, 1.6, 12.7, 1.48, 1.6, 9.3, 1.08, 1.6, 9.9, 1.08, 1.6, 12.1, -1.12, 1.6, 12.1, -1.12, 1.6, 9.9, -1.52, 1.6, 9.3, -1.52, 1.6, 12.7, 1.48, 1.6, 12.7, 1.08, 1.6, 12.1, 0.679999, 1.6, 12.5, -1.52, 1.6, 12.7, 1.48, 1.6, 12.7, 0.679999, 1.6, 12.5, -0.72, 1.6, 12.5, 2.28, 0.4, 13.9, -0.72, 0.4, 13.9, -0.72, 0.4, 15.1, 2.28, 0.4, 15.1, 2.28, 0.4, 15.1, 2.68, 0.4, 15.7, 7.88, 0.4, 15.7, 7.88, 0.4, 13.3, 2.68, 0.4, 13.3, 2.28, 0.4, 13.9, 2.68, 0.4, 20.3, 7.88, 0.4, 20.3, 7.88, 0.4, 15.7, 2.68, 0.4, 15.7, -1.52, 1.6, 16.3, -1.32, 1.6, 17.5, -0.72, 1.6, 16.5, -0.72, 1.6, 19.5, -1.32, 1.6, 18.5, -1.52, 1.6, 19.7, -1.52, 1.6, 16.3, -0.72, 1.6, 16.5, 0.679999, 1.6, 16.5, 1.48, 1.6, 16.3, 1.08, 1.6, 16.9, 1.08, 1.6, 19.1, 1.48, 1.6, 19.7, 1.48, 1.6, 16.3, 1.48, 1.6, 16.3, 0.679999, 1.6, 16.5, 1.08, 1.6, 16.9, 0.679999, 1.6, 19.5, -0.72, 1.6, 19.5, -1.52, 1.6, 19.7, 1.48, 1.6, 19.7, 1.08, 1.6, 19.1, 0.679999, 1.6, 19.5, 1.48, 1.6, 19.7, 5.48, 0.4, 26.3, 5.48, 0.4, 26.7, 7.88, 0.4, 26.7, 7.28, 0.4, 24.9, 2.28, 0.4, 20.9, 4.68, 0.4, 25.5, 6.28, 0.4, 23.7, 7.88, 0.4, 20.3, 2.68, 0.4, 20.3, 7.28, 0.4, 24.9, 7.88, 0.4, 26.7, 7.88, 0.4, 20.3, 6.88, 0.4, 23.7, 7.28, 0.4, 24.9, 7.88, 0.4, 20.3, 6.28, 0.4, 23.7, 6.88, 0.4, 23.7, 7.88, 0.4, 20.3, 5.48, 0.4, 26.7, 5.48, 0.4, 26.3, 4.68, 0.4, 25.9, -1.12, 0.4, 26.9, -6.92, 0.4, 25.3, -7.32, 0.4, 24.3, -7.72, 0.4, 24.3, -7.72, 0.4, 26.9, 4.68, 0.4, 25.9, 4.68, 0.4, 25.5, 2.28, 0.4, 20.9, -2.12, 0.4, 20.9, -4.72, 0.4, 25.3, -1.12, 0.4, 26.9, -5.72, 0.4, 26.3, -6.92, 0.4, 25.3, -7.72, 0.4, 26.9, -5.12, 0.4, 26.3, -5.72, 0.4, 26.3, -7.72, 0.4, 26.9, -1.12, 0.4, 26.9, -4.72, 0.4, 25.3, -5.12, 0.4, 26.3, -1.12, 0.4, 26.9 )
+polygons = [ PoolIntArray( 2, 1, 0 ), PoolIntArray( 5, 4, 3 ), PoolIntArray( 8, 7, 6 ), PoolIntArray( 11, 10, 9 ), PoolIntArray( 14, 13, 12 ), PoolIntArray( 17, 16, 15 ), PoolIntArray( 23, 22, 18 ), PoolIntArray( 18, 22, 21 ), PoolIntArray( 18, 21, 19 ), PoolIntArray( 19, 21, 20 ), PoolIntArray( 27, 26, 24 ), PoolIntArray( 24, 26, 25 ), PoolIntArray( 31, 30, 28 ), PoolIntArray( 28, 30, 29 ), PoolIntArray( 35, 34, 32 ), PoolIntArray( 32, 34, 33 ), PoolIntArray( 38, 37, 36 ), PoolIntArray( 41, 40, 39 ), PoolIntArray( 44, 43, 42 ), PoolIntArray( 48, 47, 45 ), PoolIntArray( 45, 47, 46 ), PoolIntArray( 54, 53, 49 ), PoolIntArray( 49, 53, 52 ), PoolIntArray( 49, 52, 50 ), PoolIntArray( 50, 52, 51 ), PoolIntArray( 58, 57, 55 ), PoolIntArray( 55, 57, 56 ), PoolIntArray( 63, 62, 59 ), PoolIntArray( 59, 62, 60 ), PoolIntArray( 60, 62, 61 ), PoolIntArray( 67, 66, 64 ), PoolIntArray( 64, 66, 65 ), PoolIntArray( 70, 69, 68 ), PoolIntArray( 74, 73, 71 ), PoolIntArray( 71, 73, 72 ), PoolIntArray( 78, 77, 75 ), PoolIntArray( 75, 77, 76 ), PoolIntArray( 82, 81, 79 ), PoolIntArray( 79, 81, 80 ), PoolIntArray( 86, 85, 83 ), PoolIntArray( 83, 85, 84 ), PoolIntArray( 91, 90, 87 ), PoolIntArray( 87, 90, 88 ), PoolIntArray( 88, 90, 89 ), PoolIntArray( 96, 95, 92 ), PoolIntArray( 92, 95, 93 ), PoolIntArray( 93, 95, 94 ), PoolIntArray( 99, 98, 97 ), PoolIntArray( 105, 104, 100 ), PoolIntArray( 100, 104, 103 ), PoolIntArray( 100, 103, 101 ), PoolIntArray( 101, 103, 102 ), PoolIntArray( 108, 107, 106 ), PoolIntArray( 112, 111, 109 ), PoolIntArray( 109, 111, 110 ), PoolIntArray( 115, 114, 113 ), PoolIntArray( 118, 117, 116 ), PoolIntArray( 122, 121, 119 ), PoolIntArray( 119, 121, 120 ), PoolIntArray( 126, 125, 123 ), PoolIntArray( 123, 125, 124 ), PoolIntArray( 129, 128, 127 ), PoolIntArray( 133, 132, 130 ), PoolIntArray( 130, 132, 131 ), PoolIntArray( 137, 136, 134 ), PoolIntArray( 134, 136, 135 ), PoolIntArray( 143, 142, 138 ), PoolIntArray( 138, 142, 139 ), PoolIntArray( 139, 142, 141 ), PoolIntArray( 139, 141, 140 ), PoolIntArray( 147, 146, 144 ), PoolIntArray( 144, 146, 145 ), PoolIntArray( 150, 149, 148 ), PoolIntArray( 153, 152, 151 ), PoolIntArray( 157, 156, 154 ), PoolIntArray( 154, 156, 155 ), PoolIntArray( 161, 160, 158 ), PoolIntArray( 158, 160, 159 ), PoolIntArray( 164, 163, 162 ), PoolIntArray( 168, 167, 165 ), PoolIntArray( 165, 167, 166 ), PoolIntArray( 171, 170, 169 ), PoolIntArray( 175, 174, 172 ), PoolIntArray( 172, 174, 173 ), PoolIntArray( 180, 179, 176 ), PoolIntArray( 176, 179, 178 ), PoolIntArray( 176, 178, 177 ), PoolIntArray( 183, 182, 181 ), PoolIntArray( 186, 185, 184 ), PoolIntArray( 189, 188, 187 ), PoolIntArray( 193, 192, 190 ), PoolIntArray( 190, 192, 191 ), PoolIntArray( 197, 196, 194 ), PoolIntArray( 194, 196, 195 ), PoolIntArray( 203, 202, 198 ), PoolIntArray( 198, 202, 199 ), PoolIntArray( 199, 202, 201 ), PoolIntArray( 199, 201, 200 ), PoolIntArray( 206, 205, 204 ), PoolIntArray( 210, 209, 207 ), PoolIntArray( 207, 209, 208 ), PoolIntArray( 213, 212, 211 ) ]
+geometry/parsed_geometry_type = 1
+geometry/collision_mask = 4294967295
+geometry/source_geometry_mode = 1
+geometry/source_group_name = "navigation"
+cell/size = 0.2
+agent/height = 0.7
+agent/radius = 0.55
+agent/max_climb = 0.1
+agent/max_slope = 4.0
+
+[sub_resource type="ProceduralSky" id=2]
+sky_top_color = Color( 0.0627451, 0.0627451, 0.156863, 1 )
+sky_horizon_color = Color( 0.0117647, 0.0117647, 0.0862745, 1 )
+ground_bottom_color = Color( 0.0117647, 0.0117647, 0.0862745, 1 )
+ground_horizon_color = Color( 0.0117647, 0.0117647, 0.0862745, 1 )
+sun_latitude = 25.0
+sun_longitude = -30.0
+sun_curve = 0.00563281
+sun_energy = 5.0
+
+[sub_resource type="Environment" id=3]
+background_mode = 2
+background_sky = SubResource( 2 )
+ambient_light_color = Color( 1, 1, 1, 1 )
+ambient_light_sky_contribution = 0.2
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="EnemyTest" type="Spatial" groups=[
+"navigation",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 15 )
+
+[node name="Navigation" type="Navigation" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, -14.9689 )
+
+[node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="Navigation"]
+navmesh = SubResource( 1 )
+
+[node name="PuzzleMainRoom" parent="." instance=ExtResource( 1 )]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 3 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="WorldEnvironment"]
+transform = Transform( 0.874404, -0.139772, -0.464631, 0.0828729, -0.900514, 0.426856, -0.478069, -0.41175, -0.77583, -20.5224, 38.1264, -30 )
+light_color = Color( 0.0705882, 0.0823529, 0.207843, 1 )
+
+[node name="PlayerRespawnSpot" type="Spatial" parent="."]
+
+[node name="Spot1" type="Spatial" parent="PlayerRespawnSpot"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, -1.15, 0 )
+
+[node name="MonsterStartSpot" type="Spatial" parent="."]
+
+[node name="Spot1" type="Spatial" parent="MonsterStartSpot"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1, 7 )
+
+[node name="MonsterRespawnSpot" type="Spatial" parent="."]
+
+[node name="Spot1" type="Spatial" parent="MonsterRespawnSpot"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1, 7 )
+
+[node name="SearchSpots" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0 )
+
+[node name="Spot1" type="Spatial" parent="SearchSpots"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.8, 0, -7.8 )
+
+[node name="Spot2" type="Spatial" parent="SearchSpots"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8, 0, -7.8 )
+
+[node name="Spot3" type="Spatial" parent="SearchSpots"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.8, 0, 7.8 )
+
+[node name="Spot4" type="Spatial" parent="SearchSpots"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8, 0, 7.8 )
+
+[node name="PlayerCharacter" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, -1.15, 0 )
+collision_layer = 4
+deadScreenNP = NodePath("../DeadScreen")
+playerInputInterpreterNP = NodePath("../../EnemyTest/PlayerCharacter/Source/PlayerInputInterpreter")
+
+[node name="MonsterCharacter" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1, 7 )
+groundSurfacePositionY = -1.1
+navigationNP = NodePath("../Navigation")
+searchSpotNP = NodePath("../SearchSpots")
+
+[node name="MonsterCharacter2" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.55157, -1.1, 7 )
+groundSurfacePositionY = -1.1
+navigationNP = NodePath("../Navigation")
+searchSpotNP = NodePath("../SearchSpots")
+
+[node name="MonsterCharacter3" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1, 9.33958 )
+groundSurfacePositionY = -1.1
+navigationNP = NodePath("../Navigation")
+searchSpotNP = NodePath("../SearchSpots")
+
+[node name="MonsterCharacter4" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.90042, -1.1, 7 )
+groundSurfacePositionY = -1.1
+navigationNP = NodePath("../Navigation")
+searchSpotNP = NodePath("../SearchSpots")
+
+[node name="ExperimentManager" parent="." instance=ExtResource( 3 )]
+playerCharacterNP = NodePath("../PlayerCharacter")
+monsterCharacterNPList = [ NodePath("../MonsterCharacter") ]
+secretMonsterCharacterNPList = [ NodePath("../MonsterCharacter"), NodePath("../MonsterCharacter2"), NodePath("../MonsterCharacter3"), NodePath("../MonsterCharacter4") ]
+playerRespawnSpotNP = NodePath("../PlayerRespawnSpot")
+monsterStartSpotNP = NodePath("../MonsterStartSpot")
+monsterRespawnSpotNP = NodePath("../MonsterRespawnSpot")
+worldEnvironmentNP = NodePath("../WorldEnvironment")
+
+[node name="DeadScreen" parent="." instance=ExtResource( 5 )]
+experimentManagerNP = NodePath("../ExperimentManager")
+
+[node name="ReturnScreen" parent="." instance=ExtResource( 7 )]

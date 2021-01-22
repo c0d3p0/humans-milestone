@@ -1,0 +1,324 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://gui/theme/computer_system_theme.tres" type="Theme" id=1]
+[ext_resource path="res://gui/font/xolonium_60.tres" type="DynamicFont" id=2]
+[ext_resource path="res://material/metal/dark_metal_2x2.tres" type="Material" id=3]
+[ext_resource path="res://source/computer/information/InformationSystem.cs" type="Script" id=4]
+[ext_resource path="res://material/metal/gold_metal.tres" type="Material" id=5]
+[ext_resource path="res://gui/font/xolonium_40.tres" type="DynamicFont" id=6]
+[ext_resource path="res://source/computer/core/ComputerTouchScreen.cs" type="Script" id=7]
+[ext_resource path="res://source/computer/information/InformationSystemGUI.cs" type="Script" id=8]
+[ext_resource path="res://source/computer/information/InformationComputer.cs" type="Script" id=9]
+[ext_resource path="res://source/computer/information/InformationComputerInitializer.cs" type="Script" id=10]
+[ext_resource path="res://.import/ocarina_system_button_pressed.wav-cdad8038763e682fb069a6c2a59dc410.sample" type="AudioStream" id=11]
+[ext_resource path="res://shader/monitor_screen.shader" type="Shader" id=12]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.805, 0.455, 0.01 )
+
+[sub_resource type="ArrayMesh" id=2]
+resource_local_to_scene = true
+surfaces/0 = {
+"aabb": AABB( -0.805, -0.455, -0.01, 1.61, 0.91, 0.02001 ),
+"array_data": PoolByteArray( 123, 20, 78, 191, 195, 245, 232, 190, 10, 215, 35, 60, 0, 0, 127, 0, 130, 4, 0, 127, 0, 60, 0, 0, 192, 208, 75, 191, 102, 102, 230, 190, 10, 215, 35, 60, 0, 0, 127, 0, 129, 0, 0, 127, 244, 59, 255, 29, 123, 20, 78, 63, 195, 245, 232, 190, 10, 215, 35, 60, 0, 0, 127, 0, 130, 252, 0, 127, 0, 0, 0, 0, 192, 208, 75, 63, 102, 102, 230, 62, 10, 215, 35, 60, 0, 0, 127, 0, 129, 0, 0, 127, 159, 29, 244, 59, 123, 20, 78, 63, 195, 245, 232, 62, 10, 215, 35, 60, 0, 0, 127, 0, 129, 0, 0, 127, 0, 0, 0, 60, 205, 204, 76, 63, 102, 102, 230, 62, 10, 215, 35, 60, 0, 0, 127, 0, 129, 0, 0, 127, 91, 26, 244, 59, 205, 204, 204, 62, 102, 102, 230, 190, 10, 215, 35, 60, 0, 0, 127, 0, 129, 0, 0, 127, 6, 52, 255, 29, 205, 204, 76, 63, 102, 102, 102, 190, 10, 215, 35, 60, 0, 0, 127, 0, 130, 8, 0, 127, 91, 26, 12, 52, 205, 204, 76, 63, 102, 102, 230, 190, 10, 215, 35, 60, 0, 0, 127, 0, 130, 252, 0, 127, 91, 26, 255, 29, 123, 20, 78, 191, 195, 245, 232, 62, 10, 215, 35, 60, 0, 0, 127, 0, 130, 0, 0, 127, 0, 60, 0, 60, 205, 204, 76, 191, 102, 102, 230, 190, 10, 215, 35, 60, 0, 0, 127, 0, 130, 4, 0, 127, 248, 59, 255, 29, 205, 204, 204, 190, 102, 102, 230, 62, 10, 215, 35, 60, 0, 0, 127, 0, 129, 0, 0, 127, 252, 57, 244, 59, 205, 204, 76, 191, 102, 102, 102, 62, 10, 215, 35, 60, 0, 0, 127, 0, 130, 5, 0, 127, 248, 59, 250, 57, 205, 204, 76, 191, 102, 102, 230, 62, 10, 215, 35, 60, 0, 0, 127, 0, 130, 0, 0, 127, 248, 59, 244, 59, 205, 204, 76, 63, 102, 102, 230, 62, 10, 215, 163, 59, 129, 0, 0, 0, 0, 129, 0, 129, 0, 0, 0, 0, 205, 204, 76, 63, 102, 102, 230, 62, 10, 215, 35, 60, 129, 0, 0, 0, 0, 129, 0, 129, 0, 0, 0, 52, 205, 204, 76, 63, 102, 102, 102, 190, 10, 215, 35, 60, 129, 0, 0, 0, 0, 130, 0, 129, 0, 58, 0, 52, 205, 204, 76, 63, 102, 102, 230, 190, 10, 215, 163, 59, 129, 0, 0, 0, 0, 129, 0, 129, 0, 60, 0, 0, 205, 204, 76, 63, 102, 102, 230, 190, 10, 215, 35, 60, 129, 0, 0, 0, 0, 129, 0, 129, 0, 60, 0, 52, 205, 204, 76, 191, 102, 102, 230, 62, 10, 215, 163, 59, 0, 129, 0, 0, 0, 0, 129, 129, 0, 60, 0, 0, 205, 204, 76, 191, 102, 102, 230, 62, 10, 215, 35, 60, 0, 129, 0, 0, 0, 0, 129, 129, 0, 58, 0, 0, 205, 204, 204, 190, 102, 102, 230, 62, 10, 215, 35, 60, 0, 129, 0, 0, 0, 0, 129, 129, 0, 58, 0, 52, 205, 204, 76, 63, 102, 102, 230, 62, 10, 215, 163, 59, 0, 129, 0, 0, 1, 0, 130, 129, 0, 60, 0, 60, 205, 204, 76, 191, 102, 102, 230, 62, 10, 215, 163, 59, 0, 129, 0, 0, 19, 0, 131, 129, 0, 60, 0, 0, 205, 204, 204, 190, 102, 102, 230, 62, 10, 215, 35, 60, 0, 129, 0, 0, 19, 0, 131, 129, 255, 57, 1, 52, 192, 208, 75, 63, 102, 102, 230, 62, 10, 215, 35, 60, 0, 129, 0, 0, 2, 0, 130, 129, 0, 58, 251, 59, 205, 204, 76, 63, 102, 102, 230, 62, 10, 215, 35, 60, 0, 129, 0, 0, 0, 0, 129, 129, 0, 58, 0, 60, 205, 204, 76, 191, 102, 102, 230, 62, 10, 215, 35, 60, 127, 0, 0, 0, 0, 129, 0, 129, 0, 0, 0, 58, 205, 204, 76, 191, 102, 102, 230, 62, 10, 215, 163, 59, 127, 0, 0, 0, 0, 129, 0, 129, 0, 0, 0, 60, 205, 204, 76, 191, 102, 102, 102, 62, 10, 215, 35, 60, 127, 0, 0, 0, 0, 130, 0, 129, 255, 51, 0, 58, 205, 204, 76, 191, 102, 102, 230, 190, 10, 215, 163, 59, 127, 0, 0, 0, 0, 129, 0, 129, 0, 60, 0, 60, 205, 204, 76, 191, 102, 102, 230, 190, 10, 215, 35, 60, 127, 0, 0, 0, 0, 129, 0, 129, 0, 60, 0, 58, 205, 204, 76, 63, 102, 102, 230, 190, 10, 215, 163, 59, 0, 127, 0, 0, 0, 0, 129, 129, 0, 60, 0, 0, 205, 204, 76, 63, 102, 102, 230, 190, 10, 215, 35, 60, 0, 127, 0, 0, 0, 0, 129, 129, 0, 58, 0, 0, 205, 204, 204, 62, 102, 102, 230, 190, 10, 215, 35, 60, 0, 127, 0, 0, 0, 0, 129, 129, 0, 58, 0, 52, 205, 204, 76, 191, 102, 102, 230, 190, 10, 215, 163, 59, 0, 127, 0, 0, 255, 0, 130, 129, 0, 60, 0, 60, 205, 204, 76, 63, 102, 102, 230, 190, 10, 215, 163, 59, 0, 127, 0, 0, 237, 0, 131, 129, 0, 60, 0, 0, 205, 204, 204, 62, 102, 102, 230, 190, 10, 215, 35, 60, 0, 127, 0, 0, 237, 0, 131, 129, 255, 57, 1, 52, 192, 208, 75, 191, 102, 102, 230, 190, 10, 215, 35, 60, 0, 127, 0, 0, 254, 0, 130, 129, 0, 58, 251, 59, 205, 204, 76, 191, 102, 102, 230, 190, 10, 215, 35, 60, 0, 127, 0, 0, 0, 0, 129, 129, 0, 58, 0, 60, 123, 20, 78, 63, 195, 245, 232, 62, 10, 215, 35, 188, 127, 0, 0, 0, 0, 129, 0, 127, 0, 0, 0, 0, 123, 20, 78, 63, 195, 245, 232, 190, 10, 215, 35, 188, 127, 0, 0, 0, 0, 129, 0, 127, 0, 60, 0, 0, 123, 20, 78, 63, 195, 245, 232, 62, 10, 215, 35, 60, 127, 0, 0, 0, 0, 129, 0, 127, 0, 0, 0, 60, 123, 20, 78, 63, 195, 245, 232, 190, 10, 215, 35, 60, 127, 0, 0, 0, 0, 129, 0, 127, 0, 60, 0, 60, 123, 20, 78, 191, 195, 245, 232, 62, 10, 215, 35, 60, 0, 127, 0, 0, 0, 0, 129, 127, 0, 0, 0, 0, 123, 20, 78, 191, 195, 245, 232, 62, 10, 215, 35, 188, 0, 127, 0, 0, 0, 0, 130, 127, 0, 60, 0, 0, 123, 20, 78, 63, 195, 245, 232, 62, 10, 215, 35, 60, 0, 127, 0, 0, 0, 0, 130, 127, 0, 0, 0, 60, 123, 20, 78, 63, 195, 245, 232, 62, 10, 215, 35, 188, 0, 127, 0, 0, 0, 0, 129, 127, 0, 60, 0, 60, 123, 20, 78, 191, 195, 245, 232, 62, 10, 215, 35, 60, 129, 0, 0, 0, 0, 129, 0, 127, 0, 0, 0, 0, 123, 20, 78, 191, 195, 245, 232, 190, 10, 215, 35, 60, 129, 0, 0, 0, 0, 129, 0, 127, 0, 60, 0, 0, 123, 20, 78, 191, 195, 245, 232, 62, 10, 215, 35, 188, 129, 0, 0, 0, 0, 129, 0, 127, 0, 0, 0, 60, 123, 20, 78, 191, 195, 245, 232, 190, 10, 215, 35, 188, 129, 0, 0, 0, 0, 129, 0, 127, 0, 60, 0, 60, 123, 20, 78, 63, 195, 245, 232, 190, 10, 215, 35, 60, 0, 129, 0, 0, 0, 0, 129, 127, 0, 0, 0, 0, 123, 20, 78, 63, 195, 245, 232, 190, 10, 215, 35, 188, 0, 129, 0, 0, 0, 0, 130, 127, 0, 60, 0, 0, 123, 20, 78, 191, 195, 245, 232, 190, 10, 215, 35, 60, 0, 129, 0, 0, 0, 0, 130, 127, 0, 0, 0, 60, 123, 20, 78, 191, 195, 245, 232, 190, 10, 215, 35, 188, 0, 129, 0, 0, 0, 0, 129, 127, 0, 60, 0, 60, 123, 20, 78, 63, 195, 245, 232, 62, 10, 215, 35, 188, 0, 0, 129, 0, 129, 0, 0, 127, 0, 0, 0, 0, 123, 20, 78, 191, 195, 245, 232, 62, 10, 215, 35, 188, 0, 0, 129, 0, 129, 0, 0, 127, 0, 60, 0, 0, 123, 20, 78, 63, 195, 245, 232, 190, 10, 215, 35, 188, 0, 0, 129, 0, 129, 0, 0, 127, 0, 0, 0, 60, 123, 20, 78, 191, 195, 245, 232, 190, 10, 215, 35, 188, 0, 0, 129, 0, 129, 0, 0, 127, 0, 60, 0, 60, 205, 204, 76, 191, 102, 102, 230, 62, 10, 215, 163, 59, 0, 0, 127, 0, 130, 0, 0, 129, 0, 60, 0, 0, 205, 204, 76, 63, 102, 102, 230, 62, 10, 215, 163, 59, 0, 0, 127, 0, 129, 0, 0, 129, 0, 0, 0, 0, 205, 204, 76, 63, 102, 102, 230, 190, 10, 215, 163, 59, 0, 0, 127, 0, 130, 0, 0, 129, 0, 0, 0, 60, 205, 204, 76, 191, 102, 102, 230, 190, 10, 215, 163, 59, 0, 0, 127, 0, 129, 0, 0, 129, 0, 60, 0, 60 ),
+"array_index_data": PoolByteArray( 0, 0, 1, 0, 2, 0, 3, 0, 4, 0, 5, 0, 1, 0, 6, 0, 2, 0, 5, 0, 4, 0, 7, 0, 6, 0, 8, 0, 2, 0, 7, 0, 4, 0, 8, 0, 2, 0, 8, 0, 4, 0, 4, 0, 3, 0, 9, 0, 1, 0, 0, 0, 10, 0, 3, 0, 11, 0, 9, 0, 10, 0, 0, 0, 12, 0, 11, 0, 13, 0, 9, 0, 12, 0, 0, 0, 13, 0, 9, 0, 13, 0, 0, 0, 14, 0, 15, 0, 16, 0, 16, 0, 17, 0, 14, 0, 18, 0, 17, 0, 16, 0, 19, 0, 20, 0, 21, 0, 22, 0, 23, 0, 24, 0, 25, 0, 26, 0, 22, 0, 22, 0, 24, 0, 25, 0, 27, 0, 28, 0, 29, 0, 30, 0, 31, 0, 29, 0, 29, 0, 28, 0, 30, 0, 32, 0, 33, 0, 34, 0, 35, 0, 36, 0, 37, 0, 38, 0, 39, 0, 35, 0, 35, 0, 37, 0, 38, 0, 40, 0, 41, 0, 42, 0, 43, 0, 42, 0, 41, 0, 44, 0, 45, 0, 46, 0, 47, 0, 46, 0, 45, 0, 48, 0, 49, 0, 50, 0, 51, 0, 50, 0, 49, 0, 52, 0, 53, 0, 54, 0, 55, 0, 54, 0, 53, 0, 56, 0, 57, 0, 58, 0, 59, 0, 58, 0, 57, 0, 60, 0, 61, 0, 62, 0, 62, 0, 63, 0, 60, 0 ),
+"blend_shape_data": [  ],
+"format": 97559,
+"index_count": 120,
+"material": ExtResource( 3 ),
+"name": "metal",
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 64
+}
+
+[sub_resource type="CubeMesh" id=3]
+material = ExtResource( 5 )
+size = Vector3( 0.2, 0.2, 0.02 )
+
+[sub_resource type="QuadMesh" id=4]
+size = Vector2( 1.6, 0.9 )
+
+[sub_resource type="ViewportTexture" id=10]
+viewport_path = NodePath("ScreenSurface/Viewport")
+
+[sub_resource type="ShaderMaterial" id=11]
+resource_local_to_scene = true
+shader = ExtResource( 12 )
+shader_param/bgColor = Color( 0.56, 0.56, 0.56, 1 )
+shader_param/color = Color( 0.7, 0.8, 2.4, 1 )
+shader_param/bgColorFactor = 0.11
+shader_param/uv1_scale = Vector3( 1, 1, 1 )
+shader_param/uv1_offset = Vector3( 0, 0, 0 )
+shader_param/textureAlbedo = SubResource( 10 )
+
+[sub_resource type="BoxShape" id=7]
+extents = Vector3( 0.025, 0.033, 0.003 )
+
+[sub_resource type="SphereShape" id=8]
+radius = 20.0
+
+[sub_resource type="Animation" id=9]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("NoiseArea:monitorable")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("AudioStreamPlayer3D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 11 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[node name="InformationComputer" type="Spatial"]
+script = ExtResource( 9 )
+informationSystemNP = NodePath("Source/InformationSystem")
+informationSystemGUINP = NodePath("Source/InformationSystemGUI")
+
+[node name="StaticBody" type="StaticBody" parent="."]
+collision_layer = 32
+collision_mask = 495
+
+[node name="CollisionShapeScreen" type="CollisionShape" parent="StaticBody"]
+shape = SubResource( 1 )
+
+[node name="MeshInstanceScreen" type="MeshInstance" parent="StaticBody"]
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="MeshInstanceConector" type="MeshInstance" parent="StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.016 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="BodyArea" type="Area" parent="."]
+collision_layer = 524288
+collision_mask = 524288
+
+[node name="CollisionShapeScreen" type="CollisionShape" parent="BodyArea"]
+shape = SubResource( 1 )
+
+[node name="ScreenSurface" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.009 )
+
+[node name="MeshInstance" type="MeshInstance" parent="ScreenSurface"]
+mesh = SubResource( 4 )
+material/0 = SubResource( 11 )
+
+[node name="Viewport" type="Viewport" parent="ScreenSurface"]
+size = Vector2( 1120, 630 )
+disable_3d = true
+usage = 0
+render_target_v_flip = true
+render_target_update_mode = 3
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Panel" type="Panel" parent="ScreenSurface/Viewport"]
+margin_right = 1120.0
+margin_bottom = 630.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RoomTitle" type="PanelContainer" parent="ScreenSurface/Viewport/Panel"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 1110.0
+margin_bottom = 100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ScreenSurface/Viewport/Panel/RoomTitle"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 1094.0
+margin_bottom = 85.0
+custom_fonts/font = ExtResource( 2 )
+text = "Room Title"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NavigationButton" type="Control" parent="ScreenSurface/Viewport/Panel"]
+margin_left = 506.0
+margin_top = 107.0
+margin_right = 614.0
+margin_bottom = 154.0
+
+[node name="PreviousPageButton" type="Button" parent="ScreenSurface/Viewport/Panel/NavigationButton"]
+margin_right = 35.0
+margin_bottom = 47.0
+text = "<"
+
+[node name="NextPageButton" type="Button" parent="ScreenSurface/Viewport/Panel/NavigationButton"]
+margin_left = 73.0
+margin_right = 108.0
+margin_bottom = 47.0
+text = ">"
+
+[node name="DoorInfo" type="PanelContainer" parent="ScreenSurface/Viewport/Panel"]
+margin_left = 10.0
+margin_top = 161.0
+margin_right = 555.0
+margin_bottom = 618.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Container" type="Control" parent="ScreenSurface/Viewport/Panel/DoorInfo"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 539.0
+margin_bottom = 453.0
+
+[node name="TitleLabel" type="Label" parent="ScreenSurface/Viewport/Panel/DoorInfo/Container"]
+margin_top = 10.0
+margin_right = 533.0
+margin_bottom = 67.0
+custom_fonts/font = ExtResource( 6 )
+text = "Doors Status"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StatusLabel" type="Label" parent="ScreenSurface/Viewport/Panel/DoorInfo/Container"]
+margin_top = 77.0
+margin_right = 533.0
+margin_bottom = 449.0
+custom_fonts/font = ExtResource( 6 )
+text = "1: Unlocked"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PuzzleInfo" type="PanelContainer" parent="ScreenSurface/Viewport/Panel"]
+margin_left = 565.0
+margin_top = 161.0
+margin_right = 1110.0
+margin_bottom = 618.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Container" type="Control" parent="ScreenSurface/Viewport/Panel/PuzzleInfo"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 539.0
+margin_bottom = 453.0
+
+[node name="TitleLabel" type="Label" parent="ScreenSurface/Viewport/Panel/PuzzleInfo/Container"]
+margin_top = 10.0
+margin_right = 533.0
+margin_bottom = 67.0
+custom_fonts/font = ExtResource( 6 )
+text = "Puzzles Status"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StatusLabel" type="Label" parent="ScreenSurface/Viewport/Panel/PuzzleInfo/Container"]
+margin_top = 77.0
+margin_right = 533.0
+margin_bottom = 449.0
+custom_fonts/font = ExtResource( 6 )
+text = "1: Unsolved"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TouchArea" type="Spatial" parent="ScreenSurface"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.263, 0.003 )
+
+[node name="PreviousPageArea" type="Area" parent="ScreenSurface/TouchArea"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.052, 0, 0 )
+collision_layer = 524288
+collision_mask = 524288
+
+[node name="CollisionShape" type="CollisionShape" parent="ScreenSurface/TouchArea/PreviousPageArea"]
+shape = SubResource( 7 )
+
+[node name="NextPageArea" type="Area" parent="ScreenSurface/TouchArea"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.052, 0, 0 )
+collision_layer = 524288
+collision_mask = 524288
+
+[node name="CollisionShape" type="CollisionShape" parent="ScreenSurface/TouchArea/NextPageArea"]
+shape = SubResource( 7 )
+
+[node name="TouchTimer" type="Timer" parent="ScreenSurface/TouchArea"]
+wait_time = 0.1
+one_shot = true
+
+[node name="NoiseArea" type="Area" parent="." groups=[
+"noise",
+]]
+monitoring = false
+monitorable = false
+collision_layer = 65536
+collision_mask = 0
+
+[node name="CollisionShape" type="CollisionShape" parent="NoiseArea"]
+shape = SubResource( 8 )
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/button_touch = SubResource( 9 )
+
+[node name="Source" type="Node" parent="."]
+
+[node name="ComputerTouchScreen" type="Node" parent="Source"]
+script = ExtResource( 7 )
+screenViewportNP = NodePath("../../ScreenSurface/Viewport")
+touchTimerNP = NodePath("../../ScreenSurface/TouchArea/TouchTimer")
+
+[node name="InformationSystem" type="Node" parent="Source"]
+script = ExtResource( 4 )
+
+[node name="InformationSystemGUI" type="Node" parent="Source"]
+script = ExtResource( 8 )
+roomNameLabelNP = NodePath("../../ScreenSurface/Viewport/Panel/RoomTitle/Label")
+doorsLabelNP = NodePath("../../ScreenSurface/Viewport/Panel/DoorInfo/Container/StatusLabel")
+puzzlesLabelNP = NodePath("../../ScreenSurface/Viewport/Panel/PuzzleInfo/Container/StatusLabel")
+navigationButtonControlNP = NodePath("../../ScreenSurface/Viewport/Panel/NavigationButton")
+touchAreaNP = NodePath("../../ScreenSurface/TouchArea")
+
+[node name="InformationComputerInitializer" type="Node" parent="Source"]
+script = ExtResource( 10 )
+informationComputerNP = NodePath("../..")
+computerTouchScreenNP = NodePath("../ComputerTouchScreen")
+touchAreaNP = NodePath("../../ScreenSurface/TouchArea")
+informationSystemNP = NodePath("../InformationSystem")
+animationPlayerNP = NodePath("../../AnimationPlayer")
+[connection signal="pressed" from="ScreenSurface/Viewport/Panel/NavigationButton/PreviousPageButton" to="Source/InformationSystem" method="UpdateInformationPage" binds= [ -1 ]]
+[connection signal="pressed" from="ScreenSurface/Viewport/Panel/NavigationButton/NextPageButton" to="Source/InformationSystem" method="UpdateInformationPage" binds= [ 1 ]]
+[connection signal="timeout" from="ScreenSurface/TouchArea/TouchTimer" to="Source/ComputerTouchScreen" method="OnReleaseTouch"]

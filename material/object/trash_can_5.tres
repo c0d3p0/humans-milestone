@@ -1,0 +1,22 @@
+[gd_resource type="SpatialMaterial" load_steps=4 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 7
+load_path = "res://.import/trash_can_5_albedo.png-30a85fbc67faf1365c17311e1d9424c6.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 7
+load_path = "res://.import/trash_can_5_specular.png-6659401e43f1ef0b8965427f88ce7673.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=3]
+flags = 7
+load_path = "res://.import/trash_can_5_normal.png-cfdc616a9aeb22d58fd65048ba361524.stex"
+
+[resource]
+albedo_texture = SubResource( 1 )
+metallic = 0.8
+metallic_texture = SubResource( 2 )
+roughness = 0.25
+normal_enabled = true
+normal_scale = 2.0
+normal_texture = SubResource( 3 )

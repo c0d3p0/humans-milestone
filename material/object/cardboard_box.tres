@@ -1,0 +1,39 @@
+[gd_resource type="SpatialMaterial" load_steps=6 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 7
+load_path = "res://.import/cardboard_box_albedo.png-b7fa7bf2f96a5fda568ac528295ebc1b.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 7
+load_path = "res://.import/cardboard_box_ao.png-6def7b81bc00c03a0d459e1f500f2e80.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=3]
+flags = 7
+load_path = "res://.import/cardboard_box_specular.png-983d024ebb83bd60422c96527d460ef4.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=4]
+flags = 7
+load_path = "res://.import/cardboard_box_normal.png-e0f8d3f2d586015d6766e70450112dad.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=5]
+flags = 7
+load_path = "res://.import/cardboard_box_roughness.png-c0d89590ea8fb0c78f13a08dd6c027b1.s3tc.stex"
+
+[resource]
+params_cull_mode = 2
+albedo_texture = SubResource( 1 )
+metallic_texture = SubResource( 3 )
+roughness = 0.6
+roughness_texture = SubResource( 5 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = SubResource( 4 )
+rim_enabled = true
+rim = 0.08
+rim_tint = 0.5
+ao_enabled = true
+ao_light_affect = 0.1
+ao_texture = SubResource( 2 )
+ao_on_uv2 = false
+ao_texture_channel = 0

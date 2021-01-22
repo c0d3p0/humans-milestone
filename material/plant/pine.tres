@@ -1,0 +1,29 @@
+[gd_resource type="SpatialMaterial" load_steps=4 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 7
+load_path = "res://.import/pine_albedo.png-f444f692b2f9879dcab65ee86d36dab3.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 7
+load_path = "res://.import/pine_normal.png-7d7ecbbe1b061962bc5abec6c14ec983.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=3]
+flags = 7
+load_path = "res://.import/pine_roughness.png-888634ae8c9df453cfc8ee91c06b8068.s3tc.stex"
+
+[resource]
+params_cull_mode = 2
+params_use_alpha_scissor = true
+params_alpha_scissor_threshold = 0.5
+albedo_texture = SubResource( 1 )
+roughness = 0.95
+roughness_texture = SubResource( 3 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = SubResource( 2 )
+rim_enabled = true
+rim = 0.12
+rim_tint = 0.95
+transmission_enabled = true
+transmission = Color( 0.414063, 0.414063, 0.414063, 1 )

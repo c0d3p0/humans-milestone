@@ -1,0 +1,39 @@
+[gd_resource type="SpatialMaterial" load_steps=6 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 7
+load_path = "res://.import/metal_crate_1_albedo.png-00e0f9482d001596c8dafcd30e06f7ec.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 7
+load_path = "res://.import/metal_crate_1_ao.png-2806c9f45b7f8565d25841552e8d9c96.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=3]
+flags = 7
+load_path = "res://.import/metal_crate_1_specular.png-5515e2b69d74b65630c57f355097c064.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=4]
+flags = 7
+load_path = "res://.import/metal_crate_1_normal.png-e3d387681b468699936251efbb8b9e1d.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=5]
+flags = 7
+load_path = "res://.import/metal_crate_1_roughness.png-d6c831c75906f889a7e10c8e7db9503f.s3tc.stex"
+
+[resource]
+albedo_texture = SubResource( 1 )
+metallic = 0.9
+metallic_specular = 1.0
+metallic_texture = SubResource( 3 )
+roughness_texture = SubResource( 5 )
+normal_enabled = true
+normal_scale = 0.2
+normal_texture = SubResource( 4 )
+rim_enabled = true
+rim = 0.12
+rim_tint = 0.5
+ao_enabled = true
+ao_light_affect = 0.8
+ao_texture = SubResource( 2 )
+ao_on_uv2 = false
+ao_texture_channel = 0

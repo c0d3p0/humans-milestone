@@ -1,0 +1,43 @@
+[gd_resource type="SpatialMaterial" load_steps=6 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 7
+load_path = "res://.import/corrosive_barrel_albedo.png-cee1f3efe1059732f3c02f036f3e57e1.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 7
+load_path = "res://.import/corrosive_barrel_ao_roughness_specular.png-21bf7f2c03a97b0935b7f52fb81e89a1.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=3]
+flags = 7
+load_path = "res://.import/corrosive_barrel_ao_roughness_specular.png-21bf7f2c03a97b0935b7f52fb81e89a1.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=4]
+flags = 7
+load_path = "res://.import/corrosive_barrel_normal.png-4a1346265e83a361493cab2ef925afa6.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=5]
+flags = 7
+load_path = "res://.import/corrosive_barrel_ao_roughness_specular.png-21bf7f2c03a97b0935b7f52fb81e89a1.s3tc.stex"
+
+[resource]
+resource_name = "barrel_biohazard_mat"
+params_cull_mode = 2
+albedo_texture = SubResource( 1 )
+metallic = 0.8
+metallic_texture = SubResource( 3 )
+metallic_texture_channel = 2
+roughness = 0.4
+roughness_texture = SubResource( 5 )
+roughness_texture_channel = 1
+normal_enabled = true
+normal_scale = -4.0
+normal_texture = SubResource( 4 )
+rim_enabled = true
+rim = 0.11
+rim_tint = 0.5
+ao_enabled = true
+ao_light_affect = 0.98
+ao_texture = SubResource( 2 )
+ao_on_uv2 = false
+ao_texture_channel = 0

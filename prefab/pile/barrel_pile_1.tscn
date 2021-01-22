@@ -1,0 +1,147 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://prefab/barrel/barrel_radioactive.tscn" type="PackedScene" id=1]
+[ext_resource path="res://prefab/barrel/barrel_flammable.tscn" type="PackedScene" id=2]
+[ext_resource path="res://prefab/object/concrete_cylinder.tscn" type="PackedScene" id=3]
+[ext_resource path="res://prefab/object/concrete_cube.tscn" type="PackedScene" id=4]
+[ext_resource path="res://prefab/crate/pallet.tscn" type="PackedScene" id=5]
+
+[node name="BarrelPile1" type="Spatial"]
+
+[node name="ConcreteCube" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.533, 0, 1.23 )
+
+[node name="ConcreteCube2" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6, 0, 0.5 )
+
+[node name="ConcreteCube3" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6, 0, -0.5 )
+
+[node name="ConcreteCube4" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.533, 0, -1.23 )
+
+[node name="ConcreteCylinder" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 1.23 )
+
+[node name="ConcreteCylinder2" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.23 )
+
+[node name="ConcreteCylinder3" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 0.5 )
+
+[node name="ConcreteCylinder4" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -0.5 )
+
+[node name="ConcreteCylinder5" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -1.23 )
+
+[node name="ConcreteCylinder6" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -1.23 )
+
+[node name="Pallet" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.351317, -0.399, 0 )
+
+[node name="Pallet2" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25616, -0.399, 0 )
+
+[node name="Barrels" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.142, 0 )
+
+[node name="BarrelFlammable" parent="Barrels" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, -0.21, 0.23 )
+
+[node name="BarrelFlammable2" parent="Barrels" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45, -0.21, 0.23 )
+
+[node name="BarrelFlammable3" parent="Barrels" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, -0.21, -0.23 )
+
+[node name="BarrelFlammable4" parent="Barrels" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45, -0.21, -0.23 )
+
+[node name="BarrelFlammable5" parent="Barrels" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 0.311868, 0.23 )
+
+[node name="BarrelFlammable6" parent="Barrels" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45, 0.312, 0.23 )
+
+[node name="BarrelFlammable7" parent="Barrels" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 0.312, -0.23 )
+
+[node name="BarrelFlammable8" parent="Barrels" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45, 0.312, -0.23 )
+
+[node name="BarrelFlammable9" parent="Barrels" instance=ExtResource( 2 )]
+transform = Transform( 0.939693, 0, 0.34202, 0, 1, 0, -0.34202, 0, 0.939693, 0.6, 0.834, 0 )
+
+[node name="BarrelRadioactive" parent="Barrels" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.21, 0.23 )
+
+[node name="BarrelRadioactive2" parent="Barrels" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45, -0.21, 0.23 )
+
+[node name="BarrelRadioactive3" parent="Barrels" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9, -0.21, 0.23 )
+
+[node name="BarrelRadioactive4" parent="Barrels" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.35, -0.21, 0.23 )
+
+[node name="BarrelRadioactive5" parent="Barrels" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8, -0.21, 0.23 )
+
+[node name="BarrelRadioactive6" parent="Barrels" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.21, -0.23 )
+
+[node name="BarrelRadioactive7" parent="Barrels" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45, -0.21, -0.23 )
+
+[node name="BarrelRadioactive8" parent="Barrels" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9, -0.21, -0.23 )
+
+[node name="BarrelRadioactive9" parent="Barrels" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.35, -0.21, -0.23 )
+
+[node name="BarrelRadioactive10" parent="Barrels" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8, -0.21, -0.23 )
+
+[node name="BarrelRadioactive15" parent="Barrels" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.312, 0.23 )
+
+[node name="BarrelRadioactive14" parent="Barrels" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45, 0.312, 0.23 )
+
+[node name="BarrelRadioactive13" parent="Barrels" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9, 0.312, 0.23 )
+
+[node name="BarrelRadioactive12" parent="Barrels" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.35, 0.312, 0.23 )
+
+[node name="BarrelRadioactive11" parent="Barrels" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8, 0.312, 0.23 )
+
+[node name="BarrelRadioactive20" parent="Barrels" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.312, -0.23 )
+
+[node name="BarrelRadioactive19" parent="Barrels" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45, 0.312, -0.23 )
+
+[node name="BarrelRadioactive18" parent="Barrels" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9, 0.312, -0.23 )
+
+[node name="BarrelRadioactive17" parent="Barrels" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.35, 0.312, -0.23 )
+
+[node name="BarrelRadioactive16" parent="Barrels" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8, 0.312, -0.23 )
+
+[node name="BarrelRadioactive21" parent="Barrels" instance=ExtResource( 1 )]
+transform = Transform( 0.681998, 0, 0.731354, 0, 1, 0, -0.731354, 0, 0.681998, 0.2, 0.834, 0 )
+
+[node name="BarrelRadioactive22" parent="Barrels" instance=ExtResource( 1 )]
+transform = Transform( -0.173648, 0, 0.984808, 0, 1, 0, -0.984808, 0, -0.173648, -0.2, 0.834, 0 )
+
+[node name="BarrelRadioactive23" parent="Barrels" instance=ExtResource( 1 )]
+transform = Transform( -0.866026, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866026, -1.2, 0.834, 0 )
+
+[node name="BarrelRadioactive24" parent="Barrels" instance=ExtResource( 1 )]
+transform = Transform( -0.743145, 0, -0.669131, 0, 1, 0, 0.669131, 0, -0.743145, -1.6, 0.834, 0 )

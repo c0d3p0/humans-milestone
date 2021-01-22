@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://prefab/object/concrete_cylinder.tscn" type="PackedScene" id=1]
+[ext_resource path="res://prefab/barrel/barrel_corrosive.tscn" type="PackedScene" id=2]
+[ext_resource path="res://prefab/object/wall_barricade.tscn" type="PackedScene" id=3]
+
+[node name="WallBarricadePile1" type="Spatial"]
+
+[node name="WallBarricade" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.353553, 0, 0.353553, 0, 0.5, 0, -0.353553, 0, 0.353553, -0.65, 0.024, -0.65 )
+
+[node name="WallBarricade2" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.353553, 0, -0.353553, 0, 0.5, 0, 0.353553, 0, 0.353553, 0.65, 0.024, -0.65 )
+
+[node name="WallBarricade3" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.353553, 0, -0.353553, 0, 0.5, 0, 0.353553, 0, 0.353553, -0.65, 0.024, 0.65 )
+
+[node name="WallBarricade4" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.353553, 0, 0.353553, 0, 0.5, 0, -0.353553, 0, 0.353553, 0.65, 0.024, 0.65 )
+
+[node name="ConcreteCylinder" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5 )
+
+[node name="ConcreteCylinder2" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0 )
+
+[node name="ConcreteCylinder4" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+
+[node name="ConcreteCylinder5" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5 )
+
+[node name="BarrelCorrosive" parent="." instance=ExtResource( 2 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 0, -0.21, 0 )
+
+[node name="BarrelCorrosive2" parent="." instance=ExtResource( 2 )]
+transform = Transform( 0.939693, 0, -0.34202, 0, 1, 0, 0.34202, 0, 0.939693, 0.01, 0.312, 0.005 )
+
+[node name="BarrelCorrosive3" parent="." instance=ExtResource( 2 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0.005, 0.834, 0.002 )

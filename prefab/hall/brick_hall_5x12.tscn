@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://prefab/wall/brick/brick_wall_12x4.tscn" type="PackedScene" id=1]
+[ext_resource path="res://prefab/ground/concrete_stone/concrete_stone_ground_5x12.tscn" type="PackedScene" id=2]
+
+[node name="BrickHall5x12" type="Spatial"]
+
+[node name="BrickWall12x4" parent="." instance=ExtResource( 1 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -2, 0, 0 )
+
+[node name="BrickWall12x4_2" parent="." instance=ExtResource( 1 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 2, 0, 0 )
+
+[node name="ConcreteStoneGround5x12" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.5, 0 )

@@ -1,0 +1,79 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://prefab/object/monster_sensor.tscn" type="PackedScene" id=1]
+[ext_resource path="res://prefab/wall/concrete/concrete_wall_4x4.tscn" type="PackedScene" id=2]
+[ext_resource path="res://prefab/object/metal_door.tscn" type="PackedScene" id=3]
+[ext_resource path="res://prefab/wall/concrete/concrete_wall_2x4.tscn" type="PackedScene" id=4]
+[ext_resource path="res://prefab/object/ventilator.tscn" type="PackedScene" id=5]
+[ext_resource path="res://prefab/object/cardboard_box_1.tscn" type="PackedScene" id=7]
+[ext_resource path="res://prefab/object/cardboard_box_3.tscn" type="PackedScene" id=8]
+[ext_resource path="res://prefab/ground/ceramic_g2/ceramic_geo_2_block.tscn" type="PackedScene" id=9]
+[ext_resource path="res://prefab/wall/concrete/concrete_wall_door_4x4.tscn" type="PackedScene" id=10]
+[ext_resource path="res://prefab/plant/triangle_spikes.tscn" type="PackedScene" id=11]
+[ext_resource path="res://prefab/ground/ceramic_g2/ceramic_geo_2_ground_4x4.tscn" type="PackedScene" id=12]
+[ext_resource path="res://prefab/ground/concrete_smooth/concrete_smooth_ceiling_4x4.tscn" type="PackedScene" id=13]
+[ext_resource path="res://prefab/computer/door_lock_computer.tscn" type="PackedScene" id=14]
+[ext_resource path="res://prefab/trash/trash_can_5.tscn" type="PackedScene" id=15]
+
+[node name="ConcreteSmallRoom" type="Spatial"]
+
+[node name="ConcreteWall2x4" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2 )
+
+[node name="ConcreteWall4x4" parent="." instance=ExtResource( 2 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -1.5, 0, -0.5 )
+
+[node name="ConcreteWall4x4_2" parent="." instance=ExtResource( 2 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 1.5, 0, -0.5 )
+
+[node name="ConcreteWallDoor4x4" parent="." instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2 )
+
+[node name="CeramicGeo2Ground4x4" parent="." instance=ExtResource( 12 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -8.14605e-08, -2.5, -0.5 )
+
+[node name="CeramicGeoBlock" parent="." instance=ExtResource( 9 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -1.5, -2.5, 2 )
+
+[node name="CeramicGeoBlock2" parent="." instance=ExtResource( 9 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 1.5, -2.5, 2 )
+
+[node name="ConcreteSmoothCeiling4x4" parent="." instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -0.5 )
+
+[node name="MetalDoor" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 2 )
+roomId = 12
+doorId = 5
+
+[node name="DoorLockComputer" parent="." instance=ExtResource( 14 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -0.99, -0.55, 1.2 )
+doorNP = NodePath("../MetalDoor")
+
+[node name="DoorLockComputer2" parent="." instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, -0.55, 2.5 )
+doorNP = NodePath("../MetalDoor")
+
+[node name="MonsterSensor" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0.1 )
+doorNP = NodePath("../MetalDoor")
+
+[node name="Object" type="Spatial" parent="."]
+
+[node name="Ventilator" parent="Object" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.295, -1.307 )
+
+[node name="TriangleSpikes" parent="Object" instance=ExtResource( 11 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -0.7, -1.75, -1.2 )
+
+[node name="TrashCan5" parent="Object" instance=ExtResource( 15 )]
+transform = Transform( -0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 0.75, -1.685, -1.25 )
+
+[node name="CardboardBox1" parent="Object" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, -1.825, -1.25 )
+
+[node name="CardboardBox1_2" parent="Object" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21, -1.47403, -1.25 )
+
+[node name="CardboardBox3" parent="Object" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.766816, -1.649, -0.410209 )

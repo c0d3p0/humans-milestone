@@ -1,0 +1,526 @@
+[gd_scene load_steps=43 format=2]
+
+[ext_resource path="res://source/character/CharacterMove.cs" type="Script" id=1]
+[ext_resource path="res://source/character/CharacterLook.cs" type="Script" id=2]
+[ext_resource path="res://source/character/player/PlayerInteraction.cs" type="Script" id=3]
+[ext_resource path="res://.import/concrete_shoe_footstep.wav-cecaaba76e4b7b9e0948d8e7d5551488.sample" type="AudioStream" id=4]
+[ext_resource path="res://.import/scream.wav-b30149f5d0f6f1ccaafb164f4d715c4e.sample" type="AudioStream" id=5]
+[ext_resource path="res://source/character/player/PlayerCharacterInitializer.cs" type="Script" id=6]
+[ext_resource path="res://source/character/player/PlayerCharacter.cs" type="Script" id=7]
+[ext_resource path="res://source/character/player/PlayerInputInterpreter.cs" type="Script" id=8]
+[ext_resource path="res://source/character/player/PlayerMainAction.cs" type="Script" id=9]
+[ext_resource path="res://source/character/player/PlayerCharacterDebug.cs" type="Script" id=10]
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 0.4
+height = 0.9
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 0.4, 0.85, 0.4 )
+
+[sub_resource type="SphereShape" id=3]
+radius = 20.0
+
+[sub_resource type="Animation" id=4]
+resource_name = "active"
+length = 0.2
+tracks/0/type = "transform"
+tracks/0/path = NodePath("Body/Head")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, 0, 0.68, 0, 0, 0, 0, 1, 1, 1, 1, 0.2, 1, 0, 0.68, 0, 0, 0, 0, 1, 1, 1, 1 )
+tracks/1/type = "value"
+tracks/1/path = NodePath("NoiseArea:monitorable")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Body/Head:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.68, 0 ), Vector3( 0, 0.68, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Body/Head:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = false
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 0 ) ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath("Source/PlayerMainAction")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ true ],
+"method": "SetActive"
+} ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "death"
+length = 4.6
+tracks/0/type = "transform"
+tracks/0/path = NodePath("Body/Head")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/keys = PoolRealArray( 0, 1, 0, 0.68, 0, 0, 0, 0, 1, 1, 1, 1, 0.2, 1, -0.001, 0.687, -0.009, -0.001, 0.319, -0.054, 0.946, 1, 1, 1, 0.4, 1, 0.111, 0.644, -0.107, -0.192, 0.35, -0.052, 0.916, 1, 1, 1, 0.6, 1, 0.147, 0.446, -0.301, -0.064, 0.488, -0.177, 0.852, 1, 1, 1, 0.8, 1, 0.094, 0.476, -0.338, 0.286, 0.343, -0.025, 0.894, 1, 1, 1, 1, 1, 0.1, 0.583, -0.307, 0.176, 0.43, -0.185, 0.866, 1, 1, 1, 1.2, 1, 0.1, 0.578, -0.311, 0.039, 0.368, -0.193, 0.909, 1, 1, 1, 1.4, 1, 0.095, 0.526, -0.312, 0.08, 0.272, -0.09, 0.955, 1, 1, 1, 1.6, 1, 0.102, 0.399, -0.339, 0.193, 0.29, -0.167, 0.922, 1, 1, 1, 1.8, 1, 0.047, 0.247, -0.435, -0.064, 0.4, -0.16, 0.9, 1, 1, 1, 2, 1, -0.056, 0.228, -0.575, -0.296, 0.073, 0.076, 0.949, 1, 1, 1, 2.2, 1, -0.131, 0.22, -0.68, -0.294, 0.072, -0.134, 0.944, 1, 1, 1, 2.4, 1, -0.171, 0.197, -0.753, -0.048, 0.193, -0.218, 0.955, 1, 1, 1, 2.6, 1, -0.161, 0.144, -0.842, 0.062, 0.313, -0.224, 0.921, 1, 1, 1, 2.8, 1, -0.12, 0.014, -1.016, -0.005, 0.326, -0.269, 0.906, 1, 1, 1, 3, 1, -0.118, -0.28, -1.276, -0.203, 0.353, -0.269, 0.873, 1, 1, 1, 3.2, 1, -0.128, -0.74, -1.469, -0.244, 0.421, -0.367, 0.793, 1, 1, 1, 3.4, 1, -0.152, -0.734, -1.534, -0.175, 0.452, -0.207, 0.85, 1, 1, 1, 3.6, 1, -0.143, -0.803, -1.528, -0.136, 0.544, -0.147, 0.815, 1, 1, 1, 3.8, 1, -0.12, -0.797, -1.517, -0.108, 0.591, -0.059, 0.797, 1, 1, 1, 4, 1, -0.12, -0.801, -1.524, -0.093, 0.584, -0.069, 0.803, 1, 1, 1, 4.2, 1, -0.123, -0.801, -1.527, -0.102, 0.581, -0.068, 0.804, 1, 1, 1, 4.4, 1, -0.122, -0.8, -1.523, -0.102, 0.58, -0.071, 0.805, 1, 1, 1, 4.6, 1, -0.122, -0.801, -1.524, -0.102, 0.58, -0.074, 0.805, 1, 1, 1 )
+tracks/1/type = "value"
+tracks/1/path = NodePath("Body/Head:transform")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.4, 2.6, 2.8, 3, 3.2, 3.4, 3.6, 3.8, 4, 4.2, 4.4, 4.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.68, 0 ), Transform( 0.790561, 0.101571, 0.603901, -0.102848, 0.994164, -0.0325732, -0.603685, -0.0363588, 0.796393, -0.001, 0.687, -0.009 ), Transform( 0.749873, -0.0390921, 0.660426, -0.229406, 0.920953, 0.31499, -0.620535, -0.387708, 0.68163, 0.111, 0.644, -0.107 ), Transform( 0.46077, 0.23927, 0.854658, -0.364264, 0.929113, -0.0637296, -0.809323, -0.281957, 0.515265, 0.147, 0.446, -0.301 ), Transform( 0.763288, 0.241063, 0.5994, 0.151601, 0.835044, -0.528885, -0.62802, 0.494561, 0.600833, 0.094, 0.476, -0.338 ), Transform( 0.561775, 0.471753, 0.679601, -0.16905, 0.869605, -0.463906, -0.809834, 0.145724, 0.568273, 0.1, 0.583, -0.307 ), Transform( 0.654818, 0.379398, 0.65366, -0.322017, 0.922497, -0.212849, -0.683753, -0.0711122, 0.72624, 0.1, 0.578, -0.311 ), Transform( 0.835916, 0.21531, 0.504863, -0.128315, 0.971015, -0.201657, -0.533648, 0.103787, 0.839314, 0.095, 0.526, -0.312 ), Transform( 0.77587, 0.420173, 0.470617, -0.196141, 0.869636, -0.453059, -0.599629, 0.259208, 0.757137, 0.102, 0.399, -0.339 ), Transform( 0.628687, 0.236872, 0.740705, -0.339303, 0.94059, -0.0128039, -0.699733, -0.243274, 0.671708, 0.047, 0.247, -0.435 ), Transform( 0.977775, -0.187591, 0.0936255, 0.101101, 0.813089, 0.573293, -0.183671, -0.551086, 0.813984, -0.056, 0.228, -0.575 ), Transform( 0.953753, 0.210506, 0.214575, -0.295118, 0.791365, 0.535395, -0.0571034, -0.573959, 0.81689, -0.131, 0.22, -0.68 ), Transform( 0.830302, 0.39821, 0.389908, -0.435299, 0.900254, 0.00753877, -0.348015, -0.175986, 0.920823, -0.171, 0.197, -0.753 ), Transform( 0.703778, 0.451316, 0.548644, -0.37371, 0.891985, -0.254369, -0.604183, -0.026014, 0.796421, -0.161, 0.144, -0.842 ), Transform( 0.642547, 0.484411, 0.5937, -0.490934, 0.855155, -0.166412, -0.588317, -0.184541, 0.787291, -0.12, 0.014, -1.016 ), Transform( 0.606181, 0.326256, 0.725329, -0.612803, 0.77293, 0.164473, -0.506968, -0.544184, 0.668466, -0.118, -0.28, -1.276 ), Transform( 0.376336, 0.376495, 0.846535, -0.787262, 0.611672, 0.0779454, -0.488456, -0.695779, 0.526595, -0.128, -0.74, -1.469 ), Transform( 0.505831, 0.193646, 0.840616, -0.509958, 0.853093, 0.110341, -0.695757, -0.484493, 0.530273, -0.152, -0.734, -1.534 ), Transform( 0.365079, 0.0916176, 0.926458, -0.387475, 0.919811, 0.0617276, -0.846511, -0.381515, 0.371303, -0.143, -0.803, -1.528 ), Transform( 0.294218, -0.0336222, 0.955147, -0.221783, 0.969699, 0.102451, -0.929649, -0.241978, 0.277846, -0.12, -0.797, -1.517 ), Transform( 0.307864, 0.0021916, 0.951428, -0.219597, 0.973161, 0.0688159, -0.925741, -0.230117, 0.300083, -0.12, -0.801, -1.524 ), Transform( 0.314948, -0.00918914, 0.949064, -0.228095, 0.969914, 0.0850847, -0.921293, -0.243274, 0.303377, -0.123, -0.801, -1.527 ), Transform( 0.317029, -0.00401052, 0.948407, -0.23266, 0.969106, 0.0818706, -0.919435, -0.246612, 0.306302, -0.122, -0.8, -1.523 ), Transform( 0.316456, 0.000819735, 0.948607, -0.237388, 0.96825, 0.0783561, -0.918424, -0.249984, 0.306603, -0.122, -0.801, -1.524 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("Source/PlayerMainAction")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 4.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "OnPlayerDead"
+} ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("NoiseArea:monitorable")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 4.6
+tracks/0/type = "transform"
+tracks/0/path = NodePath("Body/Head")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, 0, 0.68, 0, 0, 0, 0, 1, 1, 1, 1, 0.2, 1, -0.001, 0.687, -0.009, 0.062, 0.995, -0.089, 0.075, 1, 1, 1, 0.4, 1, 0.111, 0.644, -0.107, -0.056, 0.991, 0.143, 0.042, 1, 1, 1, 0.6, 1, 0.147, 0.446, -0.301, 0.239, 0.792, -0.522, -0.23, 1, 1, 1, 0.8, 1, 0.094, 0.476, -0.338, -0.309, -0.626, 0.693, 0.207, 1, 1, 1, 1, 1, 0.1, 0.583, -0.307, 0.08, 0.789, -0.448, -0.423, 1, 1, 1, 1.2, 1, 0.1, 0.578, -0.311, 0.039, 0.906, -0.271, -0.334, 1, 1, 1, 1.4, 1, 0.095, 0.526, -0.312, 0.073, 0.91, -0.313, -0.275, 1, 1, 1, 1.6, 1, 0.102, 0.399, -0.339, -0.088, 0.892, -0.294, -0.344, 1, 1, 1, 1.8, 1, 0.047, 0.247, -0.435, 0.082, 0.903, 0.025, -0.431, 1, 1, 1, 2, 1, -0.056, 0.228, -0.575, 0.199, 0.949, 0.261, -0.001, 1, 1, 1, 2.2, 1, -0.131, 0.22, -0.68, -0.089, 0.993, 0.114, -0.026, 1, 1, 1, 2.4, 1, -0.171, 0.197, -0.753, -0.191, 0.932, -0.176, -0.269, 1, 1, 1, 2.6, 1, -0.161, 0.144, -0.842, -0.181, 0.801, -0.324, -0.478, 1, 1, 1, 2.8, 1, -0.12, 0.014, -1.016, 0.099, -0.737, 0.281, 0.617, 1, 1, 1, 3, 1, -0.118, -0.28, -1.276, -0.136, -0.705, 0.154, 0.686, 1, 1, 1, 3.2, 1, -0.128, -0.74, -1.469, -0.412, -0.467, 0.362, 0.701, 1, 1, 1, 3.4, 1, -0.152, -0.734, -1.534, -0.345, -0.515, 0.395, 0.685, 1, 1, 1, 3.6, 1, -0.143, -0.803, -1.528, -0.492, -0.441, 0.477, 0.59, 1, 1, 1, 3.8, 1, -0.12, -0.797, -1.517, -0.54, -0.418, 0.506, 0.54, 1, 1, 1, 4, 1, -0.12, -0.801, -1.524, -0.54, -0.42, 0.506, 0.538, 1, 1, 1, 4.2, 1, -0.123, -0.801, -1.527, -0.54, -0.418, 0.506, 0.54, 1, 1, 1, 4.4, 1, -0.122, -0.8, -1.523, -0.54, -0.418, 0.507, 0.539, 1, 1, 1, 4.6, 1, -0.122, -0.801, -1.524, -0.54, -0.418, 0.507, 0.539, 1, 1, 1 )
+
+[sub_resource type="Animation" id=7]
+length = 0.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("NoiseArea:monitorable")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "panic"
+length = 6.0
+tracks/0/type = "transform"
+tracks/0/path = NodePath("Body/Head")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, 0, 0.68, 0, 0, 0, 0, 1, 1, 1, 1, 6, 1, 0, 0.68, 0, 0, 0, 0, 1, 1, 1, 1 )
+tracks/1/type = "value"
+tracks/1/path = NodePath("NoiseArea:monitorable")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Source/CharacterMove:enabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/3/type = "audio"
+tracks/3/path = NodePath("AudioStreamPlayer3D")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 5 )
+} ],
+"times": PoolRealArray( 0 )
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("AudioStreamPlayer3D:translation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.6, 0 ) ]
+}
+tracks/5/type = "method"
+tracks/5/path = NodePath("Source/PlayerMainAction")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 6 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ true ],
+"method": "SetActive"
+} ]
+}
+
+[sub_resource type="Animation" id=9]
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("NoiseArea:monitorable")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.4, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("AudioStreamPlayer3D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+} ],
+"times": PoolRealArray( 0, 0.4 )
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AudioStreamPlayer3D:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, -0.85, 0 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+length = 0.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("NoiseArea:monitorable")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=11]
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control/AimPC:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.04, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.3, 0.3 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=12]
+animation = "active"
+
+[sub_resource type="AnimationNodeAnimation" id=13]
+animation = "death"
+
+[sub_resource type="AnimationNodeAnimation" id=14]
+animation = "idle"
+
+[sub_resource type="AnimationNodeAnimation" id=15]
+animation = "panic"
+
+[sub_resource type="AnimationNodeAnimation" id=16]
+animation = "run"
+
+[sub_resource type="AnimationNodeAnimation" id=17]
+animation = "walk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=18]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=19]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=20]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=21]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=22]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=23]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=24]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=25]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=26]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=27]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=28]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=29]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachine" id=30]
+states/active/node = SubResource( 12 )
+states/active/position = Vector2( 158, 21 )
+states/death/node = SubResource( 13 )
+states/death/position = Vector2( 633, 273 )
+states/idle/node = SubResource( 14 )
+states/idle/position = Vector2( 395, 21 )
+states/panic/node = SubResource( 15 )
+states/panic/position = Vector2( 395, 273 )
+states/run/node = SubResource( 16 )
+states/run/position = Vector2( 158, 155 )
+states/walk/node = SubResource( 17 )
+states/walk/position = Vector2( 633, 155 )
+transitions = [ "idle", "run", SubResource( 18 ), "active", "idle", SubResource( 19 ), "run", "idle", SubResource( 20 ), "idle", "walk", SubResource( 21 ), "walk", "idle", SubResource( 22 ), "run", "walk", SubResource( 23 ), "walk", "run", SubResource( 24 ), "walk", "panic", SubResource( 25 ), "panic", "death", SubResource( 26 ), "run", "panic", SubResource( 27 ), "idle", "panic", SubResource( 28 ), "panic", "idle", SubResource( 29 ) ]
+start_node = "active"
+end_node = "death"
+graph_offset = Vector2( 0, -122.78 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=31]
+
+[sub_resource type="StyleBoxFlat" id=32]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 0.862745, 0.117647, 0.627451 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="PlayerCharacter" type="KinematicBody" groups=[
+"monster_prey",
+]]
+collision_mask = 1023
+script = ExtResource( 7 )
+playerInputInterpreterNP = NodePath("Source/PlayerInputInterpreter")
+playerMainActionNP = NodePath("Source/PlayerMainAction")
+characterMoveNP = NodePath("Source/CharacterMove")
+runSpeed = 4.8
+groundSurfacePositionY = -1.15
+
+[node name="PhysicShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+shape = SubResource( 1 )
+
+[node name="Body" type="Spatial" parent="."]
+
+[node name="Head" type="Spatial" parent="Body"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.68, 0 )
+
+[node name="Camera" type="Camera" parent="Body/Head"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.2 )
+current = true
+near = 0.01
+far = 120.0
+
+[node name="InteractionReach" type="Spatial" parent="Body/Head"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1 )
+
+[node name="PlayerArea" type="Area" parent="." groups=[
+"monster_prey",
+]]
+collision_layer = 32768
+collision_mask = 262144
+
+[node name="CollisionShape" type="CollisionShape" parent="PlayerArea"]
+shape = SubResource( 2 )
+
+[node name="NoiseArea" type="Area" parent="." groups=[
+"noise",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0372772, -0.0963745, -0.0562878 )
+monitoring = false
+monitorable = false
+collision_layer = 65536
+collision_mask = 0
+
+[node name="CollisionShape" type="CollisionShape" parent="NoiseArea"]
+shape = SubResource( 3 )
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.85, 0 )
+stream = ExtResource( 5 )
+
+[node name="CharacterAnimationPlayer" type="AnimationPlayer" parent="."]
+anims/active = SubResource( 4 )
+anims/death = SubResource( 5 )
+anims/death_raw_(need_rotation_from_animation) = SubResource( 6 )
+anims/idle = SubResource( 7 )
+anims/panic = SubResource( 8 )
+anims/run = SubResource( 9 )
+anims/walk = SubResource( 10 )
+
+[node name="AimAnimationPlayer" type="AnimationPlayer" parent="."]
+anims/interact = SubResource( 11 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 30 )
+anim_player = NodePath("../CharacterAnimationPlayer")
+active = true
+parameters/playback = SubResource( 31 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AimPC" type="PanelContainer" parent="Control"]
+margin_left = 506.0
+margin_top = 294.0
+margin_right = 518.0
+margin_bottom = 306.0
+rect_min_size = Vector2( 6, 6 )
+rect_pivot_offset = Vector2( 6, 6 )
+custom_styles/panel = SubResource( 32 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Source" type="Node" parent="."]
+
+[node name="PlayerInputInterpreter" type="Node" parent="Source"]
+script = ExtResource( 8 )
+
+[node name="CharacterMove" type="Node" parent="Source"]
+script = ExtResource( 1 )
+kinematicBodyNP = NodePath("../..")
+bodyNP = NodePath("../../Body")
+enabled = false
+pushStrength = 10.0
+
+[node name="CharacterLook" type="Node" parent="Source"]
+script = ExtResource( 2 )
+bodyNP = NodePath("../../Body")
+headNP = NodePath("../../Body/Head")
+
+[node name="PlayerInteraction" type="Node" parent="Source"]
+script = ExtResource( 3 )
+headNP = NodePath("../../Body/Head")
+interactionReachNP = NodePath("../../Body/Head/InteractionReach")
+interactExclusionNPList = [ NodePath("../.."), NodePath("../../PlayerArea"), NodePath("../../NoiseArea") ]
+interactionLayer = 524288
+
+[node name="PlayerMainAction" type="Node" parent="Source"]
+script = ExtResource( 9 )
+playerCharacterNP = NodePath("../..")
+headNP = NodePath("../../Body/Head")
+bodyNP = NodePath("../../Body")
+dead = true
+
+[node name="PlayerCharacterDebug" type="Node" parent="Source"]
+script = ExtResource( 10 )
+playerMainActionNP = NodePath("../PlayerMainAction")
+
+[node name="PlayerCharacterInitializer" type="Node" parent="Source"]
+script = ExtResource( 6 )
+playerCharacterNP = NodePath("../..")
+playerMainActionNP = NodePath("../PlayerMainAction")
+playerInputInterpreterNP = NodePath("../PlayerInputInterpreter")
+characterMoveNP = NodePath("../CharacterMove")
+characterLookNP = NodePath("../CharacterLook")
+playerInteractionNP = NodePath("../PlayerInteraction")
+playerAreaNP = NodePath("../../PlayerArea")
+animationTreeNP = NodePath("../../AnimationTree")
+aimAnimationPlayerNP = NodePath("../../AimAnimationPlayer")

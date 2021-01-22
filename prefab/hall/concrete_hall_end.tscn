@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://prefab/ground/ceramic_g2/ceramic_geo_2_ground_4x5.tscn" type="PackedScene" id=1]
+[ext_resource path="res://prefab/wall/concrete/concrete_wall_2x4.tscn" type="PackedScene" id=4]
+[ext_resource path="res://prefab/wall/concrete/concrete_wall_1x4.tscn" type="PackedScene" id=5]
+
+
+[node name="ConcreteHallEnd" type="Spatial"]
+
+[node name="ConcreteWall1x4" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -2 )
+
+[node name="ConcreteWall2x4" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2 )
+
+[node name="ConcreteWall1x4_2" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -2 )
+
+[node name="ConcreteWall1x4_3" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 2 )
+
+[node name="ConcreteWall2x4_2" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2 )
+
+[node name="ConcreteWall1x4_4" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 2 )
+
+[node name="CeramicGeo2Ground4x5" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.5, 0 )

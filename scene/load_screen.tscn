@@ -1,0 +1,218 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://gui/theme/computer_system_theme.tres" type="Theme" id=1]
+[ext_resource path="res://gui/font/xolonium_60.tres" type="DynamicFont" id=2]
+[ext_resource path="res://source/screen/LoadScreen.cs" type="Script" id=3]
+[ext_resource path="res://gui/theme/blue_style.tres" type="StyleBox" id=4]
+
+[sub_resource type="Animation" id=1]
+resource_name = "loading"
+length = 1.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Panel/Progress/Control/BarControl/Bar1Panel:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Panel/Progress/Control/BarControl/Bar2Panel:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Panel/Progress/Control/BarControl/Bar3Panel:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Panel/Progress/Control/BarControl/Bar4Panel:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Panel/Progress/Control/BarControl/Bar5Panel:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/5/type = "method"
+tracks/5/path = NodePath("Source/LoadScreen")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 1.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ true ],
+"method": "set_process"
+} ]
+}
+
+[node name="LoadScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+theme = ExtResource( 1 )
+
+[node name="Title" type="PanelContainer" parent="Panel"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 1014.0
+margin_bottom = 100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel/Title"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 998.0
+margin_bottom = 85.0
+custom_fonts/font = ExtResource( 2 )
+text = "Humans: Milestone"
+align = 1
+
+[node name="Progress" type="PanelContainer" parent="Panel"]
+margin_left = 10.0
+margin_top = 110.0
+margin_right = 1014.0
+margin_bottom = 588.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="Panel/Progress"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 998.0
+margin_bottom = 474.0
+
+[node name="LoadingLabel" type="Label" parent="Panel/Progress/Control"]
+margin_top = 160.0
+margin_right = 992.0
+margin_bottom = 207.0
+text = "Loading Experiment"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BarControl" type="Control" parent="Panel/Progress/Control"]
+margin_left = 353.0
+margin_top = 220.0
+margin_right = 640.0
+margin_bottom = 267.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bar1Panel" type="Panel" parent="Panel/Progress/Control/BarControl"]
+visible = false
+margin_right = 50.0
+margin_bottom = 50.0
+custom_styles/panel = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bar2Panel" type="Panel" parent="Panel/Progress/Control/BarControl"]
+visible = false
+margin_left = 60.0
+margin_right = 110.0
+margin_bottom = 50.0
+custom_styles/panel = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bar3Panel" type="Panel" parent="Panel/Progress/Control/BarControl"]
+visible = false
+margin_left = 120.0
+margin_right = 170.0
+margin_bottom = 50.0
+custom_styles/panel = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bar4Panel" type="Panel" parent="Panel/Progress/Control/BarControl"]
+visible = false
+margin_left = 180.0
+margin_right = 230.0
+margin_bottom = 50.0
+custom_styles/panel = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bar5Panel" type="Panel" parent="Panel/Progress/Control/BarControl"]
+visible = false
+margin_left = 240.0
+margin_right = 290.0
+margin_bottom = 50.0
+custom_styles/panel = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WaitLabel" type="Label" parent="Panel/Progress/Control"]
+margin_top = 280.0
+margin_right = 992.0
+margin_bottom = 327.0
+text = "Please Wait..."
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "loading"
+anims/loading = SubResource( 1 )
+
+[node name="Source" type="Node" parent="."]
+
+[node name="LoadScreen" type="Node" parent="Source"]
+script = ExtResource( 3 )
+changeSceneAfterLoad = false

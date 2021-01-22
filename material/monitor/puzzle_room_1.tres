@@ -1,0 +1,16 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=2]
+
+[ext_resource path="res://shader/monitor_screen.shader" type="Shader" id=1]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 7
+load_path = "res://.import/puzzle_room_1_sign.png-55e0115dba68d57599281e21254cc6fc.s3tc.stex"
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/bgColor = Color( 1, 1, 1, 1 )
+shader_param/color = Color( 0.7, 0.8, 2.8, 1 )
+shader_param/bgColorFactor = 0.11
+shader_param/uv1_scale = Vector3( 1, 1, 1 )
+shader_param/uv1_offset = Vector3( 0, 0, 0 )
+shader_param/textureAlbedo = SubResource( 1 )

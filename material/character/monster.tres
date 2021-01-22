@@ -1,0 +1,26 @@
+[gd_resource type="SpatialMaterial" load_steps=4 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 7
+load_path = "res://.import/parasite_monster_albedo.png-d809f6e6c40c93ad86b2029978f85e53.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 7
+load_path = "res://.import/parasite_monster_specular.png-e50efdab0fa474f61f7c6693a12d69d0.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=3]
+flags = 7
+load_path = "res://.import/parasite_monster_normal.png-bf63af18ff10a2b2af8055fa58f6c5f0.s3tc.stex"
+
+[resource]
+resource_name = "parasitezombie_Material"
+params_cull_mode = 2
+albedo_texture = SubResource( 1 )
+metallic_texture = SubResource( 2 )
+roughness = 0.4
+normal_enabled = true
+normal_scale = 0.8
+normal_texture = SubResource( 3 )
+rim_enabled = true
+rim = 0.08
+rim_tint = 0.5

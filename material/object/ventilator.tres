@@ -1,0 +1,43 @@
+[gd_resource type="SpatialMaterial" load_steps=6 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 7
+load_path = "res://.import/ac_albedo.png-674dbbda54b88ab350f2e25b7598792c.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 7
+load_path = "res://.import/ac_ao.png-0831912c0963e763cbe317949cf85784.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=3]
+flags = 7
+load_path = "res://.import/ac_specular.png-818f8980260c7fa8ecb74046dfa73802.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=4]
+flags = 7
+load_path = "res://.import/ac_normal.png-40c3c5c96844c03108e15b02df2a8c33.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=5]
+flags = 7
+load_path = "res://.import/ac_roughness.png-e797992414b7d9e1b59871c05d4e5393.s3tc.stex"
+
+[resource]
+resource_name = "Modular buildings"
+params_use_alpha_scissor = true
+params_alpha_scissor_threshold = 0.6
+albedo_texture = SubResource( 1 )
+metallic = 0.9
+metallic_texture = SubResource( 3 )
+metallic_texture_channel = 4
+roughness = 0.8
+roughness_texture = SubResource( 5 )
+normal_enabled = true
+normal_scale = 2.0
+normal_texture = SubResource( 4 )
+rim_enabled = true
+rim = 0.08
+rim_tint = 0.5
+ao_enabled = true
+ao_light_affect = 0.74
+ao_texture = SubResource( 2 )
+ao_on_uv2 = false
+ao_texture_channel = 0

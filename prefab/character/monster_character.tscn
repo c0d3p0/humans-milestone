@@ -1,0 +1,245 @@
+[gd_scene load_steps=43 format=2]
+
+[ext_resource path="res://source/character/CharacterMove.cs" type="Script" id=1]
+[ext_resource path="res://model/monster/monster.tscn" type="PackedScene" id=2]
+[ext_resource path="res://animation/monster/t_pose.tres" type="Animation" id=3]
+[ext_resource path="res://.import/concrete_foot_footstep.wav-a0a017bafecfab6204fef154c264b8fb.sample" type="AudioStream" id=4]
+[ext_resource path="res://.import/attack_hit.wav-68d97c1c15f85f234b27fdaa4c3e5f78.sample" type="AudioStream" id=5]
+[ext_resource path="res://source/character/monster/MonsterCharacter.cs" type="Script" id=6]
+[ext_resource path="res://source/character/monster/MonsterCharacterInitializer.cs" type="Script" id=7]
+[ext_resource path="res://animation/monster/monster_attack.tres" type="Animation" id=8]
+[ext_resource path="res://source/character/monster/MonsterMainAction.cs" type="Script" id=9]
+[ext_resource path="res://animation/monster/monster_run.tres" type="Animation" id=10]
+[ext_resource path="res://animation/monster/monster_looking.tres" type="Animation" id=11]
+[ext_resource path="res://animation/monster/monster_death.tres" type="Animation" id=12]
+[ext_resource path="res://animation/monster/monster_pre_attack.tres" type="Animation" id=13]
+[ext_resource path="res://animation/monster/monster_idle.tres" type="Animation" id=14]
+[ext_resource path="res://source/character/monster/MonsterAI.cs" type="Script" id=15]
+[ext_resource path="res://source/character/monster/MonsterCharacterDebug.cs" type="Script" id=16]
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 0.5
+height = 0.8
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 15, 1, 15 )
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 0.5, 0.9, 0.5 )
+
+[sub_resource type="AnimationNodeAnimation" id=4]
+animation = "monster_attack"
+
+[sub_resource type="AnimationNodeAnimation" id=5]
+animation = "monster_death"
+
+[sub_resource type="AnimationNodeAnimation" id=6]
+animation = "monster_idle"
+
+[sub_resource type="AnimationNodeAnimation" id=7]
+animation = "monster_looking"
+
+[sub_resource type="AnimationNodeAnimation" id=8]
+animation = "monster_pre_attack"
+
+[sub_resource type="AnimationNodeAnimation" id=9]
+animation = "monster_run"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=10]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=11]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=12]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=13]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=14]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=15]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=16]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=17]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=18]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=19]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=20]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=21]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=22]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=23]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=24]
+
+[sub_resource type="AnimationNodeStateMachine" id=25]
+states/monster_attack/node = SubResource( 4 )
+states/monster_attack/position = Vector2( -380, -255 )
+states/monster_death/node = SubResource( 5 )
+states/monster_death/position = Vector2( -380, -510 )
+states/monster_idle/node = SubResource( 6 )
+states/monster_idle/position = Vector2( -216, -387 )
+states/monster_looking/node = SubResource( 7 )
+states/monster_looking/position = Vector2( 299, -387 )
+states/monster_pre_attack/node = SubResource( 8 )
+states/monster_pre_attack/position = Vector2( -59, -255 )
+states/monster_run/node = SubResource( 9 )
+states/monster_run/position = Vector2( -59, -510 )
+transitions = [ "monster_idle", "monster_looking", SubResource( 10 ), "monster_looking", "monster_run", SubResource( 11 ), "monster_looking", "monster_idle", SubResource( 12 ), "monster_run", "monster_looking", SubResource( 13 ), "monster_pre_attack", "monster_attack", SubResource( 14 ), "monster_attack", "monster_idle", SubResource( 15 ), "monster_looking", "monster_death", SubResource( 16 ), "monster_run", "monster_idle", SubResource( 17 ), "monster_idle", "monster_run", SubResource( 18 ), "monster_looking", "monster_pre_attack", SubResource( 19 ), "monster_run", "monster_pre_attack", SubResource( 20 ), "monster_attack", "monster_looking", SubResource( 21 ), "monster_run", "monster_death", SubResource( 22 ), "monster_idle", "monster_death", SubResource( 23 ), "monster_attack", "monster_death", SubResource( 24 ) ]
+start_node = "monster_idle"
+end_node = "monster_death"
+graph_offset = Vector2( -483.221, -509.394 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=26]
+
+[node name="MonsterCharacter" type="KinematicBody" groups=[
+"monster",
+]]
+collision_mask = 1023
+script = ExtResource( 6 )
+monsterAINP = NodePath("Source/MonsterAI")
+monsterMainActionNP = NodePath("Source/MonsterMainAction")
+characterMoveNP = NodePath("Source/CharacterMove")
+
+[node name="PhysicShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+shape = SubResource( 1 )
+
+[node name="Body" type="Spatial" parent="."]
+
+[node name="Skeleton" parent="Body" instance=ExtResource( 2 )]
+transform = Transform( -0.9, 0, -2.93257e-07, 0, 0.9, 0, 2.93257e-07, 0, -0.9, 0, -0.88, 0 )
+
+[node name="HeadBoneAttachment" type="BoneAttachment" parent="Body/Skeleton"]
+transform = Transform( 0.999302, 0.000437049, 0.0373494, 0.0175521, 0.877158, -0.47988, -0.032971, 0.480201, 0.876538, -0.00470045, 1.51926, 0.401574 )
+bone_name = "Head"
+
+[node name="SightPosition" type="Spatial" parent="Body/Skeleton/HeadBoneAttachment"]
+transform = Transform( 0.999946, 0.000826642, -0.0103791, 8.30591e-05, 0.99618, 0.0873024, 0.0104117, -0.0872973, 0.996127, -0.00201213, 0.111837, 0.100267 )
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Body/Skeleton/HeadBoneAttachment"]
+transform = Transform( -1.11021, 0.0171203, 0.0412594, -0.00518569, 0.969934, -0.542004, -0.0443683, -0.541758, -0.96907, -0.00211636, -0.017181, 0.100047 )
+stream = ExtResource( 5 )
+
+[node name="SightArea" type="Area" parent="Body"]
+transform = Transform( 1, 0, 0, 0, 0.999998, 0, 0, 0, 0.999997, 0, 0, 0 )
+monitorable = false
+collision_layer = 0
+collision_mask = 32768
+
+[node name="CollisionShape" type="CollisionShape" parent="Body/SightArea"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15.3 )
+shape = SubResource( 2 )
+
+[node name="MonsterArea" type="Area" parent="Body" groups=[
+"monster",
+]]
+collision_layer = 32768
+collision_mask = 327680
+
+[node name="CollisionShape" type="CollisionShape" parent="Body/MonsterArea"]
+shape = SubResource( 3 )
+
+[node name="RayCastLeft" type="RayCast" parent="Body"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -0.8, 0 )
+enabled = true
+cast_to = Vector3( 0, 0, -1.2 )
+collision_mask = 32769
+collide_with_areas = true
+
+[node name="RayCastCenter" type="RayCast" parent="Body"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0 )
+enabled = true
+cast_to = Vector3( 0, 0, -1.2 )
+collision_mask = 32769
+collide_with_areas = true
+
+[node name="RayCastRight" type="RayCast" parent="Body"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -0.8, 0 )
+enabled = true
+cast_to = Vector3( 0, 0, -1.2 )
+collision_mask = 32769
+collide_with_areas = true
+
+[node name="LookAroundTimer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
+[node name="IgnoreNoiseTimer" type="Timer" parent="."]
+wait_time = 20.0
+one_shot = true
+
+[node name="SearchAroundTimer" type="Timer" parent="."]
+wait_time = 6.0
+one_shot = true
+
+[node name="FootstepsASP3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9, 0 )
+stream = ExtResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/monster_attack = ExtResource( 8 )
+anims/monster_death = ExtResource( 12 )
+anims/monster_idle = ExtResource( 14 )
+anims/monster_looking = ExtResource( 11 )
+anims/monster_pre_attack = ExtResource( 13 )
+anims/monster_run = ExtResource( 10 )
+anims/t_pose = ExtResource( 3 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 25 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 26 )
+
+[node name="Source" type="Node" parent="."]
+
+[node name="MonsterAI" type="Node" parent="Source"]
+script = ExtResource( 15 )
+monsterCharacterNP = NodePath("../..")
+bodyNP = NodePath("../../Body")
+lookAroundTimerNP = NodePath("../../LookAroundTimer")
+searchAroundTimerNP = NodePath("../../SearchAroundTimer")
+ignoreNoiseTimerNP = NodePath("../../IgnoreNoiseTimer")
+rayCastCenterNP = NodePath("../../Body/RayCastCenter")
+sightPositionNP = NodePath("../../Body/Skeleton/HeadBoneAttachment/SightPosition")
+sightExclusionNPList = [ NodePath("../.."), NodePath("../../Body/SightArea"), NodePath("../../Body/MonsterArea") ]
+
+[node name="CharacterMove" type="Node" parent="Source"]
+script = ExtResource( 1 )
+kinematicBodyNP = NodePath("../..")
+bodyNP = NodePath("../../Body")
+enabled = false
+
+[node name="MonsterMainAction" type="Node" parent="Source"]
+script = ExtResource( 9 )
+monsterCharacterNP = NodePath("../..")
+bodyNP = NodePath("../../Body")
+rayCastNPList = [ NodePath("../../Body/RayCastLeft"), NodePath("../../Body/RayCastCenter"), NodePath("../../Body/RayCastRight") ]
+dead = true
+
+[node name="MonsterCharacterDebug" type="Node" parent="Source"]
+script = ExtResource( 16 )
+bodyNP = NodePath("../../Body")
+monsterMainActionNP = NodePath("../MonsterMainAction")
+
+[node name="MonsterCharacterInitializer" type="Node" parent="Source"]
+script = ExtResource( 7 )
+monsterCharacterNP = NodePath("../..")
+monsterMainActionNP = NodePath("../MonsterMainAction")
+monsterAINP = NodePath("../MonsterAI")
+characterMoveNP = NodePath("../CharacterMove")
+animationTreeNP = NodePath("../../AnimationTree")
+[connection signal="area_entered" from="Body/SightArea" to="Source/MonsterAI" method="OnSightAreaEntered"]
+[connection signal="area_exited" from="Body/SightArea" to="Source/MonsterAI" method="OnSightAreaExited"]
+[connection signal="area_entered" from="Body/MonsterArea" to="Source/MonsterAI" method="OnMonsterAreaEntered"]
+[connection signal="timeout" from="LookAroundTimer" to="Source/MonsterAI" method="OnLookAroundFinished"]
+[connection signal="animation_finished" from="AnimationPlayer" to="Source/MonsterMainAction" method="OnAnimationFinished"]
+[connection signal="animation_started" from="AnimationPlayer" to="Source/MonsterMainAction" method="OnAnimationStarted"]

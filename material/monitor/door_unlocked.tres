@@ -1,0 +1,16 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=2]
+
+[ext_resource path="res://shader/monitor_screen.shader" type="Shader" id=1]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 7
+load_path = "res://.import/unlocked_sign.png-4a81681453751b9acc0da7ac393f1b71.s3tc.stex"
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/bgColor = Color( 1, 1, 1, 1 )
+shader_param/color = Color( 0.15, 1.8, 0.05, 1 )
+shader_param/bgColorFactor = 0.11
+shader_param/uv1_scale = Vector3( 1, 1, 1 )
+shader_param/uv1_offset = Vector3( 0, 0, 0 )
+shader_param/textureAlbedo = SubResource( 1 )

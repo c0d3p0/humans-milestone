@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://prefab/hall/hall_room_border.tscn" type="PackedScene" id=1]
+[ext_resource path="res://prefab/hall/brick_hall.tscn" type="PackedScene" id=2]
+[ext_resource path="res://prefab/hall/ceramic_small_hall.tscn" type="PackedScene" id=3]
+[ext_resource path="res://prefab/pile/wall_barricade_pile_1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://prefab/object/metal_shelf.tscn" type="PackedScene" id=5]
+[ext_resource path="res://prefab/pile/concrete_cylinder_pile_1.tscn" type="PackedScene" id=7]
+[ext_resource path="res://prefab/hall/brick_hall_5x12.tscn" type="PackedScene" id=9]
+
+[node name="VerticalHallLeft" type="Spatial"]
+
+[node name="HallRoomBorder2" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20 )
+
+[node name="BrickHall5x12" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8.5 )
+
+[node name="BrickHall" parent="." instance=ExtResource( 2 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 11.5 )
+
+[node name="CeramicSmallHall" parent="." instance=ExtResource( 3 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 14 )
+
+[node name="HallRoomBorder" parent="." instance=ExtResource( 1 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 20 )
+
+[node name="CeramicSmallHall2" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 20 )
+
+[node name="WallBarricadePile1" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.53, -20 )
+
+[node name="ConcreteCylinderPile1" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.53, 20 )
+
+[node name="MetalShelf_1" parent="." instance=ExtResource( 5 )]
+transform = Transform( -0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, 0.909243, -0.995, 22.3519 )
+
+[node name="MetalShelf_2" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, -0.0970084, -1.787, 22.8845 )

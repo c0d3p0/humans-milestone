@@ -1,0 +1,86 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://source/screen/LoadScreen.cs" type="Script" id=1]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
+
+[sub_resource type="StreamTexture" id=2]
+flags = 7
+load_path = "res://.import/godot logo.png-8fa4d5239b9db01cfc0bffb19aa9a56a.stex"
+
+[sub_resource type="Animation" id=3]
+resource_name = "splash"
+length = 4.0
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("LogoTextureRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2, 3, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("Source/LoadScreen")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ true ],
+"method": "set_process"
+} ]
+}
+
+[node name="SplashScreenControl" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+show_behind_parent = true
+margin_right = 1024.0
+margin_bottom = 600.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LogoTextureRect" type="TextureRect" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 256.0
+margin_top = 196.0
+margin_right = 896.0
+margin_bottom = 455.0
+rect_scale = Vector2( 0.8, 0.8 )
+texture = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "splash"
+anims/splash = SubResource( 3 )
+
+[node name="SplashScreenTimer" type="Timer" parent="."]
+wait_time = 6.0
+one_shot = true
+autostart = true
+
+[node name="Source" type="Node" parent="."]
+
+[node name="LoadScreen" type="Node" parent="Source"]
+script = ExtResource( 1 )
+changeSceneAfterLoad = false
+splashScreen = true

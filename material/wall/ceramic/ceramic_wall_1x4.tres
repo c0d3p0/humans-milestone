@@ -1,0 +1,36 @@
+[gd_resource type="SpatialMaterial" load_steps=5 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 7
+load_path = "res://.import/ceramic_1_albedo.png-b455d9fa814ff7ed3cd475dcfc48dd42.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 7
+load_path = "res://.import/ceramic_1_ao.png-d83d12ac7efd4b048b4fac051d5d741e.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=3]
+flags = 7
+load_path = "res://.import/ceramic_1_normal.png-034ff8e5dd819f438b90191e3c29a43e.stex"
+
+[sub_resource type="StreamTexture" id=4]
+flags = 7
+load_path = "res://.import/ceramic_1_roughness.png-529f0a83dfb08ed266891efc21606015.s3tc.stex"
+
+[resource]
+resource_name = "ceramic_1"
+albedo_texture = SubResource( 1 )
+metallic_texture_channel = 4
+roughness = 0.6
+roughness_texture = SubResource( 4 )
+normal_enabled = true
+normal_scale = -6.0
+normal_texture = SubResource( 3 )
+rim_enabled = true
+rim = 0.12
+rim_tint = 1.0
+ao_enabled = true
+ao_light_affect = 0.97
+ao_texture = SubResource( 2 )
+ao_on_uv2 = false
+ao_texture_channel = 0
+uv1_scale = Vector3( 3, 8, 1 )

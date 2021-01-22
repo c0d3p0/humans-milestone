@@ -1,0 +1,82 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://source/character/monster/DummyMonster.cs" type="Script" id=1]
+
+[sub_resource type="ConcavePolygonShape" id=1]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[sub_resource type="SpatialMaterial" id=2]
+flags_transparent = true
+albedo_color = Color( 1, 1, 1, 0.25098 )
+
+[sub_resource type="CubeMesh" id=3]
+material = SubResource( 2 )
+
+[sub_resource type="ConcavePolygonShape" id=4]
+data = PoolVector3Array( -0.1, 1, 1, 0.1, 1, 1, -0.1, -1, 1, 0.1, 1, 1, 0.1, -1, 1, -0.1, -1, 1, 0.1, 1, -1, -0.1, 1, -1, 0.1, -1, -1, -0.1, 1, -1, -0.1, -1, -1, 0.1, -1, -1, 0.1, 1, 1, 0.1, 1, -1, 0.1, -1, 1, 0.1, 1, -1, 0.1, -1, -1, 0.1, -1, 1, -0.1, 1, -1, -0.1, 1, 1, -0.1, -1, -1, -0.1, 1, 1, -0.1, -1, 1, -0.1, -1, -1, 0.1, 1, 1, -0.1, 1, 1, 0.1, 1, -1, -0.1, 1, 1, -0.1, 1, -1, 0.1, 1, -1, -0.1, -1, 1, 0.1, -1, 1, -0.1, -1, -1, 0.1, -1, 1, 0.1, -1, -1, -0.1, -1, -1 )
+
+[sub_resource type="SpatialMaterial" id=5]
+flags_transparent = true
+albedo_color = Color( 0.784314, 0.0392157, 0.0392157, 0.627451 )
+
+[sub_resource type="CubeMesh" id=6]
+material = SubResource( 5 )
+size = Vector3( 0.2, 2, 2 )
+
+[sub_resource type="Animation" id=7]
+resource_name = "move"
+length = 10.0
+loop = true
+tracks/0/type = "transform"
+tracks/0/path = NodePath("PanicArea")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, -5, 0, 0, 0, 0, 0, 1, 1, 1, 1, 5, 1, 5, 0, 0, 0, 0, 0, 1, 1, 1, 1, 10, 1, -5, 0, 0, 0, 0, 0, 1, 1, 1, 1 )
+tracks/1/type = "transform"
+tracks/1/path = NodePath("StrikeArea")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = PoolRealArray( 0, 1, -5, 0, 0, 0, 0, 0, 1, 1, 1, 1, 5, 1, 5, 0, 0, 0, 0, 0, 1, 1, 1, 1, 10, 1, -5, 0, 0, 0, 0, 0, 1, 1, 1, 1 )
+
+[node name="DummyMonster" type="Spatial"]
+
+[node name="PanicArea" type="Area" parent="." groups=[
+"monster_catch",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.17776, 0, 0 )
+collision_layer = 131072
+collision_mask = 32768
+
+[node name="CollisionShape" type="CollisionShape" parent="PanicArea"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="PanicArea"]
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="StrikeArea" type="Area" parent="." groups=[
+"monster_attack",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.17776, 0, 0 )
+collision_layer = 131072
+collision_mask = 32768
+
+[node name="CollisionShape" type="CollisionShape" parent="StrikeArea"]
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="StrikeArea"]
+mesh = SubResource( 6 )
+material/0 = null
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/move = SubResource( 7 )
+
+[node name="Source" type="Node" parent="."]
+
+[node name="DummyMonster" type="Node" parent="Source"]
+script = ExtResource( 1 )
+animationPlayerNP = NodePath("../../AnimationPlayer")

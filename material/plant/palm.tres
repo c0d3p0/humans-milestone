@@ -1,0 +1,26 @@
+[gd_resource type="SpatialMaterial" load_steps=4 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 7
+load_path = "res://.import/palm_albedo.png-8f5a30d1a16358fef843ba2942ddcbfa.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 7
+load_path = "res://.import/palm_normal.png-54b4a1f2c4012437f7579599915a596a.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=3]
+flags = 7
+load_path = "res://.import/palm_roughness.png-ee6a39f85730ce717acdce97b9b4569c.s3tc.stex"
+
+[resource]
+params_cull_mode = 2
+params_use_alpha_scissor = true
+params_alpha_scissor_threshold = 0.01
+albedo_texture = SubResource( 1 )
+roughness_texture = SubResource( 3 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = SubResource( 2 )
+rim_enabled = true
+rim = 0.15
+rim_tint = 0.9

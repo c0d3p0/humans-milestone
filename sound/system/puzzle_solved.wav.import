@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/puzzle_solved.wav-a4dae7e8a8d318bbd672b6c2d263e5ec.sample"
+
+[deps]
+
+source_file="res://sound/system/puzzle_solved.wav"
+dest_files=[ "res://.import/puzzle_solved.wav-a4dae7e8a8d318bbd672b6c2d263e5ec.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://model/object/concrete_cylinder.tscn" type="PackedScene" id=1]
+
+[sub_resource type="CylinderShape" id=1]
+radius = 0.47
+height = 0.94
+
+[node name="ConcreteCylinder" type="StaticBody"]
+collision_layer = 32
+collision_mask = 495
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 1 )
+
+[node name="ConcreteCylinderMI" parent="." instance=ExtResource( 1 )]

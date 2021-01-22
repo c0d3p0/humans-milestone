@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://model/object/cardboard_box_1.tscn" type="PackedScene" id=2]
+
+[sub_resource type="PhysicsMaterial" id=1]
+friction = 0.95
+bounce = 0.24
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 0.286, 0.175, 0.269 )
+
+[node name="CardboardBox1" type="RigidBody"]
+collision_layer = 64
+collision_mask = 495
+mass = 10.0
+physics_material_override = SubResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 2 )
+
+[node name="CardboardBox1MI" parent="." instance=ExtResource( 2 )]

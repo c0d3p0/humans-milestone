@@ -1,0 +1,18 @@
+KeyPad / = Increases WorldEnvironment.SkyContribution by 0.1.
+KeyPad * = Decreases WorldEnvironment.SkyContribution by 0.1.
+KeyPad - = Set WorldEnvironment.SkyContribution to 0.99f.
+
+KeyPad 0 	= Toggle God Mode.
+
+KeyPad 7 	= Activate monster.
+KeyPad 8 	= Deactivate monster.
+KeyPad 9 	= Force monster to attack
+KeyPad + 	= Activate killer device inside all monsters that has a killer device (Only the main one).
+
+KeyPad 4 	= Unlock first door.
+KeyPad 5 	= Unlock secret door.
+KeyPad 6 	= Lock first door.
+KeyPad . 	= Lock secret door.
+KeyPad 1 	= Increase experiment level by 1.
+KeyPad 2 	= Decrease experiment level by 1.
+KeyPad 3 	= Force experiment update to be executed.
