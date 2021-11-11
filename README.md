@@ -1,17 +1,16 @@
 # humans-milestone
-A Survival Horror game developed using the Godot Engine 3.2.3 and C#.
+A Survival Horror game developed using the Godot Engine 3.4 and C#.
 <br/><br/>
 
 The game is about humans being used as samples in an experiment made by a more advanced and unknown civilization. They want to find out how intelligent humans are, exposing humans to a very stressful experiment where the sample must solve puzzles while avoiding getting caught by a weird creature. Some data is collected and analyzed by this unknown civilization to come to a conclusion about how intelligent that sample is.
 
-Version 1.1 changes:
+Version 1.3 changes:
 
-  - PBRs improvements.
-  - Models improvements.
-  - Materials improvements.
-  - Better physics collision boxes.
-  - Monster behavior bug fixes and improvements.
-  - Added a new puzzle.
+  - Minor changes to the code to be compatible with Godot 3.4.
+  - Added a new Puzzle, Crazy Operation v2 (Crazy Operation v1 wasn't even being used).
+  - Increased the light a little bit.
+  - Godot 3.4 itself brings a good performance improvement, game runs better now.
+  - Minor changes and fixes.
 <br/><br/>
 
 Note:<br/>
