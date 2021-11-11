@@ -3,44 +3,48 @@ using Godot;
 
 public class ExperimentManagerDebug : Node
 {
-	private void HandleIncreaseAmbientLightSkyContribution(uint keyScancode)
+	private void HandleActivateDefaultLightMode(uint keyScancode)
 	{
 		if(keyScancode == (uint) KeyList.KpDivide)
 		{
-			worldEnvironment.Environment.AmbientLightSkyContribution += 0.1f;
-			GD.PushWarning("Debug, WorldEnvironment AmbientLight" +
-					" SkyContribution increased by 0.1!");
+			DirectionalLight dl = worldEnvironment.GetChild<DirectionalLight>(0);
+			dl.LightColor = new Color(16f / 255f, 24f / 255f, 32f / 255f);
+			GD.PushWarning("Debug, DirectionalLight Color " +
+					"set to its default (16, 24, 32) value!");
 		}
 	}
 
-	private void HandleDecreaseAmbientLightSkyContribution(uint keyScancode)
+	private void HandleToggleNiceNightLightMode(uint keyScancode)
 	{
 		if(keyScancode == (uint) KeyList.KpMultiply)
 		{
-			worldEnvironment.Environment.AmbientLightSkyContribution -= 0.1f;
-			GD.PushWarning("Debug, WorldEnvironment AmbientLight" +
-					" SkyContribution decreased by 0.1!");
+			DirectionalLight dl = worldEnvironment.GetChild<DirectionalLight>(0);
+			dl.LightColor = new Color(32f / 255f, 48f / 255f, 64f / 255f);
+			GD.PushWarning("Debug, DirectionalLight Color " +
+					"set to (32, 48, 64) value!");
 		}
 	}
 
-	private void HandleDefaultAmbientLightSkyContribution(uint keyScancode)
+	private void HandleToggleDayLightMode(uint keyScancode)
 	{
 		if(keyScancode == (uint) KeyList.KpSubtract)
 		{
-			worldEnvironment.Environment.AmbientLightSkyContribution = 0.99f;
-			GD.PushWarning("Debug, WorldEnvironment AmbientLight" +
-					" SkyContribution set to its default (0.99) value!");
+			DirectionalLight dl = worldEnvironment.GetChild<DirectionalLight>(0);
+			dl.LightColor = new Color(255f / 255f, 255f / 255f, 255f / 255f);
+			GD.PushWarning("Debug, DirectionalLight Color " +
+					"set to (255, 255, 255) value!");
 		}
 	}
+
 
 	private void HandleDebug(InputEventKey inputEventKey)
 	{
 		if(inputEventKey != null && inputEventKey.Pressed)
 		{
 			uint keyScancode = inputEventKey.Scancode;
-			HandleIncreaseAmbientLightSkyContribution(keyScancode);
-			HandleDecreaseAmbientLightSkyContribution(keyScancode);
-			HandleDefaultAmbientLightSkyContribution(keyScancode);
+			HandleActivateDefaultLightMode(keyScancode);
+			HandleToggleNiceNightLightMode(keyScancode);
+			HandleToggleDayLightMode(keyScancode);
 		}
 	}
 
@@ -65,3 +69,6 @@ public class ExperimentManagerDebug : Node
 
 	private WorldEnvironment worldEnvironment;
 }
+
+
+// Old light was 18, 22, 36.

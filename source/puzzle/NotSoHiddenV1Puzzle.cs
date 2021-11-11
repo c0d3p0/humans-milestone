@@ -144,7 +144,6 @@ public class NotSoHiddenV1Puzzle : EnhancedBasePuzzle
 
 			GD.PushWarning("");
 		}
-
 		
 		GD.PushWarning("CorrectAnswer: " + new string(correctAnswer));
 		GD.PushWarning("");

@@ -8,7 +8,7 @@ public class ExperimentResultSystemGUI : BaseSystemGUI
 {
 	public void UpdateGUIState(bool active)
 	{
-		SCG.IEnumerator<SCG.KeyValuePair<byte, Button>> it = buttonMap.GetEnumerator();
+		SCG.IEnumerator<SCG.KeyValuePair<int, Button>> it = buttonMap.GetEnumerator();
 			
 		while(it.MoveNext())
 			it.Current.Value.Disabled = !active;
@@ -21,14 +21,14 @@ public class ExperimentResultSystemGUI : BaseSystemGUI
 
 	private void InitializeButtonMap()
 	{
-		buttonMap = new Dictionary<byte, Button>();
+		buttonMap = new Dictionary<int, Button>();
 		buttonMap.Add(SystemGUIID.BTN_KB_KEY_OK,
 				awardPanel.GetChild(0).GetChild(1).GetChild<Button>(1));
 	}
 
 	private void InitializeLabelMap()
 	{
-		labelMap = new Dictionary<byte, Label>();
+		labelMap = new Dictionary<int, Label>();
 		labelMap.Add(SystemGUIID.LBL_EXPERIMENT_RESULT_DATA,
 				resultDataPanel.GetChild(0).GetChild<Label>(1));
 		labelMap.Add(SystemGUIID.LBL_AWARD_INFO,

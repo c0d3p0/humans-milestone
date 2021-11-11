@@ -8,12 +8,12 @@ public class ExperimentComputerSystem : Node
 {
 	public void SetPuzzleComputersRandomPuzzles()
 	{
-		HashList<byte> puzzleIdList = new HashList<byte>();
+		HashList<int> puzzleIdList = new HashList<int>();
 		int index;
 
 		for(byte i = 1; i < PUZZLE_AMOUNT; i++)
 			puzzleIdList.Add(i);
-			
+
 		for(byte i = 0; i < 3; i++)
 		{
 			index = this.RandiRange(rng, 0, puzzleIdList.Count - 1);
@@ -46,7 +46,7 @@ public class ExperimentComputerSystem : Node
 	
 	public void UpdateAllInformationComputers()
 	{
-		SCG.IEnumerator<SCG.KeyValuePair<short, Node>> it =
+		SCG.IEnumerator<SCG.KeyValuePair<int, Node>> it =
 				informationComputerMap.GetEnumerator();
 
 		while(it.MoveNext())
@@ -59,7 +59,7 @@ public class ExperimentComputerSystem : Node
 	{
 		ExperimentResultData erd = GetExperimentResultData(subjectID,
 				experimentStartTime, experimentEndTime, experimentLevel, hitsTaken);
-		SCG.IEnumerator<SCG.KeyValuePair<short, Node>> it =
+		SCG.IEnumerator<SCG.KeyValuePair<int, Node>> it =
 				experimentResultComputerMap.GetEnumerator();
 
 		while(it.MoveNext())
@@ -84,7 +84,7 @@ public class ExperimentComputerSystem : Node
 		experimentResultComputerMap.Add(GetComputerKey(roomId, computerId), computer);
 	}
 
-	private void SetRoomPuzzleComputersPuzzle(byte roomId, byte puzzleId)
+	private void SetRoomPuzzleComputersPuzzle(int roomId, int puzzleId)
 	{
 		short computerId;
 		Node pcn;
@@ -98,7 +98,7 @@ public class ExperimentComputerSystem : Node
 		}
 	}
 
-	private Puzzle CreatePuzzle(byte puzzleId)
+	private Puzzle CreatePuzzle(int puzzleId)
 	{
 		if(puzzleId == 0)
 			return new AnyDividedBy0Puzzle();
@@ -114,6 +114,8 @@ public class ExperimentComputerSystem : Node
 			return new CarvedInTheCoffinsV1Puzzle();
 		else if(puzzleId == 6)
 			return new GuidedByTheEvidenceV1Puzzle();
+		else if(puzzleId == 7)
+			return new CrazyOperationV2Puzzle();
 
 		return null;
 	}
@@ -132,7 +134,7 @@ public class ExperimentComputerSystem : Node
 		return erd;
 	}
 
-	private short GetComputerKey(byte roomId, byte objectId)
+	private short GetComputerKey(int roomId, int objectId)
 	{
 		return (byte) ((roomId * 100) + objectId);
 	}
@@ -153,7 +155,7 @@ public class ExperimentComputerSystem : Node
 		Initialize();
 	}
 
-	public Dictionary<short, Node> PuzzleComputerMap
+	public Dictionary<int, Node> PuzzleComputerMap
 	{
 		set
 		{
@@ -161,7 +163,7 @@ public class ExperimentComputerSystem : Node
 		}
 	}
 
-	public Dictionary<short, Node> InformationComputerMap
+	public Dictionary<int, Node> InformationComputerMap
 	{
 		set
 		{
@@ -169,7 +171,7 @@ public class ExperimentComputerSystem : Node
 		}
 	}
 
-	public Dictionary<short, Node> ExperimentResultComputerMap
+	public Dictionary<int, Node> ExperimentResultComputerMap
 	{
 		set
 		{
@@ -178,11 +180,11 @@ public class ExperimentComputerSystem : Node
 	}
 
 	
-	private const byte PUZZLE_AMOUNT = 7;
+	private const byte PUZZLE_AMOUNT = 8;
 	
 	private RandomNumberGenerator rng;
 
-	private Dictionary<short, Node> puzzleComputerMap;
-	private Dictionary<short, Node> informationComputerMap;
-	private Dictionary<short, Node> experimentResultComputerMap;
+	private Dictionary<int, Node> puzzleComputerMap;
+	private Dictionary<int, Node> informationComputerMap;
+	private Dictionary<int, Node> experimentResultComputerMap;
 }

@@ -24,7 +24,7 @@ public class KnowledgeGivenByTheBookV1Puzzle : EnhancedBasePuzzle
 			page.Append(words[i]).Append(' ');
 
 		page.Remove(page.Length - 1, 1).Append('\n');
-		page.Append("\n        ").Append(pageNumber);
+		page.Append("\n                ").Append(pageNumber);
 		return new PuzzleContent(page.ToString());
 	}
 

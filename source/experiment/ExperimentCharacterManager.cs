@@ -10,10 +10,10 @@ public class ExperimentCharacterManager : Node
 	public void RestartCharacters()
 	{
 		Spatial s = this.GetRandomItem<Spatial>(playerRespawnSpatialList, rng);
-		playerCharacter.EmitSignal(SignalKey.UPDATE_ACTIVE, s.GlobalTransform.origin);
+		playerCharacter.EmitSignal(SignalKey.UPDATE_ACTIVE, s.Translation);
 		Array<Spatial> usedSpotList = new Array<Spatial>();
 		SCG.IEnumerator<Spatial> it = monsterRespawnSpatialList.GetEnumerator();
-		Vector3 translation;
+		// Vector3 translation;
 		Spatial monster;
 		
 		while(it.MoveNext())
@@ -23,9 +23,9 @@ public class ExperimentCharacterManager : Node
 		{
 			monster = monsterCharacterList[i];
 			s = this.GetRandomItem<Spatial>(usedSpotList, rng);
-			translation = s.GlobalTransform.origin;
-			translation.y = monster.GlobalTransform.origin.y;
-			monster.Translation = translation;
+			// translation = s.Translation;
+			// translation.y = monster.GlobalTransform.origin.y;
+			monster.Translation = s.Translation;
 			usedSpotList.Remove(s);
 			monster.EmitSignal(SignalKey.UPDATE_ACTIVE, true);
 		}
@@ -35,8 +35,8 @@ public class ExperimentCharacterManager : Node
 	{
 		mainMonsterAmount = (byte) monsterCharacterList.Count;
 		Spatial spot = monsterStartSpatialList[2]; // Best spot to spawn the extra monsters.
-		Vector3 t = IsPlayerDistant(spot) ? spot.GlobalTransform.origin :
-				monsterRespawnSpatialList[5].GlobalTransform.origin;
+		Vector3 t = IsPlayerDistant(spot) ? spot.Translation :
+				monsterRespawnSpatialList[5].Translation;
 		Spatial m;
 
 		for(byte i = 1; i < mainMonsterAmount; i++)

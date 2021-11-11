@@ -6,7 +6,7 @@ public class PuzzleInputPage : Godot.Object
 {
 	public PuzzleInputPage()
 	{
-		puzzleInputMap = new Dictionary<byte, PuzzleContent>();
+		puzzleInputMap = new Dictionary<int, PuzzleContent>();
 	}
 
 	public void AddPuzzleInput(byte key, char c)
@@ -28,5 +28,5 @@ public class PuzzleInputPage : Godot.Object
 	}
 
 
-	public Dictionary<byte, PuzzleContent> puzzleInputMap;
+	public Dictionary<int, PuzzleContent> puzzleInputMap;
 }

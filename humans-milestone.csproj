@@ -1,4 +1,4 @@
-﻿<Project Sdk="Godot.NET.Sdk/3.2.3">
+﻿<Project Sdk="Godot.NET.Sdk/3.3.0">
   <PropertyGroup>
     <ProjectGuid>{7C4AC8F4-0D4C-4F62-84BA-19ABE4A79CF9}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -91,6 +91,7 @@
     <!--	-->
     <Compile Include="source\puzzle\AnyDividedBy0Puzzle.cs" />
     <Compile Include="source\puzzle\CarvedInTheCoffinsV1Puzzle.cs" />
+    <Compile Include="source\puzzle\CrazyOperationV2Puzzle.cs" />
     <Compile Include="source\puzzle\KeysToTheTreasureV1Puzzle.cs" />
     <Compile Include="source\puzzle\KnowledgeGivenByTheBookV1Puzzle.cs" />
     <Compile Include="source\puzzle\GuidedByTheEvidenceV1Puzzle.cs" />

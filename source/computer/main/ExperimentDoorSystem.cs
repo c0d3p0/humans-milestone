@@ -10,17 +10,17 @@ public class ExperimentDoorSystem : Node
 	{
 		int lockLevel = experimentLevel / 2;
 		byte amount = (byte) Mathf.Min(lockLevel, 4);
-		SCG.IEnumerator<SCG.KeyValuePair<short, Node>> it = doorMap.GetEnumerator();
-		randomDoorSet.Clear();
+		SCG.IEnumerator<SCG.KeyValuePair<int, Node>> it = doorMap.GetEnumerator();
+		randomDoorList.Clear();
 
 		while(it.MoveNext()) // Add all experiment doors.
 		{
 			if(IsExperimentDoor(it.Current.Key))
-				randomDoorSet.Add(it.Current.Key);
+				randomDoorList.Add(it.Current.Key);
 		}
 
 		while(amount-- > 0) // Remove randomly the doors that will be locked
-			randomDoorSet.RemoveAt(this.RandiRange(rng, 0, randomDoorSet.Count - 1));
+			randomDoorList.RemoveAt(this.RandiRange(rng, 0, randomDoorList.Count - 1));
 
 		it = doorMap.GetEnumerator();
 
@@ -29,7 +29,7 @@ public class ExperimentDoorSystem : Node
 			if(IsExperimentDoor(it.Current.Key))
 			{
 				it.Current.Value.EmitSignal(SignalKey.EXECUTE_SYSTEM_COMMAND,
-						randomDoorSet.Contains(it.Current.Key));
+						randomDoorList.Contains(it.Current.Key));
 			}
 		}
 
@@ -39,8 +39,8 @@ public class ExperimentDoorSystem : Node
 
 	public void SetDoorsUnlocked(bool unlocked, bool experimentDoor = true)
 	{
-		SCG.KeyValuePair<short, Node> pair;
-		SCG.IEnumerator<SCG.KeyValuePair<short, Node>> it =
+		SCG.KeyValuePair<int, Node> pair;
+		SCG.IEnumerator<SCG.KeyValuePair<int, Node>> it =
 				doorMap.GetEnumerator();
 
 		while(it.MoveNext())
@@ -70,7 +70,7 @@ public class ExperimentDoorSystem : Node
 		return (short) ((roomId * 100) + objectId);
 	}
 
-	private bool IsExperimentDoor(short doorKey)
+	private bool IsExperimentDoor(int doorKey)
 	{
 		return doorKey % 100 < 5;
 	}
@@ -79,7 +79,7 @@ public class ExperimentDoorSystem : Node
 	{
 		rng = new RandomNumberGenerator();
 		experimentUpdateTimer = GetNode<Timer>(experimentUpdateTimerNP);
-		randomDoorSet = new HashList<short>();
+		randomDoorList = new HashList<int>();
 	}
 
 	public override void _EnterTree()
@@ -87,7 +87,7 @@ public class ExperimentDoorSystem : Node
 		Initialize();
 	}
 
-	public Dictionary<short, Node> DoorMap
+	public Dictionary<int, Node> DoorMap
 	{
 		set
 		{
@@ -103,6 +103,6 @@ public class ExperimentDoorSystem : Node
 	private Timer experimentUpdateTimer;
 
 	private RandomNumberGenerator rng;
-	private Dictionary<short, Node> doorMap;
-	private HashList<short> randomDoorSet;
+	private Dictionary<int, Node> doorMap;
+	private HashList<int> randomDoorList;
 }

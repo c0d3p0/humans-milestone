@@ -114,6 +114,9 @@ public abstract class BasePuzzle : Godot.Object, Puzzle
 
 		for(int i = 0; i < userInputMap.Count; i++)
 			userAnswer[i] = userInputMap[i].character;
+
+		if(OS.IsDebugBuild())
+			PrintCorrectAnswer();
 	}
 
 	protected virtual void CreatePuzzleStatusPage()
@@ -149,20 +152,18 @@ public abstract class BasePuzzle : Godot.Object, Puzzle
 	{
 		currentPuzzleContentPage = 0;
 		currentPuzzleInputPage = 0;
-		puzzleContentMap = new Dictionary<byte, PuzzleContent>();
-		puzzleInputPageMap = new Dictionary<byte, PuzzleInputPage>();
+		puzzleContentMap = new Dictionary<int, PuzzleContent>();
+		puzzleInputPageMap = new Dictionary<int, PuzzleInputPage>();
 		userInputMap = new Array<PuzzleContent>();
 		rng = new RandomNumberGenerator();
 	}
 
-	// DEBUG: Comment/uncomment PrintPuzzle for testing.
 	public BasePuzzle()
 	{
 		InitializeAttributes();
 		InitializePuzzle();
 		InitializePuzzleInputsMap();
 		CreatePuzzleStatusPage();
-		// PrintCorrectAnswer();
 	}
 
 	protected void PrintCorrectAnswer()
@@ -196,8 +197,8 @@ public abstract class BasePuzzle : Godot.Object, Puzzle
 	protected char[] userAnswer;
 	protected Array<PuzzleContent> userInputMap;
 
-	protected Dictionary<byte, PuzzleContent> puzzleContentMap;
-	protected Dictionary<byte, PuzzleInputPage> puzzleInputPageMap;
+	protected Dictionary<int, PuzzleContent> puzzleContentMap;
+	protected Dictionary<int, PuzzleInputPage> puzzleInputPageMap;
 
 	protected RandomNumberGenerator rng;
 

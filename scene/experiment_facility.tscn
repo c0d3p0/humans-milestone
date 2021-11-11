@@ -71,7 +71,7 @@ agent/max_slope = 4.0
 bounds = AABB( -46, -5, -40, 92, 10, 80 )
 cell_size = 0.359375
 to_cell_xform = Transform( 2.78261, 0, 0, 0, 2.78261, 0, 0, 0, 2.78261, 128, 13.913, 111.304 )
-dynamic_data = PoolIntArray( 0, 9, 256, 32, 256, 1, 0, 0, 80489792, 0, 80489792, 0, 0, 0, 0, 0, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
+dynamic_data = PoolIntArray( 0, 9, 256, 32, 256, 1, 0, 0, 1102053376, 1142538240, 0, 0, 1102053376, 1142538240, 0, 0, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
 dynamic_range = 8
 bias = 1.5
 normal_bias = 0.0
@@ -85,7 +85,7 @@ environment = SubResource( 2 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="WorldEnvironment"]
 transform = Transform( -0.864187, 0.20946, -0.457501, 0, 0.909236, 0.416281, 0.503171, 0.359744, -0.78575, -20.4, 38.11, -29.95 )
-light_color = Color( 0.0705882, 0.0862745, 0.141176, 1 )
+light_color = Color( 0.0627451, 0.0941176, 0.12549, 1 )
 light_energy = 0.7
 light_indirect_energy = 0.1
 

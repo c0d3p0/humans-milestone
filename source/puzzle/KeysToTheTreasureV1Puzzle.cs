@@ -123,7 +123,7 @@ public class KeysToTheTreasureV1Puzzle : EnhancedBasePuzzle
 
 	protected void InitializeBlankIndexMap()
 	{
-		blankIndexMap = new Dictionary<byte, object>();
+		blankIndexMap = new Dictionary<int, object>();
 
 		blankIndexMap.Add(GetBlankIndexKey(0, 0), null);
 		blankIndexMap.Add(GetBlankIndexKey(0, 1), null);
@@ -185,7 +185,7 @@ public class KeysToTheTreasureV1Puzzle : EnhancedBasePuzzle
 	protected byte operation;
 	protected byte[] passwordRowValidIndexes;
 	protected byte[] passwordColValidIndexes;
-	protected Dictionary<byte, object> blankIndexMap;
+	protected Dictionary<int, object> blankIndexMap;
 
 	protected const byte ROW_PATTERN = 0;
 	protected const byte COLUMN_PATTERN = 1;

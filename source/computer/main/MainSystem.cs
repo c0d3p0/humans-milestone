@@ -216,10 +216,10 @@ public class MainSystem : Node
 
 	private void Initialize()
 	{
-		doorMap = new Dictionary<short, Node>();
-		puzzleComputerMap = new Dictionary<short, Node>();
-		informationComputerMap = new Dictionary<short, Node>();
-		experimentResultComputerMap = new Dictionary<short, Node>();
+		doorMap = new Dictionary<int, Node>();
+		puzzleComputerMap = new Dictionary<int, Node>();
+		informationComputerMap = new Dictionary<int, Node>();
+		experimentResultComputerMap = new Dictionary<int, Node>();
 		rng = new RandomNumberGenerator();
 	}
 
@@ -228,7 +228,7 @@ public class MainSystem : Node
 		Initialize();
 	}
 	
-	public Dictionary<short, Node> DoorMap
+	public Dictionary<int, Node> DoorMap
 	{
 		get
 		{
@@ -236,7 +236,7 @@ public class MainSystem : Node
 		}
 	}
 
-	public Dictionary<short, Node> PuzzleComputerMap
+	public Dictionary<int, Node> PuzzleComputerMap
 	{
 		get
 		{
@@ -244,7 +244,7 @@ public class MainSystem : Node
 		}
 	}
 
-	public Dictionary<short, Node> InformationComputerMap
+	public Dictionary<int, Node> InformationComputerMap
 	{
 		get
 		{
@@ -252,7 +252,7 @@ public class MainSystem : Node
 		}
 	}
 
-	public Dictionary<short, Node> ExperimentResultComputerMap
+	public Dictionary<int, Node> ExperimentResultComputerMap
 	{
 		get
 		{
@@ -269,15 +269,15 @@ public class MainSystem : Node
 	}
 
 
-	private Dictionary<short, Node> doorMap;
-	private Dictionary<short, Node> puzzleComputerMap;
-	private Dictionary<short, Node> informationComputerMap;
-	private Dictionary<short, Node> experimentResultComputerMap;
+	private Dictionary<int, Node> doorMap;
+	private Dictionary<int, Node> puzzleComputerMap;
+	private Dictionary<int, Node> informationComputerMap;
+	private Dictionary<int, Node> experimentResultComputerMap;
 
 	private RandomNumberGenerator rng;
 	private ushort subjectID;
-	private uint experimentStartTime;
-	private uint experimentEndTime;
+	private ulong experimentStartTime;
+	private ulong experimentEndTime;
 	private sbyte experimentLevel;
 	private ushort hitsTaken;
 	private bool playerLockedMonster;

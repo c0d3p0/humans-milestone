@@ -26,7 +26,7 @@ public class DoorLockSystemGUI : BaseSystemGUI
 	private void InitializeButtomMap()
 	{
 		lockButton = GetNode<Button>(lockButtonNP);
-		buttonMap = new Dictionary<byte, Button>();
+		buttonMap = new Dictionary<int, Button>();
 		buttonMap.Add(SystemGUIID.BTN_KB_KEY_OK, lockButton);
 	}
 

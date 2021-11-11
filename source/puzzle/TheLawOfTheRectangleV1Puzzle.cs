@@ -78,6 +78,7 @@ public class TheLawOfTheRectangleV1Puzzle : EnhancedBasePuzzle
 		byte index = 0;
 		byte[] answer = RandomizeNumbers(8, 0, 9);
 		operation = (byte) this.RandiRange(rng, 0, 1);
+
 		CopyNumericArrayToCorrectAnswer(answer);
 		puzzleContentMap.Add(index++,
 				new PuzzleContent("The Law Of The Rectangle v1"));

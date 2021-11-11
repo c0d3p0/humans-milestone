@@ -103,11 +103,12 @@ public class CarvedInTheCoffinsV1Puzzle : EnhancedBasePuzzle
 			StringBuilder[] coffins, byte startIndex)
 	{
 		byte limit = (byte) (startIndex + 4);
-
+		page.Append('\u0020');
+		
 		for(byte i = startIndex; i < limit; i++)
 		{
-			page.Append(coffins[i][7]);
 			page.Append('\u0020');
+			page.Append(coffins[i][7]);
 			page.Append('\u0020');
 			page.Append('\u0020');
 		}
@@ -158,8 +159,7 @@ public class CarvedInTheCoffinsV1Puzzle : EnhancedBasePuzzle
 	{
 		byte index = 0;
 		InitializeAttributes();
-		puzzleContentMap.Add(index++,
-				new PuzzleContent("Carved In The Coffins v1"));
+		puzzleContentMap.Add(index++, new PuzzleContent("Carved In The Coffins v1"));
 		
 		for(byte i = 0; i < correctAnswer.Length; i++)
 			puzzleContentMap.Add(index++, CreatePuzzlePage(correctAnswer[i]));	

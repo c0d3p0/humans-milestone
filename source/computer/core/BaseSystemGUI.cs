@@ -45,8 +45,8 @@ public abstract class BaseSystemGUI : Node
 	}
 
 
-	protected Dictionary<byte, Button> buttonMap;
-	protected Dictionary<byte, Label> labelMap;
-	protected Dictionary<byte, TextureRect> textureRectMap;
+	protected Dictionary<int, Button> buttonMap;
+	protected Dictionary<int, Label> labelMap;
+	protected Dictionary<int, TextureRect> textureRectMap;
 	protected Dictionary<ulong, byte> touchAreaMap;
 }

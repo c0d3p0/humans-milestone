@@ -73,7 +73,7 @@ public abstract class EnhancedBasePuzzle : BasePuzzle
 			byte rngStart, byte rngEnd)
 	{
 		byte[] numbers = new byte[amount];
-		Dictionary<byte, object> numberSet = new Dictionary<byte, object>();
+		Dictionary<int, object> numberSet = new Dictionary<int, object>();
 		int generated = 0;
 
 		while(generated < amount)

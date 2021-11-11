@@ -7,14 +7,14 @@ public class InformationSystemGUI : BaseSystemGUI
 	private void InitializeButtonMap()
 	{
 		Node nbc = GetNode(navigationButtonControlNP);
-		buttonMap = new Dictionary<byte, Button>();
+		buttonMap = new Dictionary<int, Button>();
 		buttonMap.Add(SystemGUIID.BTN_PREV_PAGE, nbc.GetChild<Button>(0));
 		buttonMap.Add(SystemGUIID.BTN_NEXT_PAGE, nbc.GetChild<Button>(1));
 	}
 
 	private void InitializeLabelMap()
 	{
-		labelMap = new Dictionary<byte, Label>();
+		labelMap = new Dictionary<int, Label>();
 		labelMap.Add(SystemGUIID.LBL_ROOM_TITLE,
 				GetNode<Label>(roomNameLabelNP));
 		labelMap.Add(SystemGUIID.LBL_DOORS_STATUS,

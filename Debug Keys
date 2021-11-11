@@ -1,6 +1,6 @@
-KeyPad / = Increases WorldEnvironment.SkyContribution by 0.1.
-KeyPad * = Decreases WorldEnvironment.SkyContribution by 0.1.
-KeyPad - = Set WorldEnvironment.SkyContribution to 0.99f.
+KeyPad / = Activate the Default Light Mode (original directional light color, it will be $121624).
+KeyPad * = Activate Night Light Mode (default mode, directional light will be #36426C).
+KeyPad - = Activate Day Light Mode (directional light will be #FFFFFF).
 
 KeyPad 0 	= Toggle God Mode.
 
